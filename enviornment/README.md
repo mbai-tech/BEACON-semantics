@@ -25,19 +25,19 @@ python3 enviornment/run.py
 
 This writes files to:
 
-- `data/images/`
-- `data/scenes/`
+- `data/images/<family>/`
+- `data/scenes/<family>/`
 
 Important:
 
-- Running `run.py` clears the existing files in those two `data/` folders first.
+- Running `run.py` clears the existing files in each family subfolder first.
 - Output filenames include the seed, so each file can be reproduced later.
 
 Example output names:
 
 ```text
-data/images/sparse_clutter_000_seed123456789.png
-data/scenes/sparse_clutter_000_seed123456789.json
+data/images/sparse_clutter/000_seed123456789.png
+data/scenes/sparse_clutter/000_seed123456789.json
 ```
 
 ## Generate One Family
@@ -59,8 +59,8 @@ Valid family names:
 
 This writes to:
 
-- `data/images/<family>_scene.png`
-- `data/scenes/<family>_scene.json`
+- `data/images/<family>/scene.png`
+- `data/scenes/<family>/scene.json`
 
 Running `run_family.py` without a seed also clears the normal `data/` output
 folders first.
@@ -83,8 +83,8 @@ This writes to:
 Example saved files:
 
 ```text
-enviornment/saved_enviornments/images/sparse_clutter_seed12345.png
-enviornment/saved_enviornments/scenes/sparse_clutter_seed12345.json
+enviornment/saved_enviornments/images/sparse_clutter/seed12345.png
+enviornment/saved_enviornments/scenes/sparse_clutter/seed12345.json
 ```
 
 These saved environments are not deleted when you rerun `python3 enviornment/run.py`.
@@ -125,8 +125,8 @@ python3 Baselines/baseline.py generate-scene \
 
 By default this writes:
 
-- `data/scenes/sparse_clutter_seed12345.json`
-- `data/images/sparse_clutter_seed12345.png`
+- `data/scenes/sparse_clutter/seed12345.json`
+- `data/images/sparse_clutter/seed12345.png`
 
 Supported families:
 
@@ -140,13 +140,13 @@ Example:
 
 ```bash
 python3 Baselines/baseline.py plan \
-  --scene data/scenes/sparse_clutter_seed12345.json
+  --scene data/scenes/sparse_clutter/seed12345.json
 ```
 
 If you omit `--output`, `baseline.py` now creates the folder automatically and
 saves to:
 
-- `data/plans/<scene_name>_dstar.json`
+- `data/plans/<family>/<scene_name>_dstar.json`
 
 This produces a JSON file containing:
 
@@ -169,13 +169,13 @@ scene:
 
 ```bash
 python3 Baselines/baseline.py render \
-  --scene data/scenes/sparse_clutter_seed12345.json \
-  --plan data/plans/sparse_clutter_seed12345_dstar.json
+  --scene data/scenes/sparse_clutter/seed12345.json \
+  --plan data/plans/sparse_clutter/seed12345_dstar.json
 ```
 
 If you omit `--output`, `baseline.py` automatically creates:
 
-- `data/plan_images/<scene_name>_dstar.png`
+- `data/plan_images/<family>/<scene_name>_dstar.png`
 
 That command creates a PNG overlay with:
 

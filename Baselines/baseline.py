@@ -17,18 +17,26 @@ if str(ENV_DIR) not in sys.path:
     sys.path.insert(0, str(ENV_DIR))
 
 from scene_generator import generate_scene, save_scene_json  # noqa: E402
+from scene_complex import generate_scene as generate_complex_scene  # noqa: E402
 from validator import build_grid  # noqa: E402
 
 
 INF = float("inf")
 SQRT2 = math.sqrt(2.0)
-VALID_FAMILIES = [
+STANDARD_FAMILIES = [
     "narrow_passage",
     "sparse_clutter",
     "dense_clutter",
     "semantic_trap",
     "perturbed",
 ]
+COMPLEX_FAMILIES = [
+    "sparse",
+    "cluttered",
+    "collision_required",
+    "collision_shortcut",
+]
+VALID_FAMILIES = STANDARD_FAMILIES + COMPLEX_FAMILIES
 
 
 class PriorityQueue:
@@ -208,22 +216,69 @@ def ensure_parent_dir(path):
     path.parent.mkdir(parents=True, exist_ok=True)
 
 
-def default_plan_path(scene_path):
-    return DATA_DIR / "plans" / f"{scene_path.stem}_dstar.json"
+def family_plan_dir(family):
+    return DATA_DIR / "plans" / family
 
 
-def default_plan_image_path(scene_path):
-    return DATA_DIR / "plan_images" / f"{scene_path.stem}_dstar.png"
+def family_plan_image_dir(family):
+    return DATA_DIR / "plan_images" / family
 
 
-def default_scene_output_paths(family, seed):
-    scenes_dir = DATA_DIR / "scenes"
-    images_dir = DATA_DIR / "images"
-    if seed is None:
-        name = f"{family}_scene"
-    else:
-        name = f"{family}_seed{seed}"
-    return scenes_dir / f"{name}.json", images_dir / f"{name}.png"
+def detect_family_kind(family):
+    if family in STANDARD_FAMILIES:
+        return "standard"
+    if family in COMPLEX_FAMILIES:
+        return "complex"
+    raise ValueError(f"Unknown family: {family}")
+
+
+def default_scene_dirs(kind):
+    if kind == "complex":
+        return None, DATA_DIR / "complex" / "scenes", DATA_DIR / "complex" / "images"
+    return None, DATA_DIR / "scenes", DATA_DIR / "images"
+
+
+def default_scene_stem(family, seed=None, index=None, count=1):
+    if seed is not None:
+        return f"seed{seed}"
+    if count > 1 and index is not None:
+        return f"{index:03d}"
+    return "scene"
+
+
+def build_scene_paths(kind, family, seed=None, index=None, count=1):
+    _, scenes_root, images_root = default_scene_dirs(kind)
+    stem = default_scene_stem(family, seed=seed, index=index, count=count)
+    return (
+        scenes_root / family / f"{stem}.json",
+        images_root / family / f"{stem}.png",
+    )
+
+
+def default_plan_path(scene_path, family):
+    return family_plan_dir(family) / f"{scene_path.stem}_dstar.json"
+
+
+def default_plan_image_path(scene_path, family):
+    return family_plan_image_dir(family) / f"{scene_path.stem}_dstar.png"
+
+
+def generate_scene_by_family(family, seed=None):
+    kind = detect_family_kind(family)
+    if kind == "complex":
+        return kind, generate_complex_scene(family=family, seed=seed)
+    return kind, generate_scene(family, seed=seed)
+
+
+def get_scene_drawer(kind):
+    if kind == "complex":
+        from draw_complex import draw_scene as draw_complex_scene
+
+        return draw_complex_scene
+
+    from draw_scene import draw_scene
+
+    return draw_scene
 
 
 def nearest_free_index(xs, ys, blocked, point_xyz):
@@ -326,8 +381,12 @@ def build_plan_payload(scene, scene_path, world_path, metadata, step, robot_radi
 
 def command_plan(args):
     scene_path = Path(args.scene).resolve()
-    output_path = Path(args.output).resolve() if args.output else default_plan_path(scene_path)
     scene = load_scene(scene_path)
+    output_path = (
+        Path(args.output).resolve()
+        if args.output
+        else default_plan_path(scene_path, scene["family"])
+    )
     world_path, metadata = plan_scene(
         scene,
         step=args.step,
@@ -361,9 +420,12 @@ def command_render(args):
 
     scene_path = Path(args.scene).resolve()
     plan_path = Path(args.plan).resolve()
-    output_path = Path(args.output).resolve() if args.output else default_plan_image_path(scene_path)
-
     scene = load_scene(scene_path)
+    output_path = (
+        Path(args.output).resolve()
+        if args.output
+        else default_plan_image_path(scene_path, scene["family"])
+    )
     plan = load_scene(plan_path)
 
     path_points = None
@@ -381,11 +443,12 @@ def command_render(args):
 
 
 def command_generate_scene(args):
-    from draw_scene import draw_scene
-
-    scene = generate_scene(args.family, seed=args.seed)
-    default_scene_path, default_image_path = default_scene_output_paths(
-        args.family, scene["seed"] if args.seed is not None else None
+    kind, scene = generate_scene_by_family(args.family, seed=args.seed)
+    draw_scene = get_scene_drawer(kind)
+    default_scene_path, default_image_path = build_scene_paths(
+        kind,
+        args.family,
+        seed=scene.get("seed") if args.seed is not None else None,
     )
 
     scene_output = Path(args.scene_output).resolve() if args.scene_output else default_scene_path
@@ -399,6 +462,73 @@ def command_generate_scene(args):
     print(f"Seed: {scene['seed']}")
     print(f"Saved scene JSON to {scene_output}")
     print(f"Saved image to {image_output}")
+
+
+def command_generate_plan(args):
+    kind = detect_family_kind(args.family)
+    draw_scene = get_scene_drawer(kind)
+
+    for index in range(args.count):
+        current_seed = None
+        if args.seed is not None:
+            current_seed = args.seed + index if args.count > 1 else args.seed
+
+        _, scene = generate_scene_by_family(args.family, seed=current_seed)
+        scene_path, image_path = build_scene_paths(
+            kind,
+            args.family,
+            seed=scene.get("seed") if current_seed is not None else None,
+            index=index,
+            count=args.count,
+        )
+        plan_path = default_plan_path(scene_path, scene["family"])
+
+        ensure_parent_dir(scene_path)
+        ensure_parent_dir(image_path)
+        save_scene_json(scene, scene_path)
+        draw_scene(scene, image_path)
+
+        world_path, metadata = plan_scene(
+            scene,
+            step=args.step,
+            robot_radius=args.robot_radius,
+            mode=args.mode,
+        )
+        payload = build_plan_payload(
+            scene,
+            scene_path,
+            world_path,
+            metadata,
+            args.step,
+            args.robot_radius,
+            args.mode,
+        )
+        ensure_parent_dir(plan_path)
+        with open(plan_path, "w", encoding="utf-8") as handle:
+            json.dump(payload, handle, indent=2)
+
+        print(f"Seed: {scene.get('seed', 'random')}")
+        print(f"Saved scene JSON to {scene_path}")
+        print(f"Saved scene PNG to {image_path}")
+        print(f"Saved plan JSON to {plan_path}")
+        print(f"Success: {payload['success']}")
+
+        if args.render:
+            if kind == "complex":
+                path_points = None
+                if payload["success"]:
+                    path_points = [point[:2] for point in payload.get("path", [])]
+                plan_image_path = default_plan_image_path(scene_path, scene["family"])
+                ensure_parent_dir(plan_image_path)
+                from draw_scene import draw_scene as draw_plan_overlay
+
+                draw_plan_overlay(
+                    scene,
+                    save_path=plan_image_path,
+                    path_points=path_points,
+                    title_suffix="(D* Lite)",
+                )
+                print(f"Saved plan PNG to {plan_image_path}")
 
 
 def make_parser():
@@ -472,6 +602,52 @@ def make_parser():
         help="Optional path for the generated scene PNG.",
     )
     generate_parser.set_defaults(func=command_generate_scene)
+
+    generate_plan_parser = subparsers.add_parser(
+        "generate-plan",
+        help="Generate scene assets and immediately run the D* Lite planner.",
+    )
+    generate_plan_parser.add_argument(
+        "--family",
+        required=True,
+        choices=VALID_FAMILIES,
+        help="Scene family to generate and plan.",
+    )
+    generate_plan_parser.add_argument(
+        "--count",
+        type=int,
+        default=1,
+        help="Number of scenes to generate for the chosen family.",
+    )
+    generate_plan_parser.add_argument(
+        "--seed",
+        type=int,
+        help="Optional seed. If --count is greater than 1, later scenes increment from this seed.",
+    )
+    generate_plan_parser.add_argument(
+        "--mode",
+        default="collision_free",
+        choices=["collision_free", "contact_allowed"],
+        help="Obstacle semantics to use during planning.",
+    )
+    generate_plan_parser.add_argument(
+        "--step",
+        type=float,
+        default=0.15,
+        help="Grid resolution used to discretize the workspace.",
+    )
+    generate_plan_parser.add_argument(
+        "--robot-radius",
+        type=float,
+        default=0.12,
+        help="Robot radius used while rasterizing obstacle occupancy.",
+    )
+    generate_plan_parser.add_argument(
+        "--render",
+        action="store_true",
+        help="Also save a path overlay PNG in data/plan_images.",
+    )
+    generate_plan_parser.set_defaults(func=command_generate_plan)
 
     return parser
 

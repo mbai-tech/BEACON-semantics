@@ -9,8 +9,6 @@ from scene_complex import generate_scene, save_scene_json
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data" / "complex"
-IMAGES_DIR = DATA_DIR / "images"
-SCENES_DIR = DATA_DIR / "scenes"
 VALID_FAMILIES = [
     "sparse",
     "cluttered",
@@ -19,9 +17,12 @@ VALID_FAMILIES = [
 ]
 
 
-def ensure_output_dirs():
-    IMAGES_DIR.mkdir(parents=True, exist_ok=True)
-    SCENES_DIR.mkdir(parents=True, exist_ok=True)
+def ensure_output_dirs(family):
+    images_dir = DATA_DIR / "images" / family
+    scenes_dir = DATA_DIR / "scenes" / family
+    images_dir.mkdir(parents=True, exist_ok=True)
+    scenes_dir.mkdir(parents=True, exist_ok=True)
+    return images_dir, scenes_dir
 
 
 def parse_args():
@@ -44,15 +45,15 @@ def parse_args():
 
 def main():
     args = parse_args()
-    ensure_output_dirs()
 
     families = [args.family] if args.family else VALID_FAMILIES
 
     for family in families:
+        images_dir, scenes_dir = ensure_output_dirs(family)
         for i in range(args.count):
             scene = generate_scene(family=family)
-            image_path = IMAGES_DIR / f"{family}_{i:03d}.png"
-            scene_path = SCENES_DIR / f"{family}_{i:03d}.json"
+            image_path = images_dir / f"{i:03d}.png"
+            scene_path = scenes_dir / f"{i:03d}.json"
 
             draw_scene(scene, image_path)
             save_scene_json(scene, scene_path)

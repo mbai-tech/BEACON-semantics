@@ -49,19 +49,19 @@ def main():
 
     if seed is None:
         output_dir = DATA_DIR
-        images_dir = output_dir / "images"
-        scenes_dir = output_dir / "scenes"
+        images_dir = output_dir / "images" / family
+        scenes_dir = output_dir / "scenes" / family
         clear_output_dir(images_dir)
         clear_output_dir(scenes_dir)
-        json_path = scenes_dir / f"{family}_scene.json"
-        image_path = images_dir / f"{family}_scene.png"
+        json_path = scenes_dir / "scene.json"
+        image_path = images_dir / "scene.png"
     else:
         output_dir = Path(__file__).resolve().parent / "saved_enviornments"
-        images_dir = output_dir / "images"
-        scenes_dir = output_dir / "scenes"
+        images_dir = output_dir / "images" / family
+        scenes_dir = output_dir / "scenes" / family
         images_dir.mkdir(parents=True, exist_ok=True)
         scenes_dir.mkdir(parents=True, exist_ok=True)
-        base_name = f"{family}_seed{scene['seed']}"
+        base_name = f"seed{scene['seed']}"
         json_path = next_available_path(scenes_dir, base_name, ".json")
         image_path = next_available_path(images_dir, base_name, ".png")
 
