@@ -32,7 +32,7 @@ def draw_scene(scene, save_path=None):
     ax.plot(sx, sy, "bo", markersize=8, label="Start")
     ax.plot(gx, gy, "r*", markersize=12, label="Goal")
 
-    ax.set_title(f"{scene['family']} ({len(scene['obstacles'])} circles)")
+    ax.set_title(f"{scene['family']} ({len(scene['obstacles'])} obstacles)")
     ax.legend(loc="upper right")
 
     # no grid lines

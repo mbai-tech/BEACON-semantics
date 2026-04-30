@@ -12,6 +12,8 @@ FAMILIES = [
     "perturbed",
 ]
 SCENES_PER_FAMILY = 100
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
 
 
 def clear_output_dir(directory):
@@ -22,9 +24,8 @@ def clear_output_dir(directory):
 
 
 def main():
-    base_dir = Path(__file__).resolve().parent
-    images_dir = base_dir / "data" / "images"
-    scenes_dir = base_dir / "data" / "scenes"
+    images_dir = DATA_DIR / "images"
+    scenes_dir = DATA_DIR / "scenes"
     clear_output_dir(images_dir)
     clear_output_dir(scenes_dir)
 

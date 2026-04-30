@@ -10,7 +10,7 @@ CLASS_COLORS = {
 }
 
 
-def draw_scene(scene, save_path=None):
+def draw_scene(scene, save_path=None, path_points=None, title_suffix=None):
     fig, ax = plt.subplots(figsize=(6, 6))
 
     xmin, xmax, ymin, ymax = scene["workspace"]
@@ -35,7 +35,16 @@ def draw_scene(scene, save_path=None):
     ax.plot(sx, sy, "go", markersize=8, label="Start")
     ax.plot(gx, gy, "ro", markersize=8, label="Goal")
 
-    ax.set_title(f"Environment: {scene['family']}")
+    if path_points:
+        path_x = [point[0] for point in path_points]
+        path_y = [point[1] for point in path_points]
+        ax.plot(path_x, path_y, color="#1D4ED8", linewidth=2.5, label="Path")
+
+    title = f"Environment: {scene['family']}"
+    if title_suffix:
+        title = f"{title} {title_suffix}"
+
+    ax.set_title(title)
     ax.legend(loc="upper right")
 
     if save_path:

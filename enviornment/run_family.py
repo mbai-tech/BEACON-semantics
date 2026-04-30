@@ -13,6 +13,8 @@ VALID_FAMILIES = [
     "semantic_trap",
     "perturbed",
 ]
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
 
 
 def clear_output_dir(directory):
@@ -45,9 +47,8 @@ def main():
     seed = int(sys.argv[2]) if len(sys.argv) == 3 else None
     scene = generate_scene(family, seed=seed)
 
-    base_dir = Path(__file__).resolve().parent
     if seed is None:
-        output_dir = base_dir / "data"
+        output_dir = DATA_DIR
         images_dir = output_dir / "images"
         scenes_dir = output_dir / "scenes"
         clear_output_dir(images_dir)
@@ -55,7 +56,7 @@ def main():
         json_path = scenes_dir / f"{family}_scene.json"
         image_path = images_dir / f"{family}_scene.png"
     else:
-        output_dir = base_dir / "saved_enviornments"
+        output_dir = Path(__file__).resolve().parent / "saved_enviornments"
         images_dir = output_dir / "images"
         scenes_dir = output_dir / "scenes"
         images_dir.mkdir(parents=True, exist_ok=True)

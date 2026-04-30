@@ -1,10 +1,12 @@
 import json
 import random
-from shapely.geometry import Point, box, LineString
+from shapely.affinity import rotate, translate
+from shapely.geometry import Point, Polygon, box, LineString
 from validator import validate_scene
 
 WORKSPACE = (0, 6, 0, 6)   # xmin, xmax, ymin, ymax
 CLASSES = ["safe", "movable", "fragile"]
+SHAPE_TYPES = ["circle", "rectangle", "triangle", "diamond", "trapezoid"]
 
 
 def polygon_to_list(poly):
@@ -32,8 +34,37 @@ def valid_candidate(candidate, placed, start_buffer=None, goal_buffer=None, min_
     return True
 
 
+def equivalent_radius(poly):
+    return ((poly.area / 3.1415926535) ** 0.5)
+
+
 def make_circle_at(x, y, r):
     return Point(x, y).buffer(r, resolution=32)
+
+
+def make_shape_polygon(shape_type, sx, sy):
+    if shape_type == "circle":
+        return Point(0, 0).buffer(max(sx, sy), resolution=32)
+    if shape_type == "rectangle":
+        return Polygon([(-sx, -sy), (sx, -sy), (sx, sy), (-sx, sy)])
+    if shape_type == "triangle":
+        return Polygon([(-sx, -sy), (sx, -sy), (0, sy)])
+    if shape_type == "diamond":
+        return Polygon([(0, sy), (sx, 0), (0, -sy), (-sx, 0)])
+    if shape_type == "trapezoid":
+        top = sx * 0.55
+        return Polygon([(-sx, -sy), (sx, -sy), (top, sy), (-top, sy)])
+    raise ValueError(f"Unsupported shape type: {shape_type}")
+
+
+def make_shape_at(x, y, sx, sy=None, shape_type=None, angle=None):
+    sy = sx if sy is None else sy
+    shape_type = shape_type or random.choice(SHAPE_TYPES)
+    angle = random.uniform(0, 180) if angle is None else angle
+    poly = make_shape_polygon(shape_type, sx, sy)
+    poly = rotate(poly, angle, origin=(0, 0), use_radians=False)
+    poly = translate(poly, xoff=x, yoff=y)
+    return poly, shape_type
 
 
 def make_random_circle(r_min=0.15, r_max=0.45):
@@ -42,6 +73,23 @@ def make_random_circle(r_min=0.15, r_max=0.45):
     x = random.uniform(xmin + r, xmax - r)
     y = random.uniform(ymin + r, ymax - r)
     return make_circle_at(x, y, r), r
+
+
+def make_random_obstacle(size_min=0.15, size_max=0.45):
+    xmin, xmax, ymin, ymax = WORKSPACE
+    shape_type = random.choice(SHAPE_TYPES)
+
+    if shape_type == "circle":
+        poly, radius = make_random_circle(r_min=size_min, r_max=size_max)
+        return poly, shape_type, radius, radius
+
+    sx = random.uniform(size_min, size_max)
+    sy = random.uniform(size_min, size_max)
+    margin = max(sx, sy) + 0.1
+    x = random.uniform(xmin + margin, xmax - margin)
+    y = random.uniform(ymin + margin, ymax - margin)
+    poly, shape_type = make_shape_at(x, y, sx, sy=sy, shape_type=shape_type)
+    return poly, shape_type, sx, sy
 
 
 def random_start_goal(min_dist=3.5, margin=0.45):
@@ -59,25 +107,25 @@ def random_start_goal(min_dist=3.5, margin=0.45):
     return (0.6, 0.6), (5.4, 5.4)
 
 
-def obstacle_record(poly, idx, cls):
+def obstacle_record(poly, idx, cls, shape_type):
     center = poly.centroid
-    radius = ((poly.area / 3.1415926535) ** 0.5)
+    radius = equivalent_radius(poly)
     return {
         "id": idx,
-        "shape_type": "circle",
+        "shape_type": shape_type,
         "class_true": cls,
         "radius": round(radius, 4),
         "center": [round(center.x, 4), round(center.y, 4)],
         "vertices": polygon_to_list(poly)
     }
 
-def try_add_obstacle(poly, cls, placed, obstacles, start=None, goal=None, min_gap=0.05):
+def try_add_obstacle(poly, cls, placed, obstacles, shape_type, start=None, goal=None, min_gap=0.05):
     start_buffer = Point(start).buffer(0.35) if start is not None else None
     goal_buffer = Point(goal).buffer(0.35) if goal is not None else None
 
     if valid_candidate(poly, placed, start_buffer, goal_buffer, min_gap=min_gap):
         placed.append(poly)
-        obstacles.append(obstacle_record(poly, len(obstacles), cls))
+        obstacles.append(obstacle_record(poly, len(obstacles), cls, shape_type))
         return True
     return False
 
@@ -108,12 +156,12 @@ def sample_background_obstacles(
 
     while len(obstacles) < n_obs and attempts < max_attempts:
         attempts += 1
-        candidate, _ = make_random_circle()
+        candidate, shape_type, _, _ = make_random_obstacle()
 
         if valid_candidate(candidate, placed, start_buffer, goal_buffer, min_gap=0.05):
             placed.append(candidate)
             cls = random.choices(classes, weights=weights, k=1)[0]
-            obstacles.append(obstacle_record(candidate, len(obstacles), cls))
+            obstacles.append(obstacle_record(candidate, len(obstacles), cls, shape_type))
 
     return placed, obstacles
 
@@ -175,16 +223,21 @@ def generate_collision_required(seed=None):
     for offset, r in zip(band_offsets, band_radii):
         x = midpoint.x + px * offset
         y = midpoint.y + py * offset
-        poly = make_circle_at(x, y, r)
+        shape_type = "rectangle" if abs(offset) < 0.5 else "diamond"
+        poly, shape_type = make_shape_at(x, y, r * 0.9, sy=r * 0.6, shape_type=shape_type)
         cls = "movable" if abs(offset) < 0.5 else "fragile"
-        try_add_obstacle(poly, cls, placed, obstacles, start, goal, min_gap=0.05)
+        try_add_obstacle(
+            poly, cls, placed, obstacles, shape_type, start, goal, min_gap=0.05
+        )
 
     extra_offsets = [-1.35, 1.35]
     for offset in extra_offsets:
         x = midpoint.x + px * offset
         y = midpoint.y + py * offset
-        poly = make_circle_at(x, y, 0.30)
-        try_add_obstacle(poly, "safe", placed, obstacles, start, goal, min_gap=0.05)
+        poly, shape_type = make_shape_at(x, y, 0.30, sy=0.22, shape_type="trapezoid")
+        try_add_obstacle(
+            poly, "safe", placed, obstacles, shape_type, start, goal, min_gap=0.05
+        )
 
     placed, bg = sample_background_obstacles(
         6, 10, start, goal, placed=placed,
@@ -218,8 +271,16 @@ def generate_collision_shortcut(seed=None):
     for frac in fractions:
         p = line.interpolate(frac, normalized=True)
         r = random.uniform(0.28, 0.40)
-        poly = make_circle_at(p.x, p.y, r)
-        try_add_obstacle(poly, "movable", placed, obstacles, start, goal, min_gap=0.05)
+        shape_type = random.choice(["circle", "rectangle", "triangle"])
+        if shape_type == "circle":
+            poly = make_circle_at(p.x, p.y, r)
+        else:
+            poly, shape_type = make_shape_at(
+                p.x, p.y, r * 0.95, sy=r * 0.65, shape_type=shape_type
+            )
+        try_add_obstacle(
+            poly, "movable", placed, obstacles, shape_type, start, goal, min_gap=0.05
+        )
 
     placed, bg = sample_background_obstacles(
         14, 22, start, goal, placed=placed,

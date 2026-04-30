@@ -25,8 +25,8 @@ python3 enviornment/run.py
 
 This writes files to:
 
-- `enviornment/data/images/`
-- `enviornment/data/scenes/`
+- `data/images/`
+- `data/scenes/`
 
 Important:
 
@@ -36,8 +36,8 @@ Important:
 Example output names:
 
 ```text
-enviornment/data/images/sparse_clutter_000_seed123456789.png
-enviornment/data/scenes/sparse_clutter_000_seed123456789.json
+data/images/sparse_clutter_000_seed123456789.png
+data/scenes/sparse_clutter_000_seed123456789.json
 ```
 
 ## Generate One Family
@@ -59,8 +59,8 @@ Valid family names:
 
 This writes to:
 
-- `enviornment/data/images/<family>_scene.png`
-- `enviornment/data/scenes/<family>_scene.json`
+- `data/images/<family>_scene.png`
+- `data/scenes/<family>_scene.json`
 
 Running `run_family.py` without a seed also clears the normal `data/` output
 folders first.
@@ -105,3 +105,80 @@ you can reproduce that same scene with:
 ```bash
 python3 enviornment/run_family.py sparse_clutter 1989186592
 ```
+
+## Run The D* Lite Baseline
+
+`Baselines/baseline.py` plans over the scene JSON files produced in this folder. It
+discretizes the workspace into a grid, runs D* Lite on that grid, and writes a
+path JSON whose waypoints keep the scene's 3D `[x, y, z]` format.
+
+## Generate A Scene With `baseline.py`
+
+You can also create a scene for a specific family directly from the baseline
+CLI:
+
+```bash
+python3 Baselines/baseline.py generate-scene \
+  --family sparse_clutter \
+  --seed 12345
+```
+
+By default this writes:
+
+- `data/scenes/sparse_clutter_seed12345.json`
+- `data/images/sparse_clutter_seed12345.png`
+
+Supported families:
+
+- `sparse_clutter`
+- `dense_clutter`
+- `narrow_passage`
+- `semantic_trap`
+- `perturbed`
+
+Example:
+
+```bash
+python3 Baselines/baseline.py plan \
+  --scene data/scenes/sparse_clutter_seed12345.json
+```
+
+If you omit `--output`, `baseline.py` now creates the folder automatically and
+saves to:
+
+- `data/plans/<scene_name>_dstar.json`
+
+This produces a JSON file containing:
+
+- planner metadata
+- success/failure status
+- path length and waypoint count
+- a `path` array with 3D waypoints
+
+Useful flags:
+
+- `--mode collision_free`
+- `--mode contact_allowed`
+- `--step 0.15`
+- `--robot-radius 0.12`
+
+## Render The Planned Path To PNG
+
+After generating a plan JSON, you can draw the path on top of the original
+scene:
+
+```bash
+python3 Baselines/baseline.py render \
+  --scene data/scenes/sparse_clutter_seed12345.json \
+  --plan data/plans/sparse_clutter_seed12345_dstar.json
+```
+
+If you omit `--output`, `baseline.py` automatically creates:
+
+- `data/plan_images/<scene_name>_dstar.png`
+
+That command creates a PNG overlay with:
+
+- the original obstacles
+- the start and goal
+- the D* Lite path
