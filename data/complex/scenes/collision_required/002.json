@@ -238,7 +238,7 @@
       ]
     }
   ],
-  "seed": 158979953,
+  "seed": 379456639,
   "validation": {
     "family": "collision_required",
     "collision_free_path_exists": false,

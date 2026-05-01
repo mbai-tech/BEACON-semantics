@@ -1,4 +1,5 @@
 import json
+import math
 import random
 from shapely.affinity import rotate, translate
 from shapely.geometry import Point, Polygon, box, LineString
@@ -202,51 +203,39 @@ def generate_collision_required(seed=None):
     if seed is not None:
         random.seed(seed)
 
-    start, goal = random_start_goal(min_dist=4.0)
+    start = (0.75, 3.0)
+    goal = (5.25, 3.0)
     placed = []
     obstacles = []
 
-    line = LineString([start, goal])
-    midpoint = line.interpolate(0.5, normalized=True)
+    def add_fixed_obstacle(poly, cls, shape_type):
+        placed.append(poly)
+        obstacles.append(obstacle_record(poly, len(obstacles), cls, shape_type))
 
-    dx = goal[0] - start[0]
-    dy = goal[1] - start[1]
-    length = (dx ** 2 + dy ** 2) ** 0.5
-    if length == 0:
-        dx, dy, length = 1.0, 0.0, 1.0
-    px = -dy / length
-    py = dx / length
+    barrier_x = 3.0
+    barrier_specs = [
+        ("fragile", "rectangle", barrier_x, 1.35, 0.22, 1.30),
+        ("movable", "rectangle", barrier_x, 2.85, 0.28, 0.15),
+        ("movable", "rectangle", barrier_x, 3.15, 0.28, 0.15),
+        ("fragile", "rectangle", barrier_x, 4.65, 0.22, 1.30),
+    ]
+    for cls, shape_type, x, y, sx, sy in barrier_specs:
+        poly, shape_type = make_shape_at(
+            x, y, sx, sy=sy, shape_type=shape_type, angle=0.0
+        )
+        add_fixed_obstacle(poly, cls, shape_type)
 
-    band_offsets = [-0.9, -0.3, 0.3, 0.9]
-    band_radii = [0.34, 0.38, 0.38, 0.34]
-
-    for offset, r in zip(band_offsets, band_radii):
-        x = midpoint.x + px * offset
-        y = midpoint.y + py * offset
-        shape_type = "rectangle" if abs(offset) < 0.5 else "diamond"
-        poly, shape_type = make_shape_at(x, y, r * 0.9, sy=r * 0.6, shape_type=shape_type)
-        cls = "movable" if abs(offset) < 0.5 else "fragile"
+    anchor_specs = [
+        (1.35, 1.15, "safe", "diamond", 0.24, 0.24),
+        (1.35, 4.85, "safe", "trapezoid", 0.22, 0.22),
+        (4.65, 1.15, "safe", "triangle", 0.22, 0.22),
+        (4.65, 4.85, "safe", "diamond", 0.24, 0.24),
+    ]
+    for x, y, cls, shape_type, sx, sy in anchor_specs:
+        poly, shape_type = make_shape_at(x, y, sx, sy=sy, shape_type=shape_type, angle=0.0)
         try_add_obstacle(
             poly, cls, placed, obstacles, shape_type, start, goal, min_gap=0.05
         )
-
-    extra_offsets = [-1.35, 1.35]
-    for offset in extra_offsets:
-        x = midpoint.x + px * offset
-        y = midpoint.y + py * offset
-        poly, shape_type = make_shape_at(x, y, 0.30, sy=0.22, shape_type="trapezoid")
-        try_add_obstacle(
-            poly, "safe", placed, obstacles, shape_type, start, goal, min_gap=0.05
-        )
-
-    placed, bg = sample_background_obstacles(
-        6, 10, start, goal, placed=placed,
-        class_weights={"safe": 0.2, "movable": 0.6, "fragile": 0.2}
-    )
-
-    for obs in bg:
-        obs["id"] = len(obstacles)
-        obstacles.append(obs)
 
     return {
         "family": "collision_required",
@@ -299,8 +288,7 @@ def generate_collision_shortcut(seed=None):
         "obstacles": obstacles
     }
 
-# Without validator
-def generate_scene(family="sparse", seed=None):
+def generate_scene_once(family="sparse", seed=None):
     if family == "sparse":
         return generate_sparse(seed=seed)
     if family == "cluttered":
@@ -313,6 +301,30 @@ def generate_scene(family="sparse", seed=None):
     raise ValueError(
         "family must be one of: "
         "'sparse', 'cluttered', 'collision_required', 'collision_shortcut'"
+    )
+
+
+def generate_scene(family="sparse", seed=None, validate=True, max_tries=200):
+    for attempt in range(max_tries):
+        if seed is None:
+            current_seed = random.randrange(0, 10**9)
+        else:
+            current_seed = seed + attempt
+
+        scene = generate_scene_once(family=family, seed=current_seed)
+        scene["seed"] = current_seed
+
+        if not validate:
+            return scene
+
+        validation = validate_scene(scene)
+        scene["validation"] = validation
+
+        if validation["valid"]:
+            return scene
+
+    raise RuntimeError(
+        f"Could not generate a valid scene for family '{family}' after {max_tries} tries"
     )
 
 
