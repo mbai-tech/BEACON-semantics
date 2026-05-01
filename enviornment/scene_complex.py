@@ -1,13 +1,20 @@
 import json
 import math
 import random
-from shapely.affinity import rotate, translate
 from shapely.geometry import Point, Polygon, box, LineString
-from validator import validate_scene
+from shapely.affinity import translate, rotate
 
-WORKSPACE = (0, 6, 0, 6)   # xmin, xmax, ymin, ymax
+WORKSPACE = (0, 6, 0, 6)  # xmin, xmax, ymin, ymax
 CLASSES = ["safe", "movable", "fragile"]
-SHAPE_TYPES = ["circle", "rectangle", "triangle", "diamond", "trapezoid"]
+SHAPE_TYPES = [
+    "circle",
+    "rectangle",
+    "triangle",
+    "trapezoid",
+    "parallelogram",
+    "pentagon",
+    "hexagon",
+]
 
 
 def polygon_to_list(poly):
@@ -21,76 +28,127 @@ def within_workspace(poly):
     return workspace_poly.contains(poly)
 
 
-def valid_candidate(candidate, placed, start_buffer=None, goal_buffer=None, min_gap=0.05):
+def valid_candidate(candidate, placed, start_buffer=None, goal_buffer=None):
     if not candidate.is_valid:
         return False
     if not within_workspace(candidate):
         return False
-    if start_buffer is not None and candidate.distance(start_buffer) < min_gap:
+
+    # touching allowed, overlap forbidden
+    if start_buffer is not None and candidate.intersection(start_buffer).area > 1e-9:
         return False
-    if goal_buffer is not None and candidate.distance(goal_buffer) < min_gap:
+    if goal_buffer is not None and candidate.intersection(goal_buffer).area > 1e-9:
         return False
-    if any(candidate.distance(p) < min_gap for p in placed):
-        return False
+
+    for p in placed:
+        if candidate.intersection(p).area > 1e-9:
+            return False
+
     return True
 
 
-def equivalent_radius(poly):
-    return ((poly.area / 3.1415926535) ** 0.5)
+def make_rectangle(w, h):
+    return Polygon([
+        (-w / 2, -h / 2),
+        (w / 2, -h / 2),
+        (w / 2, h / 2),
+        (-w / 2, h / 2),
+    ])
 
 
-def make_circle_at(x, y, r):
-    return Point(x, y).buffer(r, resolution=32)
+def make_triangle(w, h):
+    return Polygon([
+        (-w / 2, -h / 2),
+        (w / 2, -h / 2),
+        (0, h / 2),
+    ])
 
 
-def make_shape_polygon(shape_type, sx, sy):
+def make_trapezoid(bottom, top, h):
+    return Polygon([
+        (-bottom / 2, -h / 2),
+        (bottom / 2, -h / 2),
+        (top / 2, h / 2),
+        (-top / 2, h / 2),
+    ])
+
+
+def make_parallelogram(w, h, skew):
+    return Polygon([
+        (-w / 2, -h / 2),
+        (w / 2, -h / 2),
+        (w / 2 + skew, h / 2),
+        (-w / 2 + skew, h / 2),
+    ])
+
+
+def make_regular_ngon(n, r):
+    pts = []
+    for i in range(n):
+        angle = 2 * math.pi * i / n
+        pts.append((r * math.cos(angle), r * math.sin(angle)))
+    return Polygon(pts)
+
+
+def make_shape(shape_type, scale_min=0.15, scale_max=0.45):
     if shape_type == "circle":
-        return Point(0, 0).buffer(max(sx, sy), resolution=32)
+        r = random.uniform(scale_min, scale_max)
+        return Point(0, 0).buffer(r, resolution=32)
+
     if shape_type == "rectangle":
-        return Polygon([(-sx, -sy), (sx, -sy), (sx, sy), (-sx, sy)])
+        w = random.uniform(scale_min * 1.5, scale_max * 2.2)
+        h = random.uniform(scale_min * 1.2, scale_max * 1.8)
+        return make_rectangle(w, h)
+
     if shape_type == "triangle":
-        return Polygon([(-sx, -sy), (sx, -sy), (0, sy)])
-    if shape_type == "diamond":
-        return Polygon([(0, sy), (sx, 0), (0, -sy), (-sx, 0)])
+        w = random.uniform(scale_min * 1.6, scale_max * 2.1)
+        h = random.uniform(scale_min * 1.4, scale_max * 1.9)
+        return make_triangle(w, h)
+
     if shape_type == "trapezoid":
-        top = sx * 0.55
-        return Polygon([(-sx, -sy), (sx, -sy), (top, sy), (-top, sy)])
-    raise ValueError(f"Unsupported shape type: {shape_type}")
+        bottom = random.uniform(scale_min * 1.6, scale_max * 2.3)
+        top = bottom * random.uniform(0.45, 0.8)
+        h = random.uniform(scale_min * 1.2, scale_max * 1.8)
+        return make_trapezoid(bottom, top, h)
+
+    if shape_type == "parallelogram":
+        w = random.uniform(scale_min * 1.6, scale_max * 2.2)
+        h = random.uniform(scale_min * 1.1, scale_max * 1.7)
+        skew = random.uniform(0.08, 0.28)
+        return make_parallelogram(w, h, skew)
+
+    if shape_type == "pentagon":
+        r = random.uniform(scale_min, scale_max)
+        return make_regular_ngon(5, r)
+
+    if shape_type == "hexagon":
+        r = random.uniform(scale_min, scale_max)
+        return make_regular_ngon(6, r)
+
+    raise ValueError(f"Unknown shape_type: {shape_type}")
 
 
-def make_shape_at(x, y, sx, sy=None, shape_type=None, angle=None):
-    sy = sx if sy is None else sy
-    shape_type = shape_type or random.choice(SHAPE_TYPES)
-    angle = random.uniform(0, 180) if angle is None else angle
-    poly = make_shape_polygon(shape_type, sx, sy)
-    poly = rotate(poly, angle, origin=(0, 0), use_radians=False)
+def place_shape_at(poly, x, y, angle_deg=None):
+    if angle_deg is None:
+        angle_deg = random.uniform(0, 180)
+
+    poly = rotate(poly, angle_deg, origin=(0, 0), use_radians=False)
     poly = translate(poly, xoff=x, yoff=y)
-    return poly, shape_type
+    return poly
 
 
-def make_random_circle(r_min=0.15, r_max=0.45):
+def make_random_polygon(scale_min=0.15, scale_max=0.45):
     xmin, xmax, ymin, ymax = WORKSPACE
-    r = random.uniform(r_min, r_max)
-    x = random.uniform(xmin + r, xmax - r)
-    y = random.uniform(ymin + r, ymax - r)
-    return make_circle_at(x, y, r), r
 
-
-def make_random_obstacle(size_min=0.15, size_max=0.45):
-    xmin, xmax, ymin, ymax = WORKSPACE
     shape_type = random.choice(SHAPE_TYPES)
+    base_poly = make_shape(shape_type, scale_min=scale_min, scale_max=scale_max)
 
-    if shape_type == "circle":
-        poly, radius = make_random_circle(r_min=size_min, r_max=size_max)
-        return poly, shape_type, radius, radius
+    minx, miny, maxx, maxy = base_poly.bounds
+    x = random.uniform(xmin - minx, xmax - maxx)
+    y = random.uniform(ymin - miny, ymax - maxy)
 
-    sx = random.uniform(size_min, size_max)
-    sy = random.uniform(size_min, size_max)
-    margin = max(sx, sy) + 0.1
-    x = random.uniform(xmin + margin, xmax - margin)
-    y = random.uniform(ymin + margin, ymax - margin)
-    poly, shape_type = make_shape_at(x, y, sx, sy=sy, shape_type=shape_type)
-    return poly, shape_type, sx, sy
+    poly = place_shape_at(base_poly, x, y)
+    return poly, shape_type
 
 
 def random_start_goal(min_dist=3.5, margin=0.45):
@@ -110,29 +168,36 @@ def random_start_goal(min_dist=3.5, margin=0.45):
 
 def obstacle_record(poly, idx, cls, shape_type):
     center = poly.centroid
-    radius = equivalent_radius(poly)
     return {
         "id": idx,
         "shape_type": shape_type,
         "class_true": cls,
-        "radius": round(radius, 4),
         "center": [round(center.x, 4), round(center.y, 4)],
-        "vertices": polygon_to_list(poly)
+        "vertices": polygon_to_list(poly),
     }
 
-def try_add_obstacle(poly, cls, placed, obstacles, shape_type, start=None, goal=None, min_gap=0.05):
+
+def try_add_obstacle(poly, cls, shape_type, placed, obstacles, start=None, goal=None):
     start_buffer = Point(start).buffer(0.35) if start is not None else None
     goal_buffer = Point(goal).buffer(0.35) if goal is not None else None
 
-    if valid_candidate(poly, placed, start_buffer, goal_buffer, min_gap=min_gap):
+    if valid_candidate(poly, placed, start_buffer, goal_buffer):
         placed.append(poly)
         obstacles.append(obstacle_record(poly, len(obstacles), cls, shape_type))
         return True
+
     return False
 
 
 def sample_background_obstacles(
-    n_min, n_max, start, goal, placed=None, class_weights=None
+    n_min,
+    n_max,
+    start,
+    goal,
+    placed=None,
+    class_weights=None,
+    scale_min=0.15,
+    scale_max=0.45,
 ):
     if placed is None:
         placed = []
@@ -141,7 +206,7 @@ def sample_background_obstacles(
         class_weights = {
             "safe": 0.2,
             "movable": 0.6,
-            "fragile": 0.2
+            "fragile": 0.2,
         }
 
     classes = list(class_weights.keys())
@@ -153,13 +218,17 @@ def sample_background_obstacles(
     n_obs = random.randint(n_min, n_max)
     obstacles = []
     attempts = 0
-    max_attempts = 10000
+    max_attempts = 15000
 
     while len(obstacles) < n_obs and attempts < max_attempts:
         attempts += 1
-        candidate, shape_type, _, _ = make_random_obstacle()
 
-        if valid_candidate(candidate, placed, start_buffer, goal_buffer, min_gap=0.05):
+        candidate, shape_type = make_random_polygon(
+            scale_min=scale_min,
+            scale_max=scale_max,
+        )
+
+        if valid_candidate(candidate, placed, start_buffer, goal_buffer):
             placed.append(candidate)
             cls = random.choices(classes, weights=weights, k=1)[0]
             obstacles.append(obstacle_record(candidate, len(obstacles), cls, shape_type))
@@ -172,14 +241,22 @@ def generate_sparse(seed=None):
         random.seed(seed)
 
     start, goal = random_start_goal()
-    _, obstacles = sample_background_obstacles(8, 15, start, goal)
+
+    _, obstacles = sample_background_obstacles(
+        8,
+        15,
+        start,
+        goal,
+        scale_min=0.14,
+        scale_max=0.32,
+    )
 
     return {
         "family": "sparse",
         "workspace": WORKSPACE,
         "start": [start[0], start[1], 0.0],
         "goal": [goal[0], goal[1], 0.0],
-        "obstacles": obstacles
+        "obstacles": obstacles,
     }
 
 
@@ -188,14 +265,22 @@ def generate_cluttered(seed=None):
         random.seed(seed)
 
     start, goal = random_start_goal()
-    _, obstacles = sample_background_obstacles(25, 40, start, goal)
+
+    _, obstacles = sample_background_obstacles(
+        25,
+        40,
+        start,
+        goal,
+        scale_min=0.12,
+        scale_max=0.24,
+    )
 
     return {
         "family": "cluttered",
         "workspace": WORKSPACE,
         "start": [start[0], start[1], 0.0],
         "goal": [goal[0], goal[1], 0.0],
-        "obstacles": obstacles
+        "obstacles": obstacles,
     }
 
 
@@ -203,46 +288,108 @@ def generate_collision_required(seed=None):
     if seed is not None:
         random.seed(seed)
 
-    start = (0.75, 3.0)
-    goal = (5.25, 3.0)
+    start, goal = random_start_goal(min_dist=4.4)
     placed = []
     obstacles = []
 
-    def add_fixed_obstacle(poly, cls, shape_type):
-        placed.append(poly)
-        obstacles.append(obstacle_record(poly, len(obstacles), cls, shape_type))
+    line = LineString([start, goal])
+    midpoint = line.interpolate(0.5, normalized=True)
 
-    barrier_x = 3.0
-    barrier_specs = [
-        ("fragile", "rectangle", barrier_x, 1.35, 0.22, 1.30),
-        ("movable", "rectangle", barrier_x, 2.85, 0.28, 0.15),
-        ("movable", "rectangle", barrier_x, 3.15, 0.28, 0.15),
-        ("fragile", "rectangle", barrier_x, 4.65, 0.22, 1.30),
-    ]
-    for cls, shape_type, x, y, sx, sy in barrier_specs:
-        poly, shape_type = make_shape_at(
-            x, y, sx, sy=sy, shape_type=shape_type, angle=0.0
-        )
-        add_fixed_obstacle(poly, cls, shape_type)
+    dx = goal[0] - start[0]
+    dy = goal[1] - start[1]
+    length = (dx ** 2 + dy ** 2) ** 0.5
 
-    anchor_specs = [
-        (1.35, 1.15, "safe", "diamond", 0.24, 0.24),
-        (1.35, 4.85, "safe", "trapezoid", 0.22, 0.22),
-        (4.65, 1.15, "safe", "triangle", 0.22, 0.22),
-        (4.65, 4.85, "safe", "diamond", 0.24, 0.24),
+    if length == 0:
+        dx, dy, length = 1.0, 0.0, 1.0
+
+    ux = dx / length
+    uy = dy / length
+    px = -dy / length
+    py = dx / length
+
+    # Long wall from one side of the workspace to the other.
+    # More columns = longer wall. More rows = thicker wall.
+    row_offsets = [-1.05, -0.72, -0.39, -0.06, 0.27, 0.60, 0.93]
+    col_offsets = [
+        -4.0, -3.55, -3.10, -2.65, -2.20, -1.75, -1.30, -0.85, -0.40,
+         0.05,  0.50,  0.95,  1.40,  1.85,  2.30,  2.75,  3.20,  3.65,  4.10
     ]
-    for x, y, cls, shape_type, sx, sy in anchor_specs:
-        poly, shape_type = make_shape_at(x, y, sx, sy=sy, shape_type=shape_type, angle=0.0)
-        try_add_obstacle(
-            poly, cls, placed, obstacles, shape_type, start, goal, min_gap=0.05
-        )
+
+    for row in row_offsets:
+        for col in col_offsets:
+            jitter_u = random.uniform(-0.07, 0.07)
+            jitter_p = random.uniform(-0.07, 0.07)
+
+            x = midpoint.x + ux * (row + jitter_u) + px * (col + jitter_p)
+            y = midpoint.y + uy * (row + jitter_u) + py * (col + jitter_p)
+
+            shape_type = random.choice(SHAPE_TYPES)
+            base = make_shape(shape_type, scale_min=0.16, scale_max=0.28)
+            poly = place_shape_at(base, x, y)
+
+            if not within_workspace(poly):
+                continue
+
+            # Middle of the wall is mostly movable so collision is useful.
+            # Edges are more fragile so random side-collision is costly.
+            if abs(row) <= 0.45:
+                cls = random.choices(
+                    ["movable", "fragile", "safe"],
+                    weights=[0.70, 0.20, 0.10],
+                    k=1
+                )[0]
+            else:
+                cls = random.choices(
+                    ["fragile", "movable", "safe"],
+                    weights=[0.55, 0.30, 0.15],
+                    k=1
+                )[0]
+
+            try_add_obstacle(poly, cls, shape_type, placed, obstacles, start, goal)
+
+    # Add extra clutter away from the wall so the scene does not look empty.
+    start_buffer = Point(start).buffer(0.35)
+    goal_buffer = Point(goal).buffer(0.35)
+
+    extra_targets = random.randint(12, 20)
+    attempts = 0
+    max_attempts = 20000
+
+    while extra_targets > 0 and attempts < max_attempts:
+        attempts += 1
+
+        candidate, shape_type = make_random_polygon(scale_min=0.12, scale_max=0.24)
+        c = candidate.centroid
+
+        rel_x = c.x - midpoint.x
+        rel_y = c.y - midpoint.y
+
+        along = rel_x * ux + rel_y * uy
+        across = rel_x * px + rel_y * py
+
+        # Keep extra obstacles outside the main wall band
+        in_wall_band = abs(along) < 1.25
+        if in_wall_band:
+            continue
+
+        if valid_candidate(candidate, placed, start_buffer, goal_buffer):
+            placed.append(candidate)
+
+            cls = random.choices(
+                ["safe", "movable", "fragile"],
+                weights=[0.25, 0.35, 0.40],
+                k=1
+            )[0]
+
+            obstacles.append(obstacle_record(candidate, len(obstacles), cls, shape_type))
+            extra_targets -= 1
 
     return {
         "family": "collision_required",
         "workspace": WORKSPACE,
         "start": [start[0], start[1], 0.0],
         "goal": [goal[0], goal[1], 0.0],
-        "obstacles": obstacles
+        "obstacles": obstacles,
     }
 
 
@@ -259,21 +406,26 @@ def generate_collision_shortcut(seed=None):
 
     for frac in fractions:
         p = line.interpolate(frac, normalized=True)
-        r = random.uniform(0.28, 0.40)
-        shape_type = random.choice(["circle", "rectangle", "triangle"])
-        if shape_type == "circle":
-            poly = make_circle_at(p.x, p.y, r)
-        else:
-            poly, shape_type = make_shape_at(
-                p.x, p.y, r * 0.95, sy=r * 0.65, shape_type=shape_type
-            )
-        try_add_obstacle(
-            poly, "movable", placed, obstacles, shape_type, start, goal, min_gap=0.05
-        )
+
+        shape_type = random.choice(SHAPE_TYPES)
+        base = make_shape(shape_type, scale_min=0.18, scale_max=0.30)
+        poly = place_shape_at(base, p.x, p.y)
+
+        try_add_obstacle(poly, "movable", shape_type, placed, obstacles, start, goal)
 
     placed, bg = sample_background_obstacles(
-        14, 22, start, goal, placed=placed,
-        class_weights={"safe": 0.25, "movable": 0.5, "fragile": 0.25}
+        14,
+        22,
+        start,
+        goal,
+        placed=placed,
+        class_weights={
+            "safe": 0.25,
+            "movable": 0.5,
+            "fragile": 0.25,
+        },
+        scale_min=0.12,
+        scale_max=0.24,
     )
 
     for obs in bg:
@@ -285,16 +437,20 @@ def generate_collision_shortcut(seed=None):
         "workspace": WORKSPACE,
         "start": [start[0], start[1], 0.0],
         "goal": [goal[0], goal[1], 0.0],
-        "obstacles": obstacles
+        "obstacles": obstacles,
     }
 
-def generate_scene_once(family="sparse", seed=None):
+
+def generate_scene(family="sparse", seed=None):
     if family == "sparse":
         return generate_sparse(seed=seed)
+
     if family == "cluttered":
         return generate_cluttered(seed=seed)
+
     if family == "collision_required":
         return generate_collision_required(seed=seed)
+
     if family == "collision_shortcut":
         return generate_collision_shortcut(seed=seed)
 
@@ -302,63 +458,6 @@ def generate_scene_once(family="sparse", seed=None):
         "family must be one of: "
         "'sparse', 'cluttered', 'collision_required', 'collision_shortcut'"
     )
-
-
-def generate_scene(family="sparse", seed=None, validate=True, max_tries=200):
-    for attempt in range(max_tries):
-        if seed is None:
-            current_seed = random.randrange(0, 10**9)
-        else:
-            current_seed = seed + attempt
-
-        scene = generate_scene_once(family=family, seed=current_seed)
-        scene["seed"] = current_seed
-
-        if not validate:
-            return scene
-
-        validation = validate_scene(scene)
-        scene["validation"] = validation
-
-        if validation["valid"]:
-            return scene
-
-    raise RuntimeError(
-        f"Could not generate a valid scene for family '{family}' after {max_tries} tries"
-    )
-
-
-# WITH VALIDATOR.PY
-# def generate_scene(family="sparse", seed=None, validate=True, max_tries=200):
-#     for attempt in range(max_tries):
-#         current_seed = seed if seed is not None and attempt == 0 else random.randrange(0, 10**9)
-
-#         if family == "sparse":
-#             scene = generate_sparse(seed=current_seed)
-#         elif family == "cluttered":
-#             scene = generate_cluttered(seed=current_seed)
-#         elif family == "collision_required":
-#             scene = generate_collision_required(seed=current_seed)
-#         elif family == "collision_shortcut":
-#             scene = generate_collision_shortcut(seed=current_seed)
-#         else:
-#             raise ValueError(
-#                 "family must be one of: "
-#                 "'sparse', 'cluttered', 'collision_required', 'collision_shortcut'"
-#             )
-
-#         scene["seed"] = current_seed
-
-#         if not validate:
-#             return scene
-
-#         validation = validate_scene(scene)
-#         scene["validation"] = validation
-
-#         if validation["valid"]:
-#             return scene
-
-#     raise RuntimeError(f"Could not generate a valid scene for family '{family}' after {max_tries} tries")
 
 
 def save_scene_json(scene, path):
