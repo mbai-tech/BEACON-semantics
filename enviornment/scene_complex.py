@@ -15,11 +15,113 @@ SHAPE_TYPES = [
     "pentagon",
     "hexagon",
 ]
+MATERIAL_DENSITIES = {
+    "safe": 1.0,
+    "movable": 0.8,
+    "fragile": 0.35,
+}
+MATERIAL_PROPERTIES = {
+    "safe": {
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": False,
+    },
+    "movable": {
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": True,
+    },
+    "fragile": {
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": False,
+    },
+}
+
+
+class Material:
+    def __init__(
+        self,
+        name: str,
+        mass: float,
+        friction: float,
+        fragility: float,
+        pushable: bool = True,
+    ):
+        self.name = name
+        self.mass = mass
+        self.friction = friction
+        self.fragility = fragility
+        self.pushable = pushable
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "density": MATERIAL_DENSITIES[self.name],
+            "mass": round(self.mass, 4),
+            "friction": self.friction,
+            "fragility": self.fragility,
+            "pushable": self.pushable,
+        }
+
+
+class Obstacle:
+    def __init__(
+        self,
+        id: int,
+        shape: str,
+        position: tuple[float, float],
+        size: dict,
+        material: Material,
+        movable: bool = True,
+    ):
+        self.id = id
+        self.shape = shape
+        self.position = position
+        self.size = size
+        self.material = material
+        self.movable = movable
+
+    def to_dict(self, vertices, class_true):
+        return {
+            "id": self.id,
+            "shape": self.shape,
+            "shape_type": self.shape,
+            "class_true": class_true,
+            "center": [round(self.position[0], 4), round(self.position[1], 4)],
+            "position": [round(self.position[0], 4), round(self.position[1], 4)],
+            "size": self.size,
+            "material": self.material.to_dict(),
+            "movable": self.movable,
+            "vertices": vertices,
+        }
 
 
 def polygon_to_list(poly):
     coords = list(poly.exterior.coords)[:-1]
     return [[float(x), float(y)] for x, y in coords]
+
+
+def polygon_size(poly):
+    minx, miny, maxx, maxy = poly.bounds
+    return {
+        "area": round(poly.area, 4),
+        "width": round(maxx - minx, 4),
+        "height": round(maxy - miny, 4),
+    }
+
+
+def make_material(material_name, size):
+    density = MATERIAL_DENSITIES[material_name]
+    props = MATERIAL_PROPERTIES[material_name]
+    mass = density * size["area"]
+    return Material(
+        name=material_name,
+        mass=mass,
+        friction=props["friction"],
+        fragility=props["fragility"],
+        pushable=props["pushable"],
+    )
 
 
 def within_workspace(poly):
@@ -168,13 +270,20 @@ def random_start_goal(min_dist=3.5, margin=0.45):
 
 def obstacle_record(poly, idx, cls, shape_type):
     center = poly.centroid
-    return {
-        "id": idx,
-        "shape_type": shape_type,
-        "class_true": cls,
-        "center": [round(center.x, 4), round(center.y, 4)],
-        "vertices": polygon_to_list(poly),
-    }
+    size = polygon_size(poly)
+    material = make_material(cls, size)
+    obstacle = Obstacle(
+        id=idx,
+        shape=shape_type,
+        position=(center.x, center.y),
+        size=size,
+        material=material,
+        movable=material.pushable,
+    )
+    return obstacle.to_dict(
+        vertices=polygon_to_list(poly),
+        class_true=cls,
+    )
 
 
 def try_add_obstacle(poly, cls, shape_type, placed, obstacles, start=None, goal=None):
