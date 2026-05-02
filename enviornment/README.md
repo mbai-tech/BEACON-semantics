@@ -92,6 +92,21 @@ These saved environments are not deleted when you rerun `python3 enviornment/run
 If you save the same seed again, a numbered suffix is added instead of
 overwriting the previous saved copy.
 
+## Clear Saved Environments
+
+To clear every saved scene and image created under
+`enviornment/saved_enviornments/`:
+
+```bash
+python3 enviornment/clear_saved_envs.py
+```
+
+To clear saved files for only one family:
+
+```bash
+python3 enviornment/clear_saved_envs.py --family sparse_clutter
+```
+
 ## Reproduce From A Seed In Batch Output
 
 If you see a batch-generated filename like:
