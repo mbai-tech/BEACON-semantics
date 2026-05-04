@@ -1,0 +1,370 @@
+{
+  "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
+  "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_shortcut/010.json",
+  "scene_family": "collision_shortcut",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    1.9257809705666755,
+    4.93359766678588,
+    0.0
+  ],
+  "goal": [
+    4.6999927580634075,
+    1.5682115480631296,
+    0.0
+  ],
+  "success": true,
+  "summary": {
+    "success": true,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      30,
+      10
+    ],
+    "grid_goal": [
+      31,
+      10
+    ],
+    "num_waypoints": 2,
+    "path_length": 4.3614,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 21,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation",
+    "stop_reason": "goal_reached",
+    "actions": [
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "PushAction",
+      "MoveAction",
+      "PushAction",
+      "MoveAction",
+      "PushAction",
+      "PushAction",
+      "MoveAction",
+      "MoveAction",
+      "PushAction",
+      "MoveAction",
+      "PushAction",
+      "PushAction",
+      "PushAction",
+      "MoveAction"
+    ],
+    "action_details": [
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 0,
+        "distance": 0.6768,
+        "required_force": 0.2293,
+        "estimated_work": 0.1552,
+        "estimated_power": 0.1552,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 1,
+        "distance": 0.6621,
+        "required_force": 0.1867,
+        "estimated_work": 0.1236,
+        "estimated_power": 0.1236,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 0,
+        "distance": 0.745,
+        "required_force": 0.2524,
+        "estimated_work": 0.1881,
+        "estimated_power": 0.1881,
+        "push_duration": 1.0
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 2,
+        "distance": 0.6756,
+        "required_force": 0.0851,
+        "estimated_work": 0.0575,
+        "estimated_power": 0.0575,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 7,
+        "distance": 0.5024,
+        "required_force": 0.05,
+        "estimated_work": 0.0251,
+        "estimated_power": 0.0251,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 1,
+        "distance": 0.573,
+        "required_force": 0.1616,
+        "estimated_work": 0.0926,
+        "estimated_power": 0.0926,
+        "push_duration": 1.0
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 2,
+        "distance": 0.6731,
+        "required_force": 0.0848,
+        "estimated_work": 0.0571,
+        "estimated_power": 0.0571,
+        "push_duration": 1.0
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 7,
+        "distance": 0.5217,
+        "required_force": 0.05,
+        "estimated_work": 0.0261,
+        "estimated_power": 0.0261,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      }
+    ],
+    "num_actions": 18,
+    "final_robot_position": [
+      4.6999927580634075,
+      1.5682115480631296
+    ],
+    "latest_replan_waypoints": 2
+  },
+  "planner_config": {
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step_duration": 1.0,
+    "dynamic_decay": 2.5
+  },
+  "path": [
+    [
+      1.9257809705666755,
+      4.93359766678588,
+      0.0
+    ],
+    [
+      2.1,
+      4.8,
+      0.0
+    ],
+    [
+      2.25,
+      4.65,
+      0.0
+    ],
+    [
+      2.4,
+      4.5,
+      0.0
+    ],
+    [
+      2.4,
+      4.35,
+      0.0
+    ],
+    [
+      2.4,
+      4.2,
+      0.0
+    ],
+    [
+      2.4,
+      4.05,
+      0.0
+    ],
+    [
+      2.4,
+      3.9,
+      0.0
+    ],
+    [
+      2.4,
+      3.75,
+      0.0
+    ],
+    [
+      2.4,
+      3.6,
+      0.0
+    ],
+    [
+      2.55,
+      3.45,
+      0.0
+    ],
+    [
+      2.7,
+      3.3,
+      0.0
+    ],
+    [
+      2.85,
+      3.15,
+      0.0
+    ],
+    [
+      2.85,
+      3.15,
+      0.0
+    ],
+    [
+      3.0,
+      3.0,
+      0.0
+    ],
+    [
+      3.15,
+      2.85,
+      0.0
+    ],
+    [
+      3.3,
+      2.7,
+      0.0
+    ],
+    [
+      3.3,
+      2.7,
+      0.0
+    ],
+    [
+      3.45,
+      2.55,
+      0.0
+    ],
+    [
+      3.6,
+      2.4,
+      0.0
+    ],
+    [
+      3.75,
+      2.25,
+      0.0
+    ],
+    [
+      3.75,
+      2.25,
+      0.0
+    ],
+    [
+      3.75,
+      2.25,
+      0.0
+    ],
+    [
+      3.75,
+      2.1,
+      0.0
+    ],
+    [
+      3.75,
+      1.95,
+      0.0
+    ],
+    [
+      3.75,
+      1.8,
+      0.0
+    ],
+    [
+      3.75,
+      1.65,
+      0.0
+    ],
+    [
+      3.9,
+      1.5,
+      0.0
+    ],
+    [
+      4.05,
+      1.35,
+      0.0
+    ],
+    [
+      4.05,
+      1.35,
+      0.0
+    ],
+    [
+      4.2,
+      1.5,
+      0.0
+    ],
+    [
+      4.35,
+      1.5,
+      0.0
+    ],
+    [
+      4.5,
+      1.5,
+      0.0
+    ],
+    [
+      4.5,
+      1.5,
+      0.0
+    ],
+    [
+      4.5,
+      1.5,
+      0.0
+    ],
+    [
+      4.5,
+      1.5,
+      0.0
+    ],
+    [
+      4.6999927580634075,
+      1.5682115480631296,
+      0.0
+    ]
+  ]
+}

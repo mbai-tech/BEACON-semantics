@@ -19,16 +19,31 @@
     5.101517212447147,
     0.0
   ],
-  "success": true,
+  "success": false,
   "summary": {
-    "success": true,
+    "success": false,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      5,
+      20
+    ],
+    "grid_goal": [
+      35,
+      34
+    ],
+    "num_waypoints": 45,
+    "path_length": 9.1175,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 45,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation",
+    "stop_reason": "no_action_available",
     "actions": [
-      "PushAction",
       "MoveAction",
       "MoveAction",
-      "MoveAction",
-      "PushAction",
-      "PushAction",
       "MoveAction",
       "MoveAction",
       "MoveAction",
@@ -39,30 +54,12 @@
       "MoveAction",
       "MoveAction"
     ],
-    "num_actions": 15,
+    "num_actions": 11,
     "final_robot_position": [
-      5.207414099272922,
-      5.101517212447147
+      0.75,
+      3.45
     ],
-    "latest_replan_waypoints": 3,
-    "algorithm": "semantic_dstar_lite_incremental",
-    "observability": "radius_limited_incremental",
-    "grid_start": [
-      35,
-      32
-    ],
-    "grid_goal": [
-      35,
-      34
-    ],
-    "num_waypoints": 3,
-    "path_length": 5.7327,
-    "lambda_occ": 5.0,
-    "lambda_sem": 2.5,
-    "step": 0.15,
-    "robot_radius": 0.12,
-    "observed_obstacles": 47,
-    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+    "latest_replan_waypoints": 45
   },
   "planner_config": {
     "step": 0.15,
@@ -79,8 +76,13 @@
       0.0
     ],
     [
-      1.2062671397669806,
-      1.1116828241508916,
+      1.35,
+      1.2,
+      0.0
+    ],
+    [
+      1.5,
+      1.35,
       0.0
     ],
     [
@@ -89,68 +91,153 @@
       0.0
     ],
     [
+      1.8,
+      1.65,
+      0.0
+    ],
+    [
+      1.95,
+      1.65,
+      0.0
+    ],
+    [
       2.1,
       1.65,
       0.0
     ],
     [
-      2.55,
-      1.8,
+      2.25,
+      1.65,
+      0.0
+    ],
+    [
+      2.4,
+      1.65,
       0.0
     ],
     [
       2.55,
-      1.8,
+      1.65,
       0.0
     ],
     [
-      2.55,
-      1.8,
+      2.7,
+      1.65,
+      0.0
+    ],
+    [
+      2.85,
+      1.5,
       0.0
     ],
     [
       3.0,
+      1.35,
+      0.0
+    ],
+    [
+      2.85,
+      1.5,
+      0.0
+    ],
+    [
+      2.7,
+      1.5,
+      0.0
+    ],
+    [
+      2.55,
+      1.65,
+      0.0
+    ],
+    [
+      2.4,
+      1.8,
+      0.0
+    ],
+    [
+      2.25,
       1.95,
       0.0
     ],
     [
-      3.45,
+      2.1,
+      2.1,
+      0.0
+    ],
+    [
+      2.1,
       2.25,
       0.0
     ],
     [
-      3.6,
+      2.1,
+      2.4,
+      0.0
+    ],
+    [
+      1.95,
+      2.55,
+      0.0
+    ],
+    [
+      1.8,
       2.7,
       0.0
     ],
     [
-      3.9,
+      1.65,
+      2.85,
+      0.0
+    ],
+    [
+      1.5,
+      2.85,
+      0.0
+    ],
+    [
+      1.35,
+      2.7,
+      0.0
+    ],
+    [
+      1.2,
+      2.7,
+      0.0
+    ],
+    [
+      1.05,
+      2.55,
+      0.0
+    ],
+    [
+      0.9,
+      2.7,
+      0.0
+    ],
+    [
+      0.75,
+      2.85,
+      0.0
+    ],
+    [
+      0.75,
+      3.0,
+      0.0
+    ],
+    [
+      0.75,
       3.15,
       0.0
     ],
     [
-      4.35,
+      0.75,
+      3.3,
+      0.0
+    ],
+    [
+      0.75,
       3.45,
-      0.0
-    ],
-    [
-      4.8,
-      3.9,
-      0.0
-    ],
-    [
-      4.95,
-      4.35,
-      0.0
-    ],
-    [
-      5.25,
-      4.8,
-      0.0
-    ],
-    [
-      5.207414099272922,
-      5.101517212447147,
       0.0
     ]
   ]

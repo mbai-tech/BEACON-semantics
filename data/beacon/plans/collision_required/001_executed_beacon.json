@@ -1,0 +1,38 @@
+{
+  "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
+  "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/beacon/manipulated_scenes/collision_required/001_executed.json",
+  "scene_family": "collision_required",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    5.099644875700913,
+    1.4092331077105407,
+    0.0
+  ],
+  "goal": [
+    1.4645904848792095,
+    4.232796461789587,
+    0.0
+  ],
+  "success": false,
+  "summary": {
+    "success": false,
+    "reason": "No path found."
+  },
+  "planner_config": {
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step_duration": 1.0,
+    "dynamic_decay": 2.5
+  },
+  "path": [],
+  "push_history": [],
+  "pushes_applied": 0
+}

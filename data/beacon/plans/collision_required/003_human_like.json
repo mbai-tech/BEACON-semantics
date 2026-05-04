@@ -19,23 +19,29 @@
     4.290760465142669,
     0.0
   ],
-  "success": true,
+  "success": false,
   "summary": {
-    "success": true,
+    "success": false,
+    "algorithm": "semantic_dstar_lite",
+    "observability": "radius_limited_incremental_fallback",
+    "grid_start": [
+      4,
+      27
+    ],
+    "grid_goal": [
+      37,
+      29
+    ],
+    "num_waypoints": 46,
+    "path_length": 7.7232,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation",
+    "observed_obstacles": 45,
+    "stop_reason": "no_action_available",
     "actions": [
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "PushAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
       "MoveAction",
       "MoveAction",
       "MoveAction",
@@ -46,30 +52,41 @@
       "MoveAction",
       "MoveAction"
     ],
-    "num_actions": 22,
+    "action_details": [
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      }
+    ],
+    "num_actions": 9,
     "final_robot_position": [
-      5.514718830558161,
-      4.290760465142669
+      0.45,
+      4.5
     ],
-    "latest_replan_waypoints": 3,
-    "algorithm": "semantic_dstar_lite_incremental",
-    "observability": "radius_limited_incremental",
-    "grid_start": [
-      35,
-      28
-    ],
-    "grid_goal": [
-      37,
-      29
-    ],
-    "num_waypoints": 3,
-    "path_length": 4.9181,
-    "lambda_occ": 5.0,
-    "lambda_sem": 2.5,
-    "step": 0.15,
-    "robot_radius": 0.12,
-    "observed_obstacles": 60,
-    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+    "latest_replan_waypoints": 46
   },
   "planner_config": {
     "step": 0.15,
@@ -218,186 +235,6 @@
     [
       0.45,
       4.5,
-      0.0
-    ],
-    [
-      0.45,
-      4.5,
-      0.0
-    ],
-    [
-      0.45,
-      4.65,
-      0.0
-    ],
-    [
-      0.6,
-      4.8,
-      0.0
-    ],
-    [
-      0.75,
-      4.8,
-      0.0
-    ],
-    [
-      0.9,
-      4.65,
-      0.0
-    ],
-    [
-      1.05,
-      4.5,
-      0.0
-    ],
-    [
-      1.2,
-      4.5,
-      0.0
-    ],
-    [
-      1.35,
-      4.35,
-      0.0
-    ],
-    [
-      1.5,
-      4.35,
-      0.0
-    ],
-    [
-      1.65,
-      4.35,
-      0.0
-    ],
-    [
-      1.8,
-      4.35,
-      0.0
-    ],
-    [
-      1.95,
-      4.35,
-      0.0
-    ],
-    [
-      2.1,
-      4.35,
-      0.0
-    ],
-    [
-      2.25,
-      4.35,
-      0.0
-    ],
-    [
-      2.4,
-      4.5,
-      0.0
-    ],
-    [
-      2.55,
-      4.65,
-      0.0
-    ],
-    [
-      2.7,
-      4.65,
-      0.0
-    ],
-    [
-      2.85,
-      4.8,
-      0.0
-    ],
-    [
-      3.0,
-      4.95,
-      0.0
-    ],
-    [
-      3.15,
-      4.95,
-      0.0
-    ],
-    [
-      3.3,
-      4.95,
-      0.0
-    ],
-    [
-      3.45,
-      4.8,
-      0.0
-    ],
-    [
-      3.6,
-      4.65,
-      0.0
-    ],
-    [
-      3.75,
-      4.5,
-      0.0
-    ],
-    [
-      3.9,
-      4.35,
-      0.0
-    ],
-    [
-      4.05,
-      4.35,
-      0.0
-    ],
-    [
-      4.2,
-      4.2,
-      0.0
-    ],
-    [
-      4.35,
-      4.05,
-      0.0
-    ],
-    [
-      4.5,
-      3.9,
-      0.0
-    ],
-    [
-      4.65,
-      3.9,
-      0.0
-    ],
-    [
-      4.8,
-      3.9,
-      0.0
-    ],
-    [
-      4.95,
-      4.05,
-      0.0
-    ],
-    [
-      5.1,
-      4.05,
-      0.0
-    ],
-    [
-      5.25,
-      4.2,
-      0.0
-    ],
-    [
-      5.4,
-      4.35,
-      0.0
-    ],
-    [
-      5.514718830558161,
-      4.290760465142669,
       0.0
     ]
   ]

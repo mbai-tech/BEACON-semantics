@@ -19,36 +19,42 @@
     0.818968851621394,
     0.0
   ],
-  "success": true,
+  "success": false,
   "summary": {
-    "success": true,
-    "actions": [
-      "MoveAction"
-    ],
-    "num_actions": 1,
-    "final_robot_position": [
-      4.05,
-      5.25
-    ],
-    "latest_replan_waypoints": 38,
-    "algorithm": "semantic_dstar_lite_incremental",
-    "observability": "radius_limited_incremental",
+    "success": false,
+    "algorithm": "semantic_dstar_lite",
+    "observability": "radius_limited_incremental_fallback",
     "grid_start": [
-      28,
-      36
+      19,
+      33
     ],
     "grid_goal": [
       24,
       5
     ],
-    "num_waypoints": 38,
-    "path_length": 6.4529,
+    "num_waypoints": 42,
+    "path_length": 7.4632,
     "lambda_occ": 5.0,
     "lambda_sem": 2.5,
     "step": 0.15,
     "robot_radius": 0.12,
-    "observed_obstacles": 15,
-    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+    "movable_obstacle_model": "soft obstacle traversal + manipulation",
+    "observed_obstacles": 31,
+    "stop_reason": "no_action_available",
+    "actions": [
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction"
+    ],
+    "num_actions": 6,
+    "final_robot_position": [
+      2.4,
+      4.95
+    ],
+    "latest_replan_waypoints": 42
   },
   "planner_config": {
     "step": 0.15,
@@ -67,6 +73,91 @@
     [
       4.05,
       5.25,
+      0.0
+    ],
+    [
+      3.9,
+      5.25,
+      0.0
+    ],
+    [
+      3.75,
+      5.25,
+      0.0
+    ],
+    [
+      3.9,
+      5.1,
+      0.0
+    ],
+    [
+      4.05,
+      5.1,
+      0.0
+    ],
+    [
+      4.2,
+      5.1,
+      0.0
+    ],
+    [
+      4.05,
+      4.95,
+      0.0
+    ],
+    [
+      3.9,
+      4.95,
+      0.0
+    ],
+    [
+      3.75,
+      4.95,
+      0.0
+    ],
+    [
+      3.6,
+      4.95,
+      0.0
+    ],
+    [
+      3.45,
+      4.95,
+      0.0
+    ],
+    [
+      3.3,
+      4.95,
+      0.0
+    ],
+    [
+      3.15,
+      4.95,
+      0.0
+    ],
+    [
+      3.0,
+      4.95,
+      0.0
+    ],
+    [
+      2.85,
+      4.95,
+      0.0
+    ],
+    [
+      2.7,
+      4.95,
+      0.0
+    ],
+    [
+      2.55,
+      4.95,
+      0.0
+    ],
+    [
+      2.4,
+      4.95,
       0.0
     ]
   ]

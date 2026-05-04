@@ -22,6 +22,25 @@
   "success": true,
   "summary": {
     "success": true,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      10,
+      29
+    ],
+    "grid_goal": [
+      12,
+      32
+    ],
+    "num_waypoints": 4,
+    "path_length": 4.4811,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 30,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation",
+    "stop_reason": "goal_reached",
     "actions": [
       "MoveAction",
       "MoveAction",
@@ -40,25 +59,7 @@
       1.835103808673511,
       4.870668635999481
     ],
-    "latest_replan_waypoints": 4,
-    "algorithm": "semantic_dstar_lite_incremental",
-    "observability": "radius_limited_incremental",
-    "grid_start": [
-      10,
-      29
-    ],
-    "grid_goal": [
-      12,
-      32
-    ],
-    "num_waypoints": 4,
-    "path_length": 4.4811,
-    "lambda_occ": 5.0,
-    "lambda_sem": 2.5,
-    "step": 0.15,
-    "robot_radius": 0.12,
-    "observed_obstacles": 30,
-    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+    "latest_replan_waypoints": 4
   },
   "planner_config": {
     "step": 0.15,

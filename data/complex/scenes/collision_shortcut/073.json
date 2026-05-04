@@ -1,0 +1,857 @@
+{
+  "family": "collision_shortcut",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    5.12812866013101,
+    4.131628763701807,
+    0.0
+  ],
+  "goal": [
+    0.7860800227347076,
+    5.123010186954547,
+    0.0
+  ],
+  "obstacles": [
+    {
+      "id": 0,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        3.6188,
+        4.4083
+      ],
+      "position": [
+        3.6188,
+        4.4083
+      ],
+      "size": {
+        "area": 0.1007,
+        "width": 0.4668,
+        "height": 0.4566
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0806,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          3.406289795007128,
+          4.23299373404353
+        ],
+        [
+          3.87311493091699,
+          4.302221030661899
+        ],
+        [
+          3.5771209111225493,
+          4.689617141327817
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        3.0058,
+        4.6401
+      ],
+      "position": [
+        3.0058,
+        4.6401
+      ],
+      "size": {
+        "area": 0.0755,
+        "width": 0.3556,
+        "height": 0.4833
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0604,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          3.16651070928286,
+          4.423937138486436
+        ],
+        [
+          3.0400965242232747,
+          4.907190337389627
+        ],
+        [
+          2.81090506611265,
+          4.589075212718321
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        2.3058,
+        4.776
+      ],
+      "position": [
+        2.3058,
+        4.776
+      ],
+      "size": {
+        "area": 0.2033,
+        "width": 0.54,
+        "height": 0.5409
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.1626,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          2.2342387644184822,
+          5.046479134635082
+        ],
+        [
+          2.0357992165260637,
+          4.8492816221777595
+        ],
+        [
+          2.1073574979309946,
+          4.578829176358765
+        ],
+        [
+          2.3773553272283436,
+          4.505574242997093
+        ],
+        [
+          2.5757948751207627,
+          4.702771755454416
+        ],
+        [
+          2.5042365937158317,
+          4.9732242012734105
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "shape": "parallelogram",
+      "shape_type": "parallelogram",
+      "class_true": "fragile",
+      "center": [
+        0.8913,
+        3.2422
+      ],
+      "position": [
+        0.8913,
+        3.2422
+      ],
+      "size": {
+        "area": 0.151,
+        "width": 0.4869,
+        "height": 0.5991
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0528,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          0.7872052708266286,
+          2.9426132432264493
+        ],
+        [
+          1.1347583388614615,
+          3.2176511806428394
+        ],
+        [
+          0.9953904630897297,
+          3.5417038329020523
+        ],
+        [
+          0.6478373950548968,
+          3.2666658954856627
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "fragile",
+      "center": [
+        0.4353,
+        4.4003
+      ],
+      "position": [
+        0.4353,
+        4.4003
+      ],
+      "size": {
+        "area": 0.0446,
+        "width": 0.3015,
+        "height": 0.3059
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0156,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          0.6074531211348049,
+          4.32898625552681
+        ],
+        [
+          0.377761233178913,
+          4.5775718993018115
+        ],
+        [
+          0.3059638784070922,
+          4.397036987015443
+        ],
+        [
+          0.42181710606793404,
+          4.271654025354155
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "shape": "parallelogram",
+      "shape_type": "parallelogram",
+      "class_true": "safe",
+      "center": [
+        4.6491,
+        1.1283
+      ],
+      "position": [
+        4.6491,
+        1.1283
+      ],
+      "size": {
+        "area": 0.0847,
+        "width": 0.2646,
+        "height": 0.5296
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.0847,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          4.516813500855882,
+          0.863505648391531
+        ],
+        [
+          4.768157765654466,
+          1.0463921765029314
+        ],
+        [
+          4.7814220234148985,
+          1.3931253435300963
+        ],
+        [
+          4.530077758616315,
+          1.210238815418696
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        1.4661,
+        0.9251
+      ],
+      "position": [
+        1.4661,
+        0.9251
+      ],
+      "size": {
+        "area": 0.1124,
+        "width": 0.4145,
+        "height": 0.3762
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0899,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          1.673360166101522,
+          0.9422931929616556
+        ],
+        [
+          1.5548411351287028,
+          1.1131728324133057
+        ],
+        [
+          1.3475955108876385,
+          1.0959721604847545
+        ],
+        [
+          1.2588689176193935,
+          0.9078918491045533
+        ],
+        [
+          1.3773879485922127,
+          0.7370122096529033
+        ],
+        [
+          1.584633572833277,
+          0.7542128815814543
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "shape": "parallelogram",
+      "shape_type": "parallelogram",
+      "class_true": "safe",
+      "center": [
+        4.2521,
+        4.8144
+      ],
+      "position": [
+        4.2521,
+        4.8144
+      ],
+      "size": {
+        "area": 0.0642,
+        "width": 0.2463,
+        "height": 0.4008
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.0642,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          4.128944495783256,
+          4.613982234338656
+        ],
+        [
+          4.327050175110628,
+          4.675693148431648
+        ],
+        [
+          4.375268650540195,
+          5.0147866591986405
+        ],
+        [
+          4.177162971212823,
+          4.9530757451056475
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        2.6955,
+        3.8976
+      ],
+      "position": [
+        2.6955,
+        3.8976
+      ],
+      "size": {
+        "area": 0.0368,
+        "width": 0.287,
+        "height": 0.2741
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0294,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          2.853874446285294,
+          3.839810853345378
+        ],
+        [
+          2.6656832925779024,
+          4.0635614113115
+        ],
+        [
+          2.5669217112494933,
+          3.7894786659921342
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "fragile",
+      "center": [
+        5.5079,
+        0.7595
+      ],
+      "position": [
+        5.5079,
+        0.7595
+      ],
+      "size": {
+        "area": 0.0694,
+        "width": 0.3709,
+        "height": 0.3696
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0243,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          5.714217769393763,
+          0.7463720572028055
+        ],
+        [
+          5.448445245126979,
+          0.9575018257478878
+        ],
+        [
+          5.343283627675064,
+          0.7097350640773635
+        ],
+        [
+          5.496658441886317,
+          0.5878940682317526
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "shape": "pentagon",
+      "shape_type": "pentagon",
+      "class_true": "movable",
+      "center": [
+        2.6714,
+        1.2639
+      ],
+      "position": [
+        2.6714,
+        1.2639
+      ],
+      "size": {
+        "area": 0.0927,
+        "width": 0.3702,
+        "height": 0.3717
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0742,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          2.846224727657924,
+          1.3556681992879052
+        ],
+        [
+          2.63813414786165,
+          1.4585455433389685
+        ],
+        [
+          2.4759884538963632,
+          1.2924304890920226
+        ],
+        [
+          2.5838674836926505,
+          1.0868883954733142
+        ],
+        [
+          2.812686084745406,
+          1.1259714497450852
+        ]
+      ]
+    },
+    {
+      "id": 11,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "movable",
+      "center": [
+        0.7739,
+        1.3505
+      ],
+      "position": [
+        0.7739,
+        1.3505
+      ],
+      "size": {
+        "area": 0.0659,
+        "width": 0.2475,
+        "height": 0.4761
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0527,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          0.8026155084966696,
+          1.0965595044518948
+        ],
+        [
+          0.9003462976463834,
+          1.5726151575743137
+        ],
+        [
+          0.7058258459337966,
+          1.4989677835350783
+        ],
+        [
+          0.6528438401285546,
+          1.240887565450355
+        ]
+      ]
+    },
+    {
+      "id": 12,
+      "shape": "pentagon",
+      "shape_type": "pentagon",
+      "class_true": "movable",
+      "center": [
+        3.5725,
+        1.4286
+      ],
+      "position": [
+        3.5725,
+        1.4286
+      ],
+      "size": {
+        "area": 0.0358,
+        "width": 0.2287,
+        "height": 0.2319
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0286,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          3.5968409091856763,
+          1.5488303443283873
+        ],
+        [
+          3.465629381568743,
+          1.4889387182682203
+        ],
+        [
+          3.482043110913247,
+          1.3456416096417532
+        ],
+        [
+          3.6233988811472257,
+          1.3169707520811778
+        ],
+        [
+          3.694347822313241,
+          1.4425482962486023
+        ]
+      ]
+    },
+    {
+      "id": 13,
+      "shape": "rectangle",
+      "shape_type": "rectangle",
+      "class_true": "safe",
+      "center": [
+        5.7692,
+        5.7436
+      ],
+      "position": [
+        5.7692,
+        5.7436
+      ],
+      "size": {
+        "area": 0.0941,
+        "width": 0.4144,
+        "height": 0.4306
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.0941,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          5.976401419660159,
+          5.812223404645418
+        ],
+        [
+          5.7335026997677465,
+          5.958925154412169
+        ],
+        [
+          5.562030909839367,
+          5.675013896792639
+        ],
+        [
+          5.80492962973178,
+          5.528312147025888
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        2.4038,
+        2.9026
+      ],
+      "position": [
+        2.4038,
+        2.9026
+      ],
+      "size": {
+        "area": 0.0565,
+        "width": 0.3507,
+        "height": 0.3381
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0452,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          2.358347033675255,
+          2.6947846795142527
+        ],
+        [
+          2.6019521745500533,
+          2.980234466273237
+        ],
+        [
+          2.2512057934871894,
+          3.0328920598560485
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "fragile",
+      "center": [
+        3.7395,
+        1.72
+      ],
+      "position": [
+        3.7395,
+        1.72
+      ],
+      "size": {
+        "area": 0.0748,
+        "width": 0.4058,
+        "height": 0.3649
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0262,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
+      "vertices": [
+        [
+          3.796990628181646,
+          1.5187058325043823
+        ],
+        [
+          3.944898466368182,
+          1.7607920621876478
+        ],
+        [
+          3.6192480410169003,
+          1.883570211925532
+        ],
+        [
+          3.539129278977133,
+          1.752436870603641
+        ]
+      ]
+    },
+    {
+      "id": 16,
+      "shape": "rectangle",
+      "shape_type": "rectangle",
+      "class_true": "movable",
+      "center": [
+        0.9356,
+        0.8417
+      ],
+      "position": [
+        0.9356,
+        0.8417
+      ],
+      "size": {
+        "area": 0.0766,
+        "width": 0.3753,
+        "height": 0.3543
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0613,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          1.123215118171809,
+          0.782421117147337
+        ],
+        [
+          1.021176539320825,
+          1.0188274270766438
+        ],
+        [
+          0.7479385026691847,
+          0.9008914000886006
+        ],
+        [
+          0.8499770815201688,
+          0.6644850901592937
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "movable",
+      "center": [
+        5.6459,
+        4.6945
+      ],
+      "position": [
+        5.6459,
+        4.6945
+      ],
+      "size": {
+        "area": 0.0306,
+        "width": 0.2315,
+        "height": 0.2522
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0245,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
+      "vertices": [
+        [
+          5.646847233622804,
+          4.554994025237638
+        ],
+        [
+          5.7667616842743685,
+          4.764053068868369
+        ],
+        [
+          5.6195097449262805,
+          4.807181051261004
+        ],
+        [
+          5.535274687517947,
+          4.660325518451739
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
+  "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_shortcut/035.json",
+  "scene_family": "collision_shortcut",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    3.6822676185469723,
+    2.1988955971674957,
+    0.0
+  ],
+  "goal": [
+    0.911030698404105,
+    5.4875803548924695,
+    0.0
+  ],
+  "success": true,
+  "summary": {
+    "success": true,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      6,
+      33
+    ],
+    "grid_goal": [
+      6,
+      37
+    ],
+    "num_waypoints": 5,
+    "path_length": 4.4079,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 13,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation",
+    "stop_reason": "goal_reached",
+    "actions": [
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "PushAction",
+      "MoveAction",
+      "MoveAction",
+      "PushAction",
+      "PushAction",
+      "MoveAction",
+      "PushAction",
+      "MoveAction"
+    ],
+    "action_details": [
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 0,
+        "distance": 0.6715,
+        "required_force": 0.1023,
+        "estimated_work": 0.0687,
+        "estimated_power": 0.0687,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 1,
+        "distance": 0.5297,
+        "required_force": 0.0938,
+        "estimated_work": 0.0497,
+        "estimated_power": 0.0497,
+        "push_duration": 1.0
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 2,
+        "distance": 0.5686,
+        "required_force": 0.2214,
+        "estimated_work": 0.1259,
+        "estimated_power": 0.1259,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      },
+      {
+        "type": "PushAction",
+        "obstacle_id": 2,
+        "distance": 0.7525,
+        "required_force": 0.293,
+        "estimated_work": 0.2205,
+        "estimated_power": 0.2205,
+        "push_duration": 1.0
+      },
+      {
+        "type": "MoveAction"
+      }
+    ],
+    "num_actions": 12,
+    "final_robot_position": [
+      0.9,
+      5.4
+    ],
+    "latest_replan_waypoints": 5
+  },
+  "planner_config": {
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step_duration": 1.0,
+    "dynamic_decay": 2.5
+  },
+  "path": [
+    [
+      3.6822676185469723,
+      2.1988955971674957,
+      0.0
+    ],
+    [
+      3.6,
+      2.4,
+      0.0
+    ],
+    [
+      3.45,
+      2.55,
+      0.0
+    ],
+    [
+      3.3,
+      2.7,
+      0.0
+    ],
+    [
+      3.15,
+      2.85,
+      0.0
+    ],
+    [
+      3.0,
+      3.0,
+      0.0
+    ],
+    [
+      2.85,
+      3.0,
+      0.0
+    ],
+    [
+      2.7,
+      3.0,
+      0.0
+    ],
+    [
+      2.55,
+      3.0,
+      0.0
+    ],
+    [
+      2.4,
+      3.15,
+      0.0
+    ],
+    [
+      2.25,
+      3.3,
+      0.0
+    ],
+    [
+      2.1,
+      3.45,
+      0.0
+    ],
+    [
+      1.95,
+      3.6,
+      0.0
+    ],
+    [
+      1.95,
+      3.6,
+      0.0
+    ],
+    [
+      1.8,
+      3.75,
+      0.0
+    ],
+    [
+      1.65,
+      3.9,
+      0.0
+    ],
+    [
+      1.5,
+      4.05,
+      0.0
+    ],
+    [
+      1.35,
+      4.2,
+      0.0
+    ],
+    [
+      1.35,
+      4.35,
+      0.0
+    ],
+    [
+      1.35,
+      4.5,
+      0.0
+    ],
+    [
+      1.35,
+      4.5,
+      0.0
+    ],
+    [
+      1.35,
+      4.5,
+      0.0
+    ],
+    [
+      1.2,
+      4.65,
+      0.0
+    ],
+    [
+      1.05,
+      4.8,
+      0.0
+    ],
+    [
+      0.9,
+      4.95,
+      0.0
+    ],
+    [
+      0.9,
+      4.95,
+      0.0
+    ],
+    [
+      0.9,
+      5.1,
+      0.0
+    ],
+    [
+      0.9,
+      5.25,
+      0.0
+    ],
+    [
+      0.9,
+      5.4,
+      0.0
+    ]
+  ]
+}
