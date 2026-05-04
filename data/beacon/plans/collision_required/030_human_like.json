@@ -1,0 +1,139 @@
+{
+  "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
+  "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_required/030.json",
+  "scene_family": "collision_required",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    5.088879207326255,
+    4.110822418270722,
+    0.0
+  ],
+  "goal": [
+    0.9176121670469285,
+    2.3169917059960503,
+    0.0
+  ],
+  "success": true,
+  "summary": {
+    "success": true,
+    "actions": [
+      "PushAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "PushAction",
+      "PushAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction"
+    ],
+    "num_actions": 12,
+    "final_robot_position": [
+      1.05,
+      2.25
+    ],
+    "latest_replan_waypoints": 5,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      10,
+      17
+    ],
+    "grid_goal": [
+      6,
+      15
+    ],
+    "num_waypoints": 5,
+    "path_length": 4.6242,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 51,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+  },
+  "planner_config": {
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step_duration": 1.0,
+    "dynamic_decay": 2.5
+  },
+  "path": [
+    [
+      5.088879207326255,
+      4.110822418270722,
+      0.0
+    ],
+    [
+      5.088879207326255,
+      4.110822418270722,
+      0.0
+    ],
+    [
+      4.65,
+      3.6,
+      0.0
+    ],
+    [
+      4.2,
+      3.15,
+      0.0
+    ],
+    [
+      3.75,
+      3.0,
+      0.0
+    ],
+    [
+      3.3,
+      2.7,
+      0.0
+    ],
+    [
+      3.3,
+      2.7,
+      0.0
+    ],
+    [
+      3.3,
+      2.7,
+      0.0
+    ],
+    [
+      2.85,
+      2.7,
+      0.0
+    ],
+    [
+      2.4,
+      2.85,
+      0.0
+    ],
+    [
+      1.95,
+      2.7,
+      0.0
+    ],
+    [
+      1.5,
+      2.55,
+      0.0
+    ],
+    [
+      1.05,
+      2.25,
+      0.0
+    ]
+  ]
+}

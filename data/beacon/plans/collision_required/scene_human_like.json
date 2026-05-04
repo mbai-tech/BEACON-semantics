@@ -1,5 +1,6 @@
 {
   "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
   "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_required/scene.json",
   "scene_family": "collision_required",
   "workspace": [
@@ -9,42 +10,22 @@
     6
   ],
   "start": [
-    0.75,
-    3.0,
+    0.9101422816174993,
+    5.303228340043234,
     0.0
   ],
   "goal": [
-    5.25,
-    3.0,
+    3.473819812524844,
+    1.3411400519508876,
     0.0
   ],
   "success": true,
   "summary": {
     "success": true,
     "actions": [
+      "PushAction",
       "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
+      "PushAction",
       "MoveAction",
       "MoveAction",
       "MoveAction",
@@ -53,27 +34,30 @@
       "MoveAction",
       "MoveAction"
     ],
-    "num_actions": 30,
+    "num_actions": 10,
     "final_robot_position": [
-      5.25,
-      3.0
+      1.95,
+      2.85
     ],
-    "latest_replan_waypoints": 2,
-    "algorithm": "semantic_dstar_lite",
+    "latest_replan_waypoints": 15,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
     "grid_start": [
-      34,
-      20
+      16,
+      21
     ],
     "grid_goal": [
-      35,
-      20
+      23,
+      9
     ],
-    "num_waypoints": 2,
-    "path_length": 0.15,
+    "num_waypoints": 15,
+    "path_length": 4.9779,
     "lambda_occ": 5.0,
     "lambda_sem": 2.5,
     "step": 0.15,
-    "robot_radius": 0.12
+    "robot_radius": 0.12,
+    "observed_obstacles": 44,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation"
   },
   "planner_config": {
     "step": 0.15,
@@ -85,48 +69,108 @@
   },
   "path": [
     [
-      0.75,
-      3.0,
+      0.9101422816174993,
+      5.303228340043234,
       0.0
     ],
     [
-      0.9,
-      3.0,
+      0.9101422816174993,
+      5.303228340043234,
       0.0
     ],
     [
       1.05,
-      3.0,
+      5.1,
+      0.0
+    ],
+    [
+      1.05,
+      4.95,
       0.0
     ],
     [
       1.2,
-      3.0,
+      4.8,
+      0.0
+    ],
+    [
+      1.2,
+      4.8,
+      0.0
+    ],
+    [
+      1.2,
+      4.65,
+      0.0
+    ],
+    [
+      1.2,
+      4.5,
+      0.0
+    ],
+    [
+      1.2,
+      4.35,
+      0.0
+    ],
+    [
+      1.2,
+      4.2,
       0.0
     ],
     [
       1.35,
-      3.0,
+      4.05,
       0.0
     ],
     [
       1.5,
-      3.0,
+      3.9,
       0.0
     ],
     [
       1.65,
-      3.0,
+      3.9,
       0.0
     ],
     [
       1.8,
+      3.9,
+      0.0
+    ],
+    [
+      1.95,
+      3.75,
+      0.0
+    ],
+    [
+      2.1,
+      3.6,
+      0.0
+    ],
+    [
+      2.1,
+      3.45,
+      0.0
+    ],
+    [
+      2.25,
+      3.3,
+      0.0
+    ],
+    [
+      2.25,
+      3.15,
+      0.0
+    ],
+    [
+      2.1,
       3.0,
       0.0
     ],
     [
       1.95,
-      3.0,
+      2.85,
       0.0
     ],
     [
@@ -136,107 +180,27 @@
     ],
     [
       2.25,
-      3.0,
+      3.15,
       0.0
     ],
     [
       2.4,
-      3.0,
-      0.0
-    ],
-    [
-      2.55,
-      3.0,
-      0.0
-    ],
-    [
-      2.7,
-      2.85,
-      0.0
-    ],
-    [
-      2.85,
-      2.85,
-      0.0
-    ],
-    [
-      3.0,
-      2.85,
-      0.0
-    ],
-    [
       3.15,
+      0.0
+    ],
+    [
+      2.25,
+      3.15,
+      0.0
+    ],
+    [
+      2.1,
+      3.0,
+      0.0
+    ],
+    [
+      1.95,
       2.85,
-      0.0
-    ],
-    [
-      3.3,
-      2.85,
-      0.0
-    ],
-    [
-      3.45,
-      3.0,
-      0.0
-    ],
-    [
-      3.6,
-      3.0,
-      0.0
-    ],
-    [
-      3.75,
-      3.0,
-      0.0
-    ],
-    [
-      3.9,
-      3.0,
-      0.0
-    ],
-    [
-      4.05,
-      3.0,
-      0.0
-    ],
-    [
-      4.2,
-      3.0,
-      0.0
-    ],
-    [
-      4.35,
-      3.0,
-      0.0
-    ],
-    [
-      4.5,
-      3.0,
-      0.0
-    ],
-    [
-      4.65,
-      3.0,
-      0.0
-    ],
-    [
-      4.8,
-      3.0,
-      0.0
-    ],
-    [
-      4.95,
-      3.0,
-      0.0
-    ],
-    [
-      5.1,
-      3.0,
-      0.0
-    ],
-    [
-      5.25,
-      3.0,
       0.0
     ]
   ]

@@ -1,0 +1,79 @@
+{
+  "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
+  "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_required/047.json",
+  "scene_family": "collision_required",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    5.505381674394617,
+    5.062546842706243,
+    0.0
+  ],
+  "goal": [
+    0.5008567096520142,
+    5.413579739519401,
+    0.0
+  ],
+  "success": true,
+  "summary": {
+    "success": true,
+    "actions": [
+      "MoveAction",
+      "MoveAction"
+    ],
+    "num_actions": 2,
+    "final_robot_position": [
+      5.25,
+      5.1
+    ],
+    "latest_replan_waypoints": 34,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      36,
+      34
+    ],
+    "grid_goal": [
+      3,
+      36
+    ],
+    "num_waypoints": 34,
+    "path_length": 5.7538,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 10,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+  },
+  "planner_config": {
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step_duration": 1.0,
+    "dynamic_decay": 2.5
+  },
+  "path": [
+    [
+      5.505381674394617,
+      5.062546842706243,
+      0.0
+    ],
+    [
+      5.4,
+      5.1,
+      0.0
+    ],
+    [
+      5.25,
+      5.1,
+      0.0
+    ]
+  ]
+}

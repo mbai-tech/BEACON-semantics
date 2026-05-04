@@ -1,0 +1,127 @@
+{
+  "algorithm": "semantic_dstar_lite",
+  "planner_model": "soft obstacle traversal + manipulation",
+  "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_required/028.json",
+  "scene_family": "collision_required",
+  "workspace": [
+    0,
+    6,
+    0,
+    6
+  ],
+  "start": [
+    1.0176286157421734,
+    1.17376842267343,
+    0.0
+  ],
+  "goal": [
+    5.5093581875271465,
+    1.6956275641631162,
+    0.0
+  ],
+  "success": true,
+  "summary": {
+    "success": true,
+    "actions": [
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction",
+      "MoveAction"
+    ],
+    "num_actions": 10,
+    "final_robot_position": [
+      5.5093581875271465,
+      1.6956275641631162
+    ],
+    "latest_replan_waypoints": 4,
+    "algorithm": "semantic_dstar_lite_incremental",
+    "observability": "radius_limited_incremental",
+    "grid_start": [
+      34,
+      8
+    ],
+    "grid_goal": [
+      37,
+      11
+    ],
+    "num_waypoints": 4,
+    "path_length": 4.6723,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "observed_obstacles": 32,
+    "movable_obstacle_model": "soft obstacle traversal + manipulation"
+  },
+  "planner_config": {
+    "step": 0.15,
+    "robot_radius": 0.12,
+    "lambda_occ": 5.0,
+    "lambda_sem": 2.5,
+    "step_duration": 1.0,
+    "dynamic_decay": 2.5
+  },
+  "path": [
+    [
+      1.0176286157421734,
+      1.17376842267343,
+      0.0
+    ],
+    [
+      1.5,
+      0.75,
+      0.0
+    ],
+    [
+      1.95,
+      0.45,
+      0.0
+    ],
+    [
+      2.4,
+      0.15,
+      0.0
+    ],
+    [
+      2.85,
+      0.15,
+      0.0
+    ],
+    [
+      3.3,
+      0.15,
+      0.0
+    ],
+    [
+      3.75,
+      0.15,
+      0.0
+    ],
+    [
+      4.2,
+      0.3,
+      0.0
+    ],
+    [
+      4.65,
+      0.75,
+      0.0
+    ],
+    [
+      5.1,
+      1.2,
+      0.0
+    ],
+    [
+      5.5093581875271465,
+      1.6956275641631162,
+      0.0
+    ]
+  ]
+}
