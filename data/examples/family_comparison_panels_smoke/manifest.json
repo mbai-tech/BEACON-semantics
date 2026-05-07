@@ -1,0 +1,56 @@
+[
+  {
+    "environment": "sparse",
+    "seed": 11,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_smoke/sparse_seed11_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug2": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.7002,
+        "steps": 31
+      }
+    }
+  },
+  {
+    "environment": "sparse",
+    "seed": 14,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_smoke/sparse_seed14_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug2": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.3487,
+        "steps": 30
+      }
+    }
+  }
+]

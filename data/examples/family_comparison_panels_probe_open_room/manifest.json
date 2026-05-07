@@ -1,0 +1,56 @@
+[
+  {
+    "environment": "open_room",
+    "seed": 14,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_probe_open_room/open_room_seed14_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug2": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 30
+      }
+    }
+  },
+  {
+    "environment": "open_room",
+    "seed": 17,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_probe_open_room/open_room_seed17_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug2": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 30
+      }
+    }
+  }
+]

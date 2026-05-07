@@ -1,0 +1,488 @@
+[
+  {
+    "environment": "sparse",
+    "seed": 11,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/sparse_seed11_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug2": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.3487,
+        "steps": 30
+      }
+    }
+  },
+  {
+    "environment": "sparse",
+    "seed": 12,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/sparse_seed12_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 26.0416,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.7002,
+        "steps": 31
+      }
+    }
+  },
+  {
+    "environment": "collision_required",
+    "seed": 12,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/collision_required_seed12_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 23.3137,
+        "steps": 20
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 23.2066,
+        "steps": 34
+      }
+    }
+  },
+  {
+    "environment": "collision_required",
+    "seed": 13,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/collision_required_seed13_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 23.3137,
+        "steps": 20
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 6.8284,
+        "steps": 6
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 23.7037,
+        "steps": 34
+      }
+    }
+  },
+  {
+    "environment": "collision_shortcut",
+    "seed": 13,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/collision_shortcut_seed13_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 24.6274,
+        "steps": 18
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 24.9889,
+        "steps": 32
+      }
+    }
+  },
+  {
+    "environment": "collision_shortcut",
+    "seed": 14,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/collision_shortcut_seed14_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 24.6274,
+        "steps": 18
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 24.286,
+        "steps": 30
+      }
+    }
+  },
+  {
+    "environment": "open_room",
+    "seed": 14,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/open_room_seed14_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "bug2": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 18
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.4558,
+        "steps": 30
+      }
+    }
+  },
+  {
+    "environment": "open_room",
+    "seed": 15,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/open_room_seed15_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 26.0416,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 26.0517,
+        "steps": 32
+      }
+    }
+  },
+  {
+    "environment": "corridor",
+    "seed": 15,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/corridor_seed15_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 22.7279,
+        "steps": 19
+      },
+      "bug1": {
+        "success": true,
+        "path_length": 24.7279,
+        "steps": 21
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 6.6569,
+        "steps": 5
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.2025,
+        "steps": 37
+      }
+    }
+  },
+  {
+    "environment": "corridor",
+    "seed": 16,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/corridor_seed16_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 23.3137,
+        "steps": 20
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 23.2066,
+        "steps": 34
+      }
+    }
+  },
+  {
+    "environment": "cluttered",
+    "seed": 16,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/cluttered_seed16_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 26.0416,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 26.7546,
+        "steps": 34
+      }
+    }
+  },
+  {
+    "environment": "cluttered",
+    "seed": 17,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/cluttered_seed17_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 26.0416,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 26.0517,
+        "steps": 32
+      }
+    }
+  },
+  {
+    "environment": "dense_barrier",
+    "seed": 17,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/dense_barrier_seed17_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 22.3137,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 22.5169,
+        "steps": 33
+      }
+    }
+  },
+  {
+    "environment": "dense_barrier",
+    "seed": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/dense_barrier_seed18_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 22.7279,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.6995,
+        "steps": 37
+      }
+    }
+  },
+  {
+    "environment": "chain_reaction",
+    "seed": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/chain_reaction_seed18_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 24.6274,
+        "steps": 18
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 24.6375,
+        "steps": 31
+      }
+    }
+  },
+  {
+    "environment": "chain_reaction",
+    "seed": 19,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/chain_reaction_seed19_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 24.6274,
+        "steps": 18
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 24.9889,
+        "steps": 32
+      }
+    }
+  },
+  {
+    "environment": "mixed_materials",
+    "seed": 19,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/mixed_materials_seed19_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 26.0416,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 25.7002,
+        "steps": 31
+      }
+    }
+  },
+  {
+    "environment": "mixed_materials",
+    "seed": 20,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/family_comparison_panels_fixed/mixed_materials_seed20_comparison.png",
+    "planners": {
+      "dstar_lite": {
+        "success": true,
+        "path_length": 26.0416,
+        "steps": 19
+      },
+      "bug1": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "bug2": {
+        "success": false,
+        "path_length": 0.0,
+        "steps": 0
+      },
+      "beacon_human_like": {
+        "success": true,
+        "path_length": 26.0517,
+        "steps": 32
+      }
+    }
+  }
+]

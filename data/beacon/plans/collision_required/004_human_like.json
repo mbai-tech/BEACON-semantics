@@ -1,6 +1,6 @@
 {
-  "algorithm": "semantic_dstar_lite",
-  "planner_model": "soft obstacle traversal + manipulation",
+  "algorithm": "beacon_human_like_flowchart",
+  "planner_model": "explicit_flowchart_push_or_reroute",
   "scene_file": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/complex/scenes/collision_required/004.json",
   "scene_family": "collision_required",
   "workspace": [
@@ -19,41 +19,2298 @@
     5.276433802041602,
     0.0
   ],
-  "success": false,
+  "success": true,
   "summary": {
-    "success": false,
-    "algorithm": "semantic_dstar_lite",
-    "observability": "radius_limited_incremental_fallback",
-    "grid_start": [
-      10,
-      13
-    ],
-    "grid_goal": [
-      27,
-      35
-    ],
-    "num_waypoints": 40,
-    "path_length": 6.8928,
+    "success": true,
+    "algorithm": "beacon_human_like_flowchart",
+    "planner_model": "explicit_flowchart_push_or_reroute",
+    "observability": "radius_limited_incremental",
+    "sensing_range": 2.0,
+    "num_waypoints": 84,
+    "path_length": 14.4435,
     "lambda_occ": 5.0,
     "lambda_sem": 2.5,
     "step": 0.15,
     "robot_radius": 0.12,
-    "movable_obstacle_model": "soft obstacle traversal + manipulation",
-    "observed_obstacles": 31,
-    "stop_reason": "no_action_available",
-    "actions": [
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction"
-    ],
-    "num_actions": 5,
+    "step_duration": 1.0,
+    "movable_obstacle_model": "explicit push-versus-reroute flowchart controller",
+    "stop_reason": "goal_reached",
+    "num_actions": 33,
     "final_robot_position": [
-      1.05,
-      2.4
+      4.097,
+      5.2764
     ],
-    "latest_replan_waypoints": 40
+    "observed_obstacles": 67,
+    "cumulative_push_work": 2.3372,
+    "cumulative_navigation_work": 14.4435,
+    "cumulative_energy": 16.7808,
+    "actions": [
+      {
+        "step_index": 0,
+        "action_type": "move",
+        "robot_position_before": [
+          1.9716,
+          0.9292
+        ],
+        "robot_position_after": [
+          1.95,
+          1.35
+        ],
+        "observed_obstacles": 18,
+        "navigation_distance": 0.4227,
+        "navigation_work": 0.4227,
+        "cumulative_navigation_work": 0.4227,
+        "cumulative_push_work": 0.0,
+        "cumulative_energy": 0.4227
+      },
+      {
+        "step_index": 1,
+        "action_type": "move",
+        "robot_position_before": [
+          1.95,
+          1.35
+        ],
+        "robot_position_after": [
+          2.4,
+          1.35
+        ],
+        "observed_obstacles": 23,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 0.8727,
+        "cumulative_push_work": 0.0,
+        "cumulative_energy": 0.8727
+      },
+      {
+        "step_index": 2,
+        "action_type": "move",
+        "robot_position_before": [
+          2.4,
+          1.35
+        ],
+        "robot_position_after": [
+          1.95,
+          1.8
+        ],
+        "observed_obstacles": 27,
+        "navigation_distance": 0.6364,
+        "navigation_work": 0.6364,
+        "cumulative_navigation_work": 1.5091,
+        "cumulative_push_work": 0.0,
+        "cumulative_energy": 1.5091
+      },
+      {
+        "step_index": 3,
+        "action_type": "move",
+        "robot_position_before": [
+          1.95,
+          1.8
+        ],
+        "robot_position_after": [
+          1.5,
+          2.1
+        ],
+        "observed_obstacles": 30,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 2.0834,
+        "cumulative_push_work": 0.0,
+        "cumulative_energy": 2.0834
+      },
+      {
+        "step_index": 4,
+        "action_type": "push",
+        "robot_position_before": [
+          1.5,
+          2.1
+        ],
+        "robot_position_after": [
+          1.5,
+          2.1
+        ],
+        "observed_obstacles": 33,
+        "navigation_distance": 0.0,
+        "navigation_work": 0.0,
+        "cumulative_navigation_work": 2.0834,
+        "cumulative_push_work": 0.1862,
+        "cumulative_energy": 2.2696,
+        "obstacle_id": 13,
+        "push_distance": 0.456,
+        "push_force": 0.4084,
+        "push_work": 0.1862,
+        "push_power": 0.1862,
+        "push_duration": 1.0,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 13,
+            "position": [
+              -0.0783,
+              3.7416
+            ]
+          }
+        ]
+      },
+      {
+        "step_index": 5,
+        "action_type": "move",
+        "robot_position_before": [
+          1.5,
+          2.1
+        ],
+        "robot_position_after": [
+          1.05,
+          2.25
+        ],
+        "observed_obstacles": 33,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 2.5955,
+        "cumulative_push_work": 0.1862,
+        "cumulative_energy": 2.7817
+      },
+      {
+        "step_index": 6,
+        "action_type": "move",
+        "robot_position_before": [
+          1.05,
+          2.25
+        ],
+        "robot_position_after": [
+          0.6,
+          2.7
+        ],
+        "observed_obstacles": 33,
+        "navigation_distance": 0.6364,
+        "navigation_work": 0.6364,
+        "cumulative_navigation_work": 3.2319,
+        "cumulative_push_work": 0.1862,
+        "cumulative_energy": 3.4181
+      },
+      {
+        "step_index": 7,
+        "action_type": "move",
+        "robot_position_before": [
+          0.6,
+          2.7
+        ],
+        "robot_position_after": [
+          0.6,
+          3.15
+        ],
+        "observed_obstacles": 35,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 3.6819,
+        "cumulative_push_work": 0.1862,
+        "cumulative_energy": 3.8681
+      },
+      {
+        "step_index": 8,
+        "action_type": "move",
+        "robot_position_before": [
+          0.6,
+          3.15
+        ],
+        "robot_position_after": [
+          0.3,
+          3.6
+        ],
+        "observed_obstacles": 39,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 4.2562,
+        "cumulative_push_work": 0.1862,
+        "cumulative_energy": 4.4424
+      },
+      {
+        "step_index": 9,
+        "action_type": "push",
+        "robot_position_before": [
+          0.3,
+          3.6
+        ],
+        "robot_position_after": [
+          0.3,
+          3.6
+        ],
+        "observed_obstacles": 40,
+        "navigation_distance": 0.0,
+        "navigation_work": 0.0,
+        "cumulative_navigation_work": 4.2562,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 4.5354,
+        "obstacle_id": 46,
+        "push_distance": 0.444,
+        "push_force": 0.2093,
+        "push_work": 0.0929,
+        "push_power": 0.0929,
+        "push_duration": 1.0,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 46,
+            "position": [
+              -0.0357,
+              5.8824
+            ]
+          }
+        ]
+      },
+      {
+        "step_index": 10,
+        "action_type": "move",
+        "robot_position_before": [
+          0.3,
+          3.6
+        ],
+        "robot_position_after": [
+          0.3,
+          4.05
+        ],
+        "observed_obstacles": 40,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 4.7062,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 4.9854
+      },
+      {
+        "step_index": 11,
+        "action_type": "move",
+        "robot_position_before": [
+          0.3,
+          4.05
+        ],
+        "robot_position_after": [
+          0.3,
+          3.6
+        ],
+        "observed_obstacles": 42,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 5.1562,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 5.4354
+      },
+      {
+        "step_index": 12,
+        "action_type": "move",
+        "robot_position_before": [
+          0.3,
+          3.6
+        ],
+        "robot_position_after": [
+          0.6,
+          3.15
+        ],
+        "observed_obstacles": 42,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 5.7304,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 6.0096
+      },
+      {
+        "step_index": 13,
+        "action_type": "move",
+        "robot_position_before": [
+          0.6,
+          3.15
+        ],
+        "robot_position_after": [
+          0.75,
+          2.7
+        ],
+        "observed_obstacles": 42,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 6.2426,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 6.5217
+      },
+      {
+        "step_index": 14,
+        "action_type": "move",
+        "robot_position_before": [
+          0.75,
+          2.7
+        ],
+        "robot_position_after": [
+          1.2,
+          2.55
+        ],
+        "observed_obstacles": 42,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 6.7547,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 7.0339
+      },
+      {
+        "step_index": 15,
+        "action_type": "move",
+        "robot_position_before": [
+          1.2,
+          2.55
+        ],
+        "robot_position_after": [
+          1.65,
+          2.1
+        ],
+        "observed_obstacles": 42,
+        "navigation_distance": 0.6364,
+        "navigation_work": 0.6364,
+        "cumulative_navigation_work": 7.3911,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 7.6703
+      },
+      {
+        "step_index": 16,
+        "action_type": "move",
+        "robot_position_before": [
+          1.65,
+          2.1
+        ],
+        "robot_position_after": [
+          2.1,
+          1.95
+        ],
+        "observed_obstacles": 42,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 7.9032,
+        "cumulative_push_work": 0.2792,
+        "cumulative_energy": 8.1824
+      },
+      {
+        "step_index": 17,
+        "action_type": "push",
+        "robot_position_before": [
+          2.1,
+          1.95
+        ],
+        "robot_position_after": [
+          2.1,
+          1.95
+        ],
+        "observed_obstacles": 44,
+        "navigation_distance": 0.0,
+        "navigation_work": 0.0,
+        "cumulative_navigation_work": 7.9032,
+        "cumulative_push_work": 1.7297,
+        "cumulative_energy": 9.6329,
+        "obstacle_id": 16,
+        "push_distance": 0.4417,
+        "push_force": 3.2837,
+        "push_work": 1.4505,
+        "push_power": 1.4505,
+        "push_duration": 1.0,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 16,
+            "position": [
+              4.6921,
+              1.5273
+            ]
+          }
+        ]
+      },
+      {
+        "step_index": 18,
+        "action_type": "move",
+        "robot_position_before": [
+          2.1,
+          1.95
+        ],
+        "robot_position_after": [
+          2.55,
+          1.65
+        ],
+        "observed_obstacles": 44,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 8.4775,
+        "cumulative_push_work": 1.7297,
+        "cumulative_energy": 10.2072
+      },
+      {
+        "step_index": 19,
+        "action_type": "push",
+        "robot_position_before": [
+          2.55,
+          1.65
+        ],
+        "robot_position_after": [
+          2.55,
+          1.65
+        ],
+        "observed_obstacles": 46,
+        "navigation_distance": 0.0,
+        "navigation_work": 0.0,
+        "cumulative_navigation_work": 8.4775,
+        "cumulative_push_work": 2.0326,
+        "cumulative_energy": 10.5101,
+        "obstacle_id": 28,
+        "push_distance": 0.6023,
+        "push_force": 0.5029,
+        "push_work": 0.3029,
+        "push_power": 0.3029,
+        "push_duration": 1.0,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 28,
+            "position": [
+              4.5134,
+              2.9995
+            ]
+          }
+        ]
+      },
+      {
+        "step_index": 20,
+        "action_type": "push",
+        "robot_position_before": [
+          2.55,
+          1.65
+        ],
+        "robot_position_after": [
+          2.55,
+          1.65
+        ],
+        "observed_obstacles": 46,
+        "navigation_distance": 0.0,
+        "navigation_work": 0.0,
+        "cumulative_navigation_work": 8.4775,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 10.8147,
+        "obstacle_id": 29,
+        "push_distance": 0.6409,
+        "push_force": 0.4753,
+        "push_work": 0.3047,
+        "push_power": 0.3047,
+        "push_duration": 1.0,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 29,
+            "position": [
+              4.2814,
+              3.0218
+            ]
+          }
+        ]
+      },
+      {
+        "step_index": 21,
+        "action_type": "move",
+        "robot_position_before": [
+          2.55,
+          1.65
+        ],
+        "robot_position_after": [
+          3.0,
+          1.5
+        ],
+        "observed_obstacles": 46,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 8.9896,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 11.3269
+      },
+      {
+        "step_index": 22,
+        "action_type": "move",
+        "robot_position_before": [
+          3.0,
+          1.5
+        ],
+        "robot_position_after": [
+          3.45,
+          1.35
+        ],
+        "observed_obstacles": 49,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 9.5018,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 11.839
+      },
+      {
+        "step_index": 23,
+        "action_type": "move",
+        "robot_position_before": [
+          3.45,
+          1.35
+        ],
+        "robot_position_after": [
+          3.9,
+          1.35
+        ],
+        "observed_obstacles": 53,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 9.9518,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 12.289
+      },
+      {
+        "step_index": 24,
+        "action_type": "move",
+        "robot_position_before": [
+          3.9,
+          1.35
+        ],
+        "robot_position_after": [
+          4.05,
+          1.8
+        ],
+        "observed_obstacles": 56,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 10.4639,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 12.8011
+      },
+      {
+        "step_index": 25,
+        "action_type": "move",
+        "robot_position_before": [
+          4.05,
+          1.8
+        ],
+        "robot_position_after": [
+          4.05,
+          2.25
+        ],
+        "observed_obstacles": 58,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 10.9139,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 13.2511
+      },
+      {
+        "step_index": 26,
+        "action_type": "move",
+        "robot_position_before": [
+          4.05,
+          2.25
+        ],
+        "robot_position_after": [
+          4.05,
+          2.7
+        ],
+        "observed_obstacles": 59,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 11.4881,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 13.8254
+      },
+      {
+        "step_index": 27,
+        "action_type": "move",
+        "robot_position_before": [
+          4.05,
+          2.7
+        ],
+        "robot_position_after": [
+          3.9,
+          3.15
+        ],
+        "observed_obstacles": 62,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 12.0003,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 14.3375
+      },
+      {
+        "step_index": 28,
+        "action_type": "move",
+        "robot_position_before": [
+          3.9,
+          3.15
+        ],
+        "robot_position_after": [
+          4.2,
+          3.6
+        ],
+        "observed_obstacles": 64,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 12.5745,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 14.9118
+      },
+      {
+        "step_index": 29,
+        "action_type": "move",
+        "robot_position_before": [
+          4.2,
+          3.6
+        ],
+        "robot_position_after": [
+          4.35,
+          4.05
+        ],
+        "observed_obstacles": 65,
+        "navigation_distance": 0.5121,
+        "navigation_work": 0.5121,
+        "cumulative_navigation_work": 13.0867,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 15.4239
+      },
+      {
+        "step_index": 30,
+        "action_type": "move",
+        "robot_position_before": [
+          4.35,
+          4.05
+        ],
+        "robot_position_after": [
+          4.05,
+          4.5
+        ],
+        "observed_obstacles": 66,
+        "navigation_distance": 0.5743,
+        "navigation_work": 0.5743,
+        "cumulative_navigation_work": 13.6609,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 15.9982
+      },
+      {
+        "step_index": 31,
+        "action_type": "move",
+        "robot_position_before": [
+          4.05,
+          4.5
+        ],
+        "robot_position_after": [
+          4.05,
+          4.95
+        ],
+        "observed_obstacles": 67,
+        "navigation_distance": 0.45,
+        "navigation_work": 0.45,
+        "cumulative_navigation_work": 14.1109,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 16.4482
+      },
+      {
+        "step_index": 32,
+        "action_type": "move",
+        "robot_position_before": [
+          4.05,
+          4.95
+        ],
+        "robot_position_after": [
+          4.097,
+          5.2764
+        ],
+        "observed_obstacles": 67,
+        "navigation_distance": 0.3326,
+        "navigation_work": 0.3326,
+        "cumulative_navigation_work": 14.4435,
+        "cumulative_push_work": 2.3372,
+        "cumulative_energy": 16.7808
+      }
+    ],
+    "flowchart_trace": [
+      {
+        "robot_position": [
+          1.9716,
+          0.9292
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          11,
+          17,
+          18,
+          48,
+          49,
+          52,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 0,
+        "observed_obstacles": 18,
+        "cumulative_energy": 0.4227,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          1.95,
+          1.35
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          17,
+          18,
+          19,
+          22,
+          23,
+          48,
+          49,
+          52,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 1,
+        "observed_obstacles": 23,
+        "cumulative_energy": 0.8727,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          2.4,
+          1.35
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          18,
+          19,
+          22,
+          23,
+          30,
+          48,
+          49,
+          52,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 2,
+        "observed_obstacles": 27,
+        "cumulative_energy": 1.5091,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          1.95,
+          1.8
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          22,
+          23,
+          24,
+          25,
+          30,
+          31,
+          48,
+          49,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 3,
+        "observed_obstacles": 30,
+        "cumulative_energy": 2.0834,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          1.5,
+          2.1
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          31,
+          35,
+          48,
+          49,
+          57,
+          59,
+          61,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": true,
+        "blocking_obstacle_id": 13,
+        "more_costly_to_reroute": true,
+        "push_cost": -0.1638,
+        "detour_cost": Infinity,
+        "selected_action": "push",
+        "push_cluster_ids": [
+          13
+        ],
+        "step_index": 4,
+        "observed_obstacles": 33,
+        "cumulative_energy": 2.2696,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 13,
+            "position": [
+              -0.0783,
+              3.7416
+            ]
+          }
+        ]
+      },
+      {
+        "robot_position": [
+          1.5,
+          2.1
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          31,
+          35,
+          48,
+          49,
+          57,
+          59,
+          61,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 5,
+        "observed_obstacles": 33,
+        "cumulative_energy": 2.7817,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          1.05,
+          2.25
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          31,
+          48,
+          49,
+          59,
+          61,
+          63
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 6,
+        "observed_obstacles": 33,
+        "cumulative_energy": 3.4181,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.6,
+          2.7
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          23,
+          24,
+          25,
+          32,
+          37,
+          48,
+          49,
+          61,
+          63
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 7,
+        "observed_obstacles": 35,
+        "cumulative_energy": 3.8681,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.6,
+          3.15
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          23,
+          24,
+          25,
+          31,
+          32,
+          35,
+          36,
+          37,
+          38,
+          44,
+          45,
+          49,
+          61,
+          63
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 8,
+        "observed_obstacles": 39,
+        "cumulative_energy": 4.4424,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.3,
+          3.6
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          24,
+          25,
+          32,
+          35,
+          36,
+          37,
+          38,
+          44,
+          45,
+          46,
+          49
+        ],
+        "object_in_path_trajectory": true,
+        "blocking_obstacle_id": 46,
+        "more_costly_to_reroute": true,
+        "push_cost": -0.2571,
+        "detour_cost": Infinity,
+        "selected_action": "push",
+        "push_cluster_ids": [
+          46
+        ],
+        "step_index": 9,
+        "observed_obstacles": 40,
+        "cumulative_energy": 4.5354,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 46,
+            "position": [
+              -0.0357,
+              5.8824
+            ]
+          }
+        ]
+      },
+      {
+        "robot_position": [
+          0.3,
+          3.6
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          24,
+          25,
+          32,
+          35,
+          36,
+          37,
+          38,
+          44,
+          45,
+          49
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 10,
+        "observed_obstacles": 40,
+        "cumulative_energy": 4.9854,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.3,
+          4.05
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          8,
+          9,
+          12,
+          13,
+          19,
+          20,
+          24,
+          25,
+          32,
+          35,
+          36,
+          37,
+          38,
+          44,
+          45,
+          46,
+          58,
+          66
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 11,
+        "observed_obstacles": 42,
+        "cumulative_energy": 5.4354,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.3,
+          3.6
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          24,
+          25,
+          32,
+          35,
+          36,
+          37,
+          38,
+          44,
+          45,
+          49
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 12,
+        "observed_obstacles": 42,
+        "cumulative_energy": 6.0096,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.6,
+          3.15
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          23,
+          24,
+          25,
+          31,
+          32,
+          35,
+          36,
+          37,
+          38,
+          44,
+          45,
+          49,
+          61,
+          63
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 13,
+        "observed_obstacles": 42,
+        "cumulative_energy": 6.5217,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          0.75,
+          2.7
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          19,
+          20,
+          23,
+          24,
+          25,
+          32,
+          35,
+          36,
+          37,
+          48,
+          49,
+          61,
+          63
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 14,
+        "observed_obstacles": 42,
+        "cumulative_energy": 7.0339,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          1.2,
+          2.55
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          31,
+          32,
+          35,
+          36,
+          37,
+          48,
+          49,
+          61,
+          63
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 15,
+        "observed_obstacles": 42,
+        "cumulative_energy": 7.6703,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          1.65,
+          2.1
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          30,
+          31,
+          35,
+          48,
+          49,
+          57,
+          59,
+          61,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 16,
+        "observed_obstacles": 42,
+        "cumulative_energy": 8.1824,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          2.1,
+          1.95
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          29,
+          30,
+          31,
+          34,
+          35,
+          48,
+          49,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": true,
+        "blocking_obstacle_id": 16,
+        "more_costly_to_reroute": true,
+        "push_cost": 1.1005,
+        "detour_cost": Infinity,
+        "selected_action": "push",
+        "push_cluster_ids": [
+          3,
+          16,
+          17,
+          18,
+          22
+        ],
+        "step_index": 17,
+        "observed_obstacles": 44,
+        "cumulative_energy": 9.6329,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 16,
+            "position": [
+              4.6921,
+              1.5273
+            ]
+          }
+        ]
+      },
+      {
+        "robot_position": [
+          2.1,
+          1.95
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          29,
+          30,
+          31,
+          34,
+          35,
+          48,
+          49,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 18,
+        "observed_obstacles": 44,
+        "cumulative_energy": 10.2072,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          2.55,
+          1.65
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          28,
+          29,
+          30,
+          31,
+          34,
+          48,
+          49,
+          52,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": true,
+        "blocking_obstacle_id": 28,
+        "more_costly_to_reroute": true,
+        "push_cost": -0.0471,
+        "detour_cost": Infinity,
+        "selected_action": "push",
+        "push_cluster_ids": [
+          28
+        ],
+        "step_index": 19,
+        "observed_obstacles": 46,
+        "cumulative_energy": 10.5101,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 28,
+            "position": [
+              4.5134,
+              2.9995
+            ]
+          }
+        ]
+      },
+      {
+        "robot_position": [
+          2.55,
+          1.65
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          29,
+          30,
+          31,
+          34,
+          48,
+          49,
+          52,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": true,
+        "blocking_obstacle_id": 29,
+        "more_costly_to_reroute": true,
+        "push_cost": -0.0453,
+        "detour_cost": Infinity,
+        "selected_action": "push",
+        "push_cluster_ids": [
+          29
+        ],
+        "step_index": 20,
+        "observed_obstacles": 46,
+        "cumulative_energy": 10.8147,
+        "updated_obstacle_positions": [
+          {
+            "obstacle_id": 29,
+            "position": [
+              4.2814,
+              3.0218
+            ]
+          }
+        ]
+      },
+      {
+        "robot_position": [
+          2.55,
+          1.65
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          29,
+          30,
+          31,
+          34,
+          48,
+          49,
+          52,
+          57,
+          59,
+          61,
+          62,
+          63,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 21,
+        "observed_obstacles": 46,
+        "cumulative_energy": 11.3269,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          3.0,
+          1.5
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          11,
+          12,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          28,
+          29,
+          30,
+          31,
+          34,
+          48,
+          49,
+          52,
+          57,
+          59,
+          62,
+          63,
+          64,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 22,
+        "observed_obstacles": 49,
+        "cumulative_energy": 11.839,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          3.45,
+          1.35
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          21,
+          22,
+          23,
+          27,
+          28,
+          29,
+          30,
+          33,
+          52,
+          57,
+          62,
+          63,
+          64,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 23,
+        "observed_obstacles": 53,
+        "cumulative_energy": 12.289,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          3.9,
+          1.35
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          21,
+          22,
+          26,
+          27,
+          28,
+          29,
+          30,
+          33,
+          40,
+          41,
+          52,
+          57,
+          62,
+          64,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 24,
+        "observed_obstacles": 56,
+        "cumulative_energy": 12.8011,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.05,
+          1.8
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          21,
+          22,
+          23,
+          26,
+          27,
+          28,
+          29,
+          30,
+          33,
+          34,
+          39,
+          40,
+          41,
+          42,
+          52,
+          57,
+          62,
+          64,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 25,
+        "observed_obstacles": 58,
+        "cumulative_energy": 13.2511,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.05,
+          2.25
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          21,
+          22,
+          23,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          39,
+          40,
+          41,
+          42,
+          50,
+          52,
+          62,
+          64,
+          65
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 26,
+        "observed_obstacles": 59,
+        "cumulative_energy": 13.8254,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.05,
+          2.7
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          39,
+          40,
+          41,
+          42,
+          43,
+          50,
+          51,
+          53,
+          62,
+          64
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 27,
+        "observed_obstacles": 62,
+        "cumulative_energy": 14.3375,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          3.9,
+          3.15
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          39,
+          40,
+          41,
+          42,
+          43,
+          50,
+          51,
+          53,
+          55,
+          60
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 28,
+        "observed_obstacles": 64,
+        "cumulative_energy": 14.9118,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.2,
+          3.6
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          3,
+          4,
+          5,
+          6,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          21,
+          22,
+          23,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          39,
+          40,
+          41,
+          42,
+          43,
+          47,
+          50,
+          51,
+          53,
+          55,
+          60
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 29,
+        "observed_obstacles": 65,
+        "cumulative_energy": 15.4239,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.35,
+          4.05
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          15,
+          17,
+          18,
+          21,
+          22,
+          23,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          39,
+          40,
+          41,
+          42,
+          43,
+          47,
+          50,
+          51,
+          53,
+          54,
+          55,
+          60
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 30,
+        "observed_obstacles": 66,
+        "cumulative_energy": 15.9982,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.05,
+          4.5
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          17,
+          18,
+          22,
+          23,
+          24,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          39,
+          40,
+          41,
+          42,
+          43,
+          47,
+          50,
+          51,
+          53,
+          54,
+          55,
+          56,
+          60
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 31,
+        "observed_obstacles": 67,
+        "cumulative_energy": 16.4482,
+        "updated_obstacle_positions": []
+      },
+      {
+        "robot_position": [
+          4.05,
+          4.95
+        ],
+        "drive_towards_goal": true,
+        "object_detected": true,
+        "visible_obstacle_ids": [
+          22,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          40,
+          41,
+          42,
+          43,
+          47,
+          50,
+          51,
+          53,
+          54,
+          55,
+          56,
+          60
+        ],
+        "object_in_path_trajectory": false,
+        "blocking_obstacle_id": null,
+        "more_costly_to_reroute": null,
+        "push_cost": null,
+        "detour_cost": null,
+        "selected_action": "move",
+        "step_index": 32,
+        "observed_obstacles": 67,
+        "cumulative_energy": 16.7808,
+        "updated_obstacle_positions": []
+      }
+    ]
   },
   "planner_config": {
     "step": 0.15,
@@ -61,7 +2318,16 @@
     "lambda_occ": 5.0,
     "lambda_sem": 2.5,
     "step_duration": 1.0,
-    "dynamic_decay": 2.5
+    "dynamic_decay": 2.5,
+    "auto_tune_weights": false,
+    "occupancy_weight_scale": 1.0,
+    "semantic_weight_scale": 0.35,
+    "dynamic_weight_scale": 0.5,
+    "density_weight_scale": 0.25,
+    "min_lambda_occ": 0.5,
+    "max_lambda_occ": 25.0,
+    "min_lambda_sem": 0.5,
+    "max_lambda_sem": 25.0
   },
   "path": [
     [
@@ -106,32 +2372,32 @@
     ],
     [
       2.1,
-      1.5,
-      0.0
-    ],
-    [
-      1.95,
       1.65,
       0.0
     ],
     [
+      1.95,
       1.8,
+      0.0
+    ],
+    [
       1.8,
+      1.95,
       0.0
     ],
     [
       1.65,
-      1.8,
+      1.95,
       0.0
     ],
     [
       1.5,
-      1.95,
+      2.1,
       0.0
     ],
     [
       1.35,
-      2.1,
+      2.25,
       0.0
     ],
     [
@@ -141,7 +2407,347 @@
     ],
     [
       1.05,
+      2.25,
+      0.0
+    ],
+    [
+      0.9,
       2.4,
+      0.0
+    ],
+    [
+      0.75,
+      2.55,
+      0.0
+    ],
+    [
+      0.6,
+      2.7,
+      0.0
+    ],
+    [
+      0.6,
+      2.85,
+      0.0
+    ],
+    [
+      0.6,
+      3.0,
+      0.0
+    ],
+    [
+      0.6,
+      3.15,
+      0.0
+    ],
+    [
+      0.45,
+      3.3,
+      0.0
+    ],
+    [
+      0.3,
+      3.45,
+      0.0
+    ],
+    [
+      0.3,
+      3.6,
+      0.0
+    ],
+    [
+      0.3,
+      3.75,
+      0.0
+    ],
+    [
+      0.3,
+      3.9,
+      0.0
+    ],
+    [
+      0.3,
+      4.05,
+      0.0
+    ],
+    [
+      0.3,
+      3.9,
+      0.0
+    ],
+    [
+      0.3,
+      3.75,
+      0.0
+    ],
+    [
+      0.3,
+      3.6,
+      0.0
+    ],
+    [
+      0.45,
+      3.45,
+      0.0
+    ],
+    [
+      0.6,
+      3.3,
+      0.0
+    ],
+    [
+      0.6,
+      3.15,
+      0.0
+    ],
+    [
+      0.6,
+      3.0,
+      0.0
+    ],
+    [
+      0.6,
+      2.85,
+      0.0
+    ],
+    [
+      0.75,
+      2.7,
+      0.0
+    ],
+    [
+      0.9,
+      2.55,
+      0.0
+    ],
+    [
+      1.05,
+      2.55,
+      0.0
+    ],
+    [
+      1.2,
+      2.55,
+      0.0
+    ],
+    [
+      1.35,
+      2.4,
+      0.0
+    ],
+    [
+      1.5,
+      2.25,
+      0.0
+    ],
+    [
+      1.65,
+      2.1,
+      0.0
+    ],
+    [
+      1.8,
+      1.95,
+      0.0
+    ],
+    [
+      1.95,
+      1.95,
+      0.0
+    ],
+    [
+      2.1,
+      1.95,
+      0.0
+    ],
+    [
+      2.25,
+      1.8,
+      0.0
+    ],
+    [
+      2.4,
+      1.8,
+      0.0
+    ],
+    [
+      2.55,
+      1.65,
+      0.0
+    ],
+    [
+      2.7,
+      1.65,
+      0.0
+    ],
+    [
+      2.85,
+      1.5,
+      0.0
+    ],
+    [
+      3.0,
+      1.5,
+      0.0
+    ],
+    [
+      3.15,
+      1.35,
+      0.0
+    ],
+    [
+      3.3,
+      1.35,
+      0.0
+    ],
+    [
+      3.45,
+      1.35,
+      0.0
+    ],
+    [
+      3.6,
+      1.35,
+      0.0
+    ],
+    [
+      3.75,
+      1.35,
+      0.0
+    ],
+    [
+      3.9,
+      1.35,
+      0.0
+    ],
+    [
+      4.05,
+      1.5,
+      0.0
+    ],
+    [
+      4.05,
+      1.65,
+      0.0
+    ],
+    [
+      4.05,
+      1.8,
+      0.0
+    ],
+    [
+      4.05,
+      1.95,
+      0.0
+    ],
+    [
+      4.05,
+      2.1,
+      0.0
+    ],
+    [
+      4.05,
+      2.25,
+      0.0
+    ],
+    [
+      4.05,
+      2.4,
+      0.0
+    ],
+    [
+      4.2,
+      2.55,
+      0.0
+    ],
+    [
+      4.05,
+      2.7,
+      0.0
+    ],
+    [
+      3.9,
+      2.85,
+      0.0
+    ],
+    [
+      3.9,
+      3.0,
+      0.0
+    ],
+    [
+      3.9,
+      3.15,
+      0.0
+    ],
+    [
+      4.05,
+      3.3,
+      0.0
+    ],
+    [
+      4.05,
+      3.45,
+      0.0
+    ],
+    [
+      4.2,
+      3.6,
+      0.0
+    ],
+    [
+      4.35,
+      3.75,
+      0.0
+    ],
+    [
+      4.35,
+      3.9,
+      0.0
+    ],
+    [
+      4.35,
+      4.05,
+      0.0
+    ],
+    [
+      4.2,
+      4.2,
+      0.0
+    ],
+    [
+      4.05,
+      4.35,
+      0.0
+    ],
+    [
+      4.05,
+      4.5,
+      0.0
+    ],
+    [
+      4.05,
+      4.65,
+      0.0
+    ],
+    [
+      4.05,
+      4.8,
+      0.0
+    ],
+    [
+      4.05,
+      4.95,
+      0.0
+    ],
+    [
+      4.05,
+      5.1,
+      0.0
+    ],
+    [
+      4.096951059454593,
+      5.276433802041602,
       0.0
     ]
   ]

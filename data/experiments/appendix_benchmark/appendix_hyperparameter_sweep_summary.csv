@@ -1,0 +1,73 @@
+sweep_group,factor,factor_level,planner,planner_label,episodes,success_rate_percent,mean_energy,mean_path_length,mean_time_to_goal
+planner_hyperparameter,energy_weight,0.5,baseline_semantic,Baseline Sem.,100,100.0,26.0065,26.0065,18.94
+planner_hyperparameter,energy_weight,0.5,beacon_human_like,BEACON,100,100.0,25.6254,25.6254,37.06
+planner_hyperparameter,energy_weight,1.0,baseline_semantic,Baseline Sem.,100,100.0,26.0065,26.0065,18.94
+planner_hyperparameter,energy_weight,1.0,beacon_human_like,BEACON,100,100.0,25.6254,25.6254,37.06
+planner_hyperparameter,energy_weight,1.5,baseline_semantic,Baseline Sem.,100,100.0,26.0065,26.0065,18.94
+planner_hyperparameter,energy_weight,1.5,beacon_human_like,BEACON,100,100.0,25.6254,25.6254,37.06
+planner_hyperparameter,robot_radius,0.12,baseline_semantic,Baseline Sem.,100,100.0,26.0065,26.0065,18.94
+planner_hyperparameter,robot_radius,0.12,beacon_human_like,BEACON,100,100.0,25.6254,25.6254,37.06
+planner_hyperparameter,robot_radius,0.15,baseline_semantic,Baseline Sem.,100,100.0,26.0065,26.0065,18.94
+planner_hyperparameter,robot_radius,0.15,beacon_human_like,BEACON,100,100.0,25.6644,25.6644,37.2
+planner_hyperparameter,robot_radius,0.45,baseline_semantic,Baseline Sem.,100,99.0,25.8422,25.8422,18.9
+planner_hyperparameter,robot_radius,0.45,beacon_human_like,BEACON,100,100.0,26.5524,26.5524,40.26
+scene_generation,friction_scale,0.7,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,friction_scale,0.7,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,friction_scale,0.7,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,friction_scale,0.7,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,friction_scale,0.7,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,friction_scale,1.0,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,friction_scale,1.0,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,friction_scale,1.0,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,friction_scale,1.0,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,friction_scale,1.0,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,friction_scale,1.3,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,friction_scale,1.3,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,friction_scale,1.3,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,friction_scale,1.3,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,friction_scale,1.3,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_count_scale,0.7,baseline_semantic,Baseline Sem.,400,100.0,24.6717,24.6717,18.4275
+scene_generation,obstacle_count_scale,0.7,beacon_human_like,BEACON,400,100.0,24.1706,24.1706,35.6125
+scene_generation,obstacle_count_scale,0.7,bug1_geometric,Bug,400,35.0,9.7436,9.7436,7.075
+scene_generation,obstacle_count_scale,0.7,bug2_geometric,Bug2,400,27.25,6.9845,6.9845,4.9725
+scene_generation,obstacle_count_scale,0.7,dstar_lite_geometric,D* Lite,400,100.0,24.6717,24.6717,18.4275
+scene_generation,obstacle_count_scale,1.0,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_count_scale,1.0,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,obstacle_count_scale,1.0,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_count_scale,1.0,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_count_scale,1.0,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_count_scale,1.3,baseline_semantic,Baseline Sem.,400,100.0,24.969,24.969,18.935
+scene_generation,obstacle_count_scale,1.3,beacon_human_like,BEACON,400,100.0,24.4152,24.4152,36.4175
+scene_generation,obstacle_count_scale,1.3,bug1_geometric,Bug,400,19.25,5.223,5.223,3.765
+scene_generation,obstacle_count_scale,1.3,bug2_geometric,Bug2,400,16.25,4.1689,4.1689,2.9625
+scene_generation,obstacle_count_scale,1.3,dstar_lite_geometric,D* Lite,400,100.0,24.969,24.969,18.935
+scene_generation,obstacle_density_scale,0.7,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_density_scale,0.7,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,obstacle_density_scale,0.7,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_density_scale,0.7,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_density_scale,0.7,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_density_scale,1.0,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_density_scale,1.0,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,obstacle_density_scale,1.0,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_density_scale,1.0,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_density_scale,1.0,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_density_scale,1.4,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_density_scale,1.4,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,obstacle_density_scale,1.4,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_density_scale,1.4,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_density_scale,1.4,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_size_scale,0.75,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_size_scale,0.75,beacon_human_like,BEACON,400,100.0,24.2694,24.2694,35.9375
+scene_generation,obstacle_size_scale,0.75,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_size_scale,0.75,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_size_scale,0.75,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_size_scale,1.0,baseline_semantic,Baseline Sem.,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_size_scale,1.0,beacon_human_like,BEACON,400,100.0,24.3578,24.3578,36.225
+scene_generation,obstacle_size_scale,1.0,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_size_scale,1.0,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_size_scale,1.0,dstar_lite_geometric,D* Lite,400,100.0,24.9002,24.9002,18.8175
+scene_generation,obstacle_size_scale,1.35,baseline_semantic,Baseline Sem.,400,100.0,24.9046,24.9046,18.825
+scene_generation,obstacle_size_scale,1.35,beacon_human_like,BEACON,400,100.0,24.8033,24.8033,37.58
+scene_generation,obstacle_size_scale,1.35,bug1_geometric,Bug,400,25.0,7.2203,7.2203,5.26
+scene_generation,obstacle_size_scale,1.35,bug2_geometric,Bug2,400,20.25,5.2363,5.2363,3.7275
+scene_generation,obstacle_size_scale,1.35,dstar_lite_geometric,D* Lite,400,100.0,24.9046,24.9046,18.825

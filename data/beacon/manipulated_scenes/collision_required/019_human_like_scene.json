@@ -1,4 +1,5 @@
 {
+  "family": "collision_required",
   "workspace": [
     0,
     6,
@@ -18,13 +19,31 @@
   "obstacles": [
     {
       "id": 0,
+      "shape": "triangle",
       "shape_type": "triangle",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        4.315812089049141,
-        0.381955569941393
+        4.3158,
+        0.382
       ],
+      "position": [
+        4.3158,
+        0.382
+      ],
+      "size": {
+        "area": 0.0665,
+        "width": 0.4037,
+        "height": 0.3647
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0233,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           4.560383458202526,
@@ -39,29 +58,43 @@
           0.2031245042925185
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0233,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 1,
+      "shape": "hexagon",
       "shape_type": "hexagon",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        3.8630079401093327,
-        0.653768894556969
+        3.863,
+        0.6538
       ],
+      "position": [
+        3.863,
+        0.6538
+      ],
+      "size": {
+        "area": 0.1231,
+        "width": 0.3954,
+        "height": 0.4335
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0985,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           3.843004524287886,
@@ -88,29 +121,43 @@
           0.7794640742506471
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 2,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        3.522,
+        1.0591
+      ],
+      "position": [
+        3.522,
+        1.0591
+      ],
+      "size": {
+        "area": 0.1159,
+        "width": 0.4063,
+        "height": 0.573
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0985,
+        "mass": 0.0927,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 2,
-      "shape_type": "triangle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        3.521981188193434,
-        1.059085573012765
-      ],
       "vertices": [
         [
           3.7909055926525017,
@@ -125,30 +172,79 @@
           0.7314967734064851
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 3,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        2.7454,
+        1.3846
+      ],
+      "position": [
+        2.7454,
+        1.3846
+      ],
+      "size": {
+        "area": 0.1808,
+        "width": 0.5136,
+        "height": 0.5051
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0927,
+        "mass": 0.1446,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 3,
-      "shape_type": "hexagon",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        2.745401473756427,
-        1.3845599700868099
-      ],
       "vertices": [
+        [
+          3.0467373742411805,
+          1.5563300773858801
+        ],
+        [
+          2.866079803577203,
+          1.7485631065170022
+        ],
+        [
+          2.6092723315712285,
+          1.6882255755015767
+        ],
+        [
+          2.5331224302292314,
+          1.435655015355029
+        ],
+        [
+          2.7137800008932085,
+          1.2434219862239067
+        ],
+        [
+          2.9705874728991835,
+          1.3037595172393321
+        ]
+      ],
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666648102,
+        "movable": 0.8000000000059927,
+        "fragile": 0.06666666666376321,
+        "forbidden": 0.06666666666376321
+      },
+      "map_class": "movable",
+      "push_count": 1,
+      "previous_vertices": [
         [
           3.0022089457624017,
           1.4448975011022356
@@ -173,30 +269,35 @@
           2.9260590444204047,
           1.1923269409556876
         ]
-      ],
-      "semantic_probs": {
-        "movable": 1.0
-      },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.1446,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      ]
     },
     {
       "id": 4,
+      "shape": "pentagon",
       "shape_type": "pentagon",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        1.9436652555647829,
-        1.8578785426447326
+        1.9437,
+        1.8579
       ],
+      "position": [
+        1.9437,
+        1.8579
+      ],
+      "size": {
+        "area": 0.0654,
+        "width": 0.3148,
+        "height": 0.3056
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0229,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           1.789518073842862,
@@ -219,29 +320,43 @@
           2.0233738238469363
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 5,
+      "shape": "parallelogram",
+      "shape_type": "parallelogram",
+      "class_true": "fragile",
+      "center": [
+        1.3318,
+        2.3602
+      ],
+      "position": [
+        1.3318,
+        2.3602
+      ],
+      "size": {
+        "area": 0.0997,
+        "width": 0.348,
+        "height": 0.5075
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0229,
+        "mass": 0.0349,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 5,
-      "shape_type": "parallelogram",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        1.3318426665536438,
-        2.360181954815854
-      ],
       "vertices": [
         [
           1.1578431497636172,
@@ -260,29 +375,43 @@
           2.5064980610135033
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 6,
+      "shape": "pentagon",
+      "shape_type": "pentagon",
+      "class_true": "fragile",
+      "center": [
+        0.8612,
+        2.5835
+      ],
+      "position": [
+        0.8612,
+        2.5835
+      ],
+      "size": {
+        "area": 0.0874,
+        "width": 0.359,
+        "height": 0.3614
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0349,
+        "mass": 0.0306,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 6,
-      "shape_type": "pentagon",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        0.8611958462550429,
-        2.5835362474076065
-      ],
       "vertices": [
         [
           0.9446835277366836,
@@ -305,29 +434,43 @@
           2.5574850208019617
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666554925034,
+        "movable": 0.06666666554925034,
+        "fragile": 0.7999999865910029,
+        "forbidden": 0.06666668231049647
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "shape_type": "rectangle",
+      "class_true": "fragile",
+      "center": [
+        0.4992,
+        2.806
+      ],
+      "position": [
+        0.4992,
+        2.806
+      ],
+      "size": {
+        "area": 0.1802,
+        "width": 0.5257,
+        "height": 0.5578
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0306,
+        "mass": 0.0631,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 7,
-      "shape_type": "rectangle",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        0.49920524430419416,
-        2.8059957429922076
-      ],
       "vertices": [
         [
           0.61307796252352,
@@ -346,29 +489,43 @@
           2.6587316352124826
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666096387922,
+        "movable": 0.06666666096387922,
+        "fragile": 0.7999999315665495,
+        "forbidden": 0.0666667465056926
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0631,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 8,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        5.278905363063579,
-        0.2337408814072673
+        5.2789,
+        0.2337
       ],
+      "position": [
+        5.2789,
+        0.2337
+      ],
+      "size": {
+        "area": 0.048,
+        "width": 0.297,
+        "height": 0.3066
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0384,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           5.4391246054527524,
@@ -387,29 +544,43 @@
           0.11057764334444403
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "shape_type": "rectangle",
+      "class_true": "movable",
+      "center": [
+        4.8554,
+        0.3966
+      ],
+      "position": [
+        4.8554,
+        0.3966
+      ],
+      "size": {
+        "area": 0.0943,
+        "width": 0.235,
+        "height": 0.4712
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0384,
+        "mass": 0.0754,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 9,
-      "shape_type": "rectangle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        4.855371558977461,
-        0.3966352856829676
-      ],
       "vertices": [
         [
           4.972890871930062,
@@ -428,30 +599,79 @@
           0.16104399567380578
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 10,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        2.5559,
+        1.8395
+      ],
+      "position": [
+        2.5559,
+        1.8395
+      ],
+      "size": {
+        "area": 0.1061,
+        "width": 0.3943,
+        "height": 0.3858
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0754,
+        "mass": 0.0849,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 10,
-      "shape_type": "hexagon",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        2.555944236462219,
-        1.839532191972676
-      ],
       "vertices": [
+        [
+          2.38994211503949,
+          1.9618206432069125
+        ],
+        [
+          2.4501756296696717,
+          1.768921839877623
+        ],
+        [
+          2.6473476510275455,
+          1.7246361920419375
+        ],
+        [
+          2.7842861577552376,
+          1.8732493475355412
+        ],
+        [
+          2.724052643125056,
+          2.0661481508648305
+        ],
+        [
+          2.526880621767182,
+          2.1104337987005164
+        ]
+      ],
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0,
+      "previous_vertices": [
         [
           2.3587722151043446,
           1.8838178398083614
@@ -476,30 +696,35 @@
           2.4957107218320367,
           2.032430995301965
         ]
-      ],
-      "semantic_probs": {
-        "movable": 1.0
-      },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0849,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      ]
     },
     {
       "id": 11,
+      "shape": "triangle",
       "shape_type": "triangle",
       "class_true": "safe",
-      "radius": 0.0,
       "center": [
-        2.1807146858993804,
-        2.193840281381096
+        2.1807,
+        2.1938
       ],
+      "position": [
+        2.1807,
+        2.1938
+      ],
+      "size": {
+        "area": 0.0638,
+        "width": 0.34,
+        "height": 0.4129
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.0638,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           2.389645058388947,
@@ -514,29 +739,43 @@
           1.9760903836952497
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "safe",
-        "density": 1.0,
-        "mass": 0.0638,
-        "friction": 0.9,
-        "fragility": 0.05,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "safe",
+      "push_count": 0
     },
     {
       "id": 12,
+      "shape": "hexagon",
       "shape_type": "hexagon",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        1.8431185076134589,
-        2.4417594605258164
+        1.8431,
+        2.4418
       ],
+      "position": [
+        1.8431,
+        2.4418
+      ],
+      "size": {
+        "area": 0.0776,
+        "width": 0.3069,
+        "height": 0.3454
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0272,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           1.697466683270899,
@@ -563,29 +802,43 @@
           2.614451784563834
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 13,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "fragile",
+      "center": [
+        0.3506,
+        3.378
+      ],
+      "position": [
+        0.3506,
+        3.378
+      ],
+      "size": {
+        "area": 0.1549,
+        "width": 0.3557,
+        "height": 0.5596
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0272,
+        "mass": 0.0542,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 13,
-      "shape_type": "trapezoid",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        0.3506466836998691,
-        3.377973083929446
-      ],
       "vertices": [
         [
           0.519458438612627,
@@ -604,29 +857,43 @@
           3.1846235788888584
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666662887209707,
+        "movable": 0.06666662887209707,
+        "fragile": 0.7999995464651638,
+        "forbidden": 0.06666719579064227
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0542,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 14,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        5.463180745289155,
-        0.45118047630774477
+        5.4632,
+        0.4512
       ],
+      "position": [
+        5.4632,
+        0.4512
+      ],
+      "size": {
+        "area": 0.0814,
+        "width": 0.385,
+        "height": 0.3685
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0651,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           5.520817287107953,
@@ -645,29 +912,43 @@
           0.4259847878262769
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 15,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        4.6241,
+        0.963
+      ],
+      "position": [
+        4.6241,
+        0.963
+      ],
+      "size": {
+        "area": 0.0639,
+        "width": 0.3329,
+        "height": 0.3975
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0651,
+        "mass": 0.0511,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 15,
-      "shape_type": "triangle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        4.624100375224009,
-        0.9630200635849463
-      ],
       "vertices": [
         [
           4.4717529646314995,
@@ -682,29 +963,43 @@
           1.215660417479802
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0511,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 16,
+      "shape": "rectangle",
       "shape_type": "rectangle",
       "class_true": "safe",
-      "radius": 0.0,
       "center": [
-        4.1928489601855485,
-        1.1924919462514034
+        4.1928,
+        1.1925
       ],
+      "position": [
+        4.1928,
+        1.1925
+      ],
+      "size": {
+        "area": 0.2264,
+        "width": 0.662,
+        "height": 0.6316
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.2264,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           4.523864340529842,
@@ -723,29 +1018,43 @@
           0.8766728379021322
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "safe",
-        "density": 1.0,
-        "mass": 0.2264,
-        "friction": 0.9,
-        "fragility": 0.05,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "safe",
+      "push_count": 0
     },
     {
       "id": 17,
+      "shape": "circle",
       "shape_type": "circle",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        3.4711552628510534,
-        1.775682525535553
+        3.4712,
+        1.7757
       ],
+      "position": [
+        3.4712,
+        1.7757
+      ],
+      "size": {
+        "area": 0.0896,
+        "width": 0.3378,
+        "height": 0.3378
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0717,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           3.418969053115094,
@@ -1260,29 +1569,43 @@
           1.9336008945821819
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 18,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        1.9695,
+        2.7744
+      ],
+      "position": [
+        1.9695,
+        2.7744
+      ],
+      "size": {
+        "area": 0.0384,
+        "width": 0.3247,
+        "height": 0.2421
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0717,
+        "mass": 0.0307,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 18,
-      "shape_type": "triangle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        1.969547949457202,
-        2.774407691242024
-      ],
       "vertices": [
         [
           2.1347474464757155,
@@ -1297,29 +1620,43 @@
           2.6168668915200612
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0307,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 19,
+      "shape": "parallelogram",
       "shape_type": "parallelogram",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        1.5469142986616111,
-        2.955220830207607
+        1.5469,
+        2.9552
       ],
+      "position": [
+        1.5469,
+        2.9552
+      ],
+      "size": {
+        "area": 0.0543,
+        "width": 0.3225,
+        "height": 0.4545
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.019,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           1.7081631785429836,
@@ -1338,29 +1675,43 @@
           2.8987811878540795
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.019,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 20,
+      "shape": "hexagon",
       "shape_type": "hexagon",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        5.183130048500469,
-        1.068882211735679
+        5.1831,
+        1.0689
       ],
+      "position": [
+        5.1831,
+        1.0689
+      ],
+      "size": {
+        "area": 0.1033,
+        "width": 0.3979,
+        "height": 0.358
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0826,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           5.0720960387202725,
@@ -1387,29 +1738,43 @@
           1.2478605853510358
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0826,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 21,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        4.849954770580834,
-        1.2758760851472648
+        4.85,
+        1.2759
       ],
+      "position": [
+        4.85,
+        1.2759
+      ],
+      "size": {
+        "area": 0.0804,
+        "width": 0.3052,
+        "height": 0.392
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0281,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           4.9432993217473635,
@@ -1428,29 +1793,43 @@
           1.1945877265265694
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0281,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 22,
+      "shape": "parallelogram",
       "shape_type": "parallelogram",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        4.365492153587256,
-        1.6543003180656197
+        4.3655,
+        1.6543
       ],
+      "position": [
+        4.3655,
+        1.6543
+      ],
+      "size": {
+        "area": 0.1604,
+        "width": 0.6045,
+        "height": 0.4863
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.1283,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           4.6677456766051355,
@@ -1469,29 +1848,43 @@
           1.4504669818566138
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 23,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        3.2628,
+        2.1708
+      ],
+      "position": [
+        3.2628,
+        2.1708
+      ],
+      "size": {
+        "area": 0.1563,
+        "width": 0.4521,
+        "height": 0.4867
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.1283,
+        "mass": 0.125,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 23,
-      "shape_type": "hexagon",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        3.262754276907923,
-        2.170805882196256
-      ],
       "vertices": [
         [
           3.488780077386298,
@@ -1518,29 +1911,43 @@
           2.022676339267068
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 24,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "movable",
+      "center": [
+        2.8656,
+        2.3826
+      ],
+      "position": [
+        2.8656,
+        2.3826
+      ],
+      "size": {
+        "area": 0.0703,
+        "width": 0.2707,
+        "height": 0.5246
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.125,
+        "mass": 0.0562,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 24,
-      "shape_type": "triangle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        2.8656255364189196,
-        2.3825557235415062
-      ],
       "vertices": [
         [
           2.767751384899672,
@@ -1555,30 +1962,71 @@
           2.7117350931834348
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 25,
+      "shape": "parallelogram",
+      "shape_type": "parallelogram",
+      "class_true": "movable",
+      "center": [
+        1.0738,
+        3.7203
+      ],
+      "position": [
+        1.0738,
+        3.7203
+      ],
+      "size": {
+        "area": 0.2283,
+        "width": 0.4436,
+        "height": 0.6366
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0562,
+        "mass": 0.1826,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 25,
-      "shape_type": "parallelogram",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        1.07376052140457,
-        3.720270307312108
-      ],
       "vertices": [
+        [
+          1.4191249357736326,
+          3.3706269145825756
+        ],
+        [
+          1.411391060075852,
+          3.8962743863108864
+        ],
+        [
+          0.9754983295780671,
+          4.007197443209555
+        ],
+        [
+          0.9832322052758479,
+          3.4815499714812446
+        ]
+      ],
+      "observed": true,
+      "belief": {
+        "safe": 0.06666757225022862,
+        "movable": 0.7999993114518016,
+        "fragile": 0.06666655814898496,
+        "forbidden": 0.06666655814898496
+      },
+      "map_class": "movable",
+      "push_count": 0,
+      "previous_vertices": [
         [
           1.2955738245023525,
           3.4019850429986183
@@ -1595,30 +2043,35 @@
           0.8596810940045676,
           3.5129080998972873
         ]
+      ]
+    },
+    {
+      "id": 26,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "movable",
+      "center": [
+        0.2975,
+        4.1896
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "position": [
+        0.2975,
+        4.1896
+      ],
+      "size": {
+        "area": 0.1548,
+        "width": 0.5554,
+        "height": 0.525
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.1826,
+        "mass": 0.1238,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 26,
-      "shape_type": "trapezoid",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        0.29751429807486834,
-        4.189565011395061
-      ],
       "vertices": [
         [
           0.12317723854042947,
@@ -1637,29 +2090,43 @@
           4.287878271662604
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 27,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "movable",
+      "center": [
+        5.6892,
+        1.0671
+      ],
+      "position": [
+        5.6892,
+        1.0671
+      ],
+      "size": {
+        "area": 0.0638,
+        "width": 0.2827,
+        "height": 0.3703
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.1238,
+        "mass": 0.051,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 27,
-      "shape_type": "trapezoid",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        5.689167241851456,
-        1.0670817613884875
-      ],
       "vertices": [
         [
           5.832920418750281,
@@ -1678,29 +2145,43 @@
           0.9021459828420705
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.051,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 28,
+      "shape": "circle",
       "shape_type": "circle",
       "class_true": "safe",
-      "radius": 0.0,
       "center": [
-        3.822303299636037,
-        2.2252807618962063
+        3.8223,
+        2.2253
       ],
+      "position": [
+        3.8223,
+        2.2253
+      ],
+      "size": {
+        "area": 0.1344,
+        "width": 0.4137,
+        "height": 0.4137
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.1344,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           3.794931723159091,
@@ -2215,29 +2696,43 @@
           2.4287344246297695
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "safe",
-        "density": 1.0,
-        "mass": 0.1344,
-        "friction": 0.9,
-        "fragility": 0.05,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "safe",
+      "push_count": 0
     },
     {
       "id": 29,
+      "shape": "triangle",
       "shape_type": "triangle",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        3.110641537998416,
-        2.7097517713237624
+        3.1106,
+        2.7098
       ],
+      "position": [
+        3.1106,
+        2.7098
+      ],
+      "size": {
+        "area": 0.0627,
+        "width": 0.371,
+        "height": 0.359
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0502,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           2.975487062550559,
@@ -2252,29 +2747,43 @@
           2.8725389584513805
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 30,
+      "shape": "circle",
+      "shape_type": "circle",
+      "class_true": "movable",
+      "center": [
+        2.6591,
+        2.998
+      ],
+      "position": [
+        2.6591,
+        2.998
+      ],
+      "size": {
+        "area": 0.1552,
+        "width": 0.4446,
+        "height": 0.4446
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0502,
+        "mass": 0.1242,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 30,
-      "shape_type": "circle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        2.6590830162968238,
-        2.997981380419563
-      ],
       "vertices": [
         [
           2.537694432819392,
@@ -2789,29 +3298,43 @@
           3.1780255274880487
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.1242,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 31,
+      "shape": "hexagon",
       "shape_type": "hexagon",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        1.9715688853297626,
-        3.456958367124743
+        1.9716,
+        3.457
       ],
+      "position": [
+        1.9716,
+        3.457
+      ],
+      "size": {
+        "area": 0.1277,
+        "width": 0.4422,
+        "height": 0.3995
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0447,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           1.846653530511843,
@@ -2838,29 +3361,43 @@
           3.656731140758371
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 32,
+      "shape": "parallelogram",
+      "shape_type": "parallelogram",
+      "class_true": "fragile",
+      "center": [
+        1.5966,
+        3.8605
+      ],
+      "position": [
+        1.5966,
+        3.8605
+      ],
+      "size": {
+        "area": 0.1466,
+        "width": 0.3614,
+        "height": 0.7259
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0447,
+        "mass": 0.0513,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 32,
-      "shape_type": "parallelogram",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        1.5965875124772373,
-        3.860533983287665
-      ],
       "vertices": [
         [
           1.7048800592638476,
@@ -2879,29 +3416,43 @@
           3.789440354345801
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666655281882448,
+        "movable": 0.06666655281882448,
+        "fragile": 0.7999986338258929,
+        "forbidden": 0.06666826053645832
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0513,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 33,
+      "shape": "rectangle",
       "shape_type": "rectangle",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        5.548310117214114,
-        1.5251642662755294
+        5.5483,
+        1.5252
       ],
+      "position": [
+        5.5483,
+        1.5252
+      ],
+      "size": {
+        "area": 0.0801,
+        "width": 0.391,
+        "height": 0.4348
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0641,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           5.523490176460014,
@@ -2920,29 +3471,43 @@
           1.4268449710006073
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0641,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 34,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        5.124989683483108,
-        1.788924766261805
+        5.125,
+        1.7889
       ],
+      "position": [
+        5.125,
+        1.7889
+      ],
+      "size": {
+        "area": 0.168,
+        "width": 0.5827,
+        "height": 0.577
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0588,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           5.452873020779829,
@@ -2961,29 +3526,43 @@
           1.5288870022742318
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0588,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 35,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        4.338537076263297,
-        2.294401963018797
+        4.3385,
+        2.2944
       ],
+      "position": [
+        4.3385,
+        2.2944
+      ],
+      "size": {
+        "area": 0.0815,
+        "width": 0.3099,
+        "height": 0.4555
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0652,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           4.496984145050481,
@@ -3002,29 +3581,43 @@
           2.088790178803087
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0652,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 36,
+      "shape": "triangle",
       "shape_type": "triangle",
       "class_true": "safe",
-      "radius": 0.0,
       "center": [
-        3.7780843636820625,
-        2.758433083162445
+        3.7781,
+        2.7584
       ],
+      "position": [
+        3.7781,
+        2.7584
+      ],
+      "size": {
+        "area": 0.0784,
+        "width": 0.4102,
+        "height": 0.3856
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.0784,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           3.7347910753031104,
@@ -3039,29 +3632,43 @@
           2.89007817951205
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "safe",
+      "push_count": 0
+    },
+    {
+      "id": 37,
+      "shape": "rectangle",
+      "shape_type": "rectangle",
+      "class_true": "safe",
+      "center": [
+        2.5381,
+        3.5357
+      ],
+      "position": [
+        2.5381,
+        3.5357
+      ],
+      "size": {
+        "area": 0.1988,
+        "width": 0.3513,
+        "height": 0.6228
       },
       "material": {
         "name": "safe",
         "density": 1.0,
-        "mass": 0.0784,
+        "mass": 0.1988,
         "friction": 0.9,
         "fragility": 0.05,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 37,
-      "shape_type": "rectangle",
-      "class_true": "safe",
-      "radius": 0.0,
-      "center": [
-        2.5381094238589186,
-        3.535670734208066
-      ],
       "vertices": [
         [
           2.7137802308203884,
@@ -3080,29 +3687,43 @@
           3.2242712301208476
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "safe",
-        "density": 1.0,
-        "mass": 0.1988,
-        "friction": 0.9,
-        "fragility": 0.05,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "safe",
+      "push_count": 0
     },
     {
       "id": 38,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        1.0122716799501228,
-        4.532639006810442
+        1.0123,
+        4.5326
       ],
+      "position": [
+        1.0123,
+        4.5326
+      ],
+      "size": {
+        "area": 0.0697,
+        "width": 0.3436,
+        "height": 0.3139
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0558,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           1.0900231379922662,
@@ -3121,29 +3742,43 @@
           4.4981180598135735
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.10300338693271337,
+        "movable": 0.7688542397719601,
+        "fragile": 0.06407118664766331,
+        "forbidden": 0.06407118664766331
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0558,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 39,
+      "shape": "circle",
       "shape_type": "circle",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        0.589531254439215,
-        4.796671577453603
+        0.5895,
+        4.7967
       ],
+      "position": [
+        0.5895,
+        4.7967
+      ],
+      "size": {
+        "area": 0.1434,
+        "width": 0.4273,
+        "height": 0.4273
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0502,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           0.6727068415925733,
@@ -3658,29 +4293,43 @@
           4.997316034404069
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0502,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 40,
+      "shape": "pentagon",
       "shape_type": "pentagon",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        4.959809834201528,
-        2.402637958360972
+        4.9598,
+        2.4026
       ],
+      "position": [
+        4.9598,
+        2.4026
+      ],
+      "size": {
+        "area": 0.1494,
+        "width": 0.4745,
+        "height": 0.4656
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.1195,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           4.832937167238818,
@@ -3703,29 +4352,43 @@
           2.590096885853412
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.1195,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 41,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        3.7659573915276114,
-        3.070216988745682
+        3.766,
+        3.0702
       ],
+      "position": [
+        3.766,
+        3.0702
+      ],
+      "size": {
+        "area": 0.0467,
+        "width": 0.2959,
+        "height": 0.2875
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0163,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           3.7923676260018166,
@@ -3744,29 +4407,43 @@
           3.066160271825857
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 42,
+      "shape": "trapezoid",
+      "shape_type": "trapezoid",
+      "class_true": "fragile",
+      "center": [
+        3.4633,
+        3.2744
+      ],
+      "position": [
+        3.4633,
+        3.2744
+      ],
+      "size": {
+        "area": 0.0548,
+        "width": 0.3266,
+        "height": 0.333
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0163,
+        "mass": 0.0192,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 42,
-      "shape_type": "trapezoid",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        3.4632669239798726,
-        3.2744068173959495
-      ],
       "vertices": [
         [
           3.6459517011572995,
@@ -3785,29 +4462,43 @@
           3.118987891617651
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 43,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "fragile",
+      "center": [
+        3.1206,
+        3.5409
+      ],
+      "position": [
+        3.1206,
+        3.5409
+      ],
+      "size": {
+        "area": 0.1062,
+        "width": 0.3728,
+        "height": 0.4011
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0192,
+        "mass": 0.0372,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 43,
-      "shape_type": "hexagon",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        3.120612684093312,
-        3.540862931521972
-      ],
       "vertices": [
         [
           3.2815761034416715,
@@ -3834,29 +4525,43 @@
           3.4626233449002988
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 44,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "fragile",
+      "center": [
+        2.3946,
+        4.0119
+      ],
+      "position": [
+        2.3946,
+        4.0119
+      ],
+      "size": {
+        "area": 0.074,
+        "width": 0.5612,
+        "height": 0.3003
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0372,
+        "mass": 0.0259,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 44,
-      "shape_type": "triangle",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        2.394580614804324,
-        4.0119040456019786
-      ],
       "vertices": [
         [
           2.126942742323039,
@@ -3871,29 +4576,43 @@
           4.1838253816294255
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 45,
+      "shape": "pentagon",
+      "shape_type": "pentagon",
+      "class_true": "fragile",
+      "center": [
+        1.9374,
+        4.2749
+      ],
+      "position": [
+        1.9374,
+        4.2749
+      ],
+      "size": {
+        "area": 0.0882,
+        "width": 0.3591,
+        "height": 0.3638
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0259,
+        "mass": 0.0309,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 45,
-      "shape_type": "pentagon",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        1.9373551425655726,
-        4.274851166464815
-      ],
       "vertices": [
         [
           2.0790555567540134,
@@ -3916,30 +4635,79 @@
           4.1803766236737765
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0309,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 46,
+      "shape": "hexagon",
       "shape_type": "hexagon",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        1.6209192276321502,
-        4.499961570273873
+        1.6209,
+        4.5
       ],
+      "position": [
+        1.6209,
+        4.5
+      ],
+      "size": {
+        "area": 0.1218,
+        "width": 0.377,
+        "height": 0.4329
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0974,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
+        [
+          1.4548192216432005,
+          4.619675439799366
+        ],
+        [
+          1.4527192161122005,
+          4.4032019760167955
+        ],
+        [
+          1.6391407322276166,
+          4.293146585987577
+        ],
+        [
+          1.8276622538740328,
+          4.399564659740928
+        ],
+        [
+          1.829762259405033,
+          4.616038123523498
+        ],
+        [
+          1.6433407432896165,
+          4.726093513552717
+        ]
+      ],
+      "observed": true,
+      "belief": {
+        "safe": 0.9895407424527521,
+        "movable": 0.008965077897641123,
+        "fragile": 0.0007470898248034269,
+        "forbidden": 0.0007470898248034269
+      },
+      "map_class": "safe",
+      "push_count": 0,
+      "previous_vertices": [
         [
           1.434497711516734,
           4.610016960303093
@@ -3964,30 +4732,35 @@
           1.62301923316315,
           4.7164350340564445
         ]
-      ],
-      "semantic_probs": {
-        "movable": 1.0
-      },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0974,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      ]
     },
     {
       "id": 47,
+      "shape": "triangle",
       "shape_type": "triangle",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        0.9047885420066607,
-        4.982368971635008
+        0.9048,
+        4.9824
       ],
+      "position": [
+        0.9048,
+        4.9824
+      ],
+      "size": {
+        "area": 0.0475,
+        "width": 0.2414,
+        "height": 0.4155
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0166,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           0.966935483972898,
@@ -4002,29 +4775,43 @@
           4.992400489590054
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 48,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "fragile",
+      "center": [
+        5.6903,
+        2.9016
+      ],
+      "position": [
+        5.6903,
+        2.9016
+      ],
+      "size": {
+        "area": 0.0807,
+        "width": 0.4172,
+        "height": 0.405
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0166,
+        "mass": 0.0282,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 48,
-      "shape_type": "triangle",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        5.690346729345188,
-        2.9015688340018753
-      ],
       "vertices": [
         [
           5.904248983850904,
@@ -4039,29 +4826,43 @@
           2.7888700629393117
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0282,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 49,
+      "shape": "circle",
       "shape_type": "circle",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        4.345908461672876,
-        3.749893950575703
+        4.3459,
+        3.7499
       ],
+      "position": [
+        4.3459,
+        3.7499
+      ],
+      "size": {
+        "area": 0.0734,
+        "width": 0.3059,
+        "height": 0.3059
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0587,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           4.193160412174744,
@@ -4576,29 +5377,43 @@
           3.7498002062223055
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 50,
+      "shape": "circle",
+      "shape_type": "circle",
+      "class_true": "movable",
+      "center": [
+        5.1718,
+        4.5117
+      ],
+      "position": [
+        5.1718,
+        4.5117
+      ],
+      "size": {
+        "area": 0.1172,
+        "width": 0.3863,
+        "height": 0.3863
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0587,
+        "mass": 0.0938,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 50,
-      "shape_type": "circle",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        5.171752917063374,
-        4.5116923953785815
-      ],
       "vertices": [
         [
           4.979390606895955,
@@ -5113,29 +5928,43 @@
           4.519838174619903
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0938,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 51,
+      "shape": "parallelogram",
       "shape_type": "parallelogram",
       "class_true": "safe",
-      "radius": 0.0,
       "center": [
-        4.171658951394311,
-        3.4357858926971394
+        4.1717,
+        3.4358
       ],
+      "position": [
+        4.1717,
+        3.4358
+      ],
+      "size": {
+        "area": 0.1138,
+        "width": 0.6471,
+        "height": 0.3293
+      },
+      "material": {
+        "name": "safe",
+        "density": 1.0,
+        "mass": 0.1138,
+        "friction": 0.9,
+        "fragility": 0.05,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           4.495221545113113,
@@ -5154,29 +5983,43 @@
           3.271132667584383
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "safe",
+      "push_count": 0
+    },
+    {
+      "id": 52,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "safe",
+      "center": [
+        5.0703,
+        5.7189
+      ],
+      "position": [
+        5.0703,
+        5.7189
+      ],
+      "size": {
+        "area": 0.0381,
+        "width": 0.2419,
+        "height": 0.2151
       },
       "material": {
         "name": "safe",
         "density": 1.0,
-        "mass": 0.1138,
+        "mass": 0.0381,
         "friction": 0.9,
         "fragility": 0.05,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 52,
-      "shape_type": "hexagon",
-      "class_true": "safe",
-      "radius": 0.0,
-      "center": [
-        5.0703239309001376,
-        5.7189036863635225
-      ],
       "vertices": [
         [
           5.005013875701008,
@@ -5203,29 +6046,43 @@
           5.826449440092803
         ]
       ],
-      "semantic_probs": {
-        "safe": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.8,
+        "movable": 0.06666666666666665,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "safe",
-        "density": 1.0,
-        "mass": 0.0381,
-        "friction": 0.9,
-        "fragility": 0.05,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "safe",
+      "push_count": 0
     },
     {
       "id": 53,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        2.110540074015121,
-        5.038036202992537
+        2.1105,
+        5.038
       ],
+      "position": [
+        2.1105,
+        5.038
+      ],
+      "size": {
+        "area": 0.0354,
+        "width": 0.2256,
+        "height": 0.2132
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0124,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           2.0178743117845093,
@@ -5244,30 +6101,71 @@
           5.114956716521106
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0124,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 54,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        3.1291537852677553,
-        0.4334377922240168
+        3.1292,
+        0.4334
       ],
+      "position": [
+        3.1292,
+        0.4334
+      ],
+      "size": {
+        "area": 0.0322,
+        "width": 0.2562,
+        "height": 0.2552
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0258,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
+        [
+          3.1839416439439887,
+          0.1931888907458661
+        ],
+        [
+          3.332495197607834,
+          0.34630631949170787
+        ],
+        [
+          3.148843931071752,
+          0.4484350030001333
+        ],
+        [
+          3.0763041789688064,
+          0.37366667837965634
+        ]
+      ],
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666682576185,
+        "movable": 0.7999999998639674,
+        "fragile": 0.06666666665513546,
+        "forbidden": 0.06666666665513546
+      },
+      "map_class": "movable",
+      "push_count": 1,
+      "previous_vertices": [
         [
           3.1193535580235054,
           0.29432434030302324
@@ -5284,30 +6182,35 @@
           3.011716093048323,
           0.4748021279368135
         ]
-      ],
-      "semantic_probs": {
-        "movable": 1.0
-      },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0258,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      ]
     },
     {
       "id": 55,
+      "shape": "trapezoid",
       "shape_type": "trapezoid",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        1.1078215838657965,
-        5.691832927817629
+        1.1078,
+        5.6918
       ],
+      "position": [
+        1.1078,
+        5.6918
+      ],
+      "size": {
+        "area": 0.174,
+        "width": 0.5854,
+        "height": 0.587
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0609,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           1.0869832992450301,
@@ -5326,29 +6229,43 @@
           5.711753927453549
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "fragile",
+      "push_count": 0
+    },
+    {
+      "id": 56,
+      "shape": "triangle",
+      "shape_type": "triangle",
+      "class_true": "fragile",
+      "center": [
+        3.4845,
+        4.1013
+      ],
+      "position": [
+        3.4845,
+        4.1013
+      ],
+      "size": {
+        "area": 0.0316,
+        "width": 0.2502,
+        "height": 0.2756
       },
       "material": {
         "name": "fragile",
         "density": 0.35,
-        "mass": 0.0609,
+        "mass": 0.0111,
         "friction": 0.75,
         "fragility": 0.95,
         "pushable": false
       },
       "movable": false,
-      "previous_vertices": []
-    },
-    {
-      "id": 56,
-      "shape_type": "triangle",
-      "class_true": "fragile",
-      "radius": 0.0,
-      "center": [
-        3.484470529434248,
-        4.101260080854704
-      ],
       "vertices": [
         [
           3.5912278080173192,
@@ -5363,29 +6280,43 @@
           4.064785026356489
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0111,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 57,
+      "shape": "pentagon",
       "shape_type": "pentagon",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        0.8399422024618559,
-        1.8490507394706077
+        0.8399,
+        1.8491
       ],
+      "position": [
+        0.8399,
+        1.8491
+      ],
+      "size": {
+        "area": 0.1084,
+        "width": 0.4008,
+        "height": 0.4015
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0867,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           0.8053358496110781,
@@ -5408,29 +6339,43 @@
           1.947077581864548
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0867,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 58,
+      "shape": "parallelogram",
       "shape_type": "parallelogram",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        2.42963913992978,
-        5.2010478634486965
+        2.4296,
+        5.201
       ],
+      "position": [
+        2.4296,
+        5.201
+      ],
+      "size": {
+        "area": 0.1074,
+        "width": 0.5059,
+        "height": 0.36
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0376,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           2.682601020529455,
@@ -5449,29 +6394,43 @@
           5.079427464526063
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0376,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 59,
+      "shape": "hexagon",
       "shape_type": "hexagon",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        4.401342878956479,
-        4.187759602854561
+        4.4013,
+        4.1878
       ],
+      "position": [
+        4.4013,
+        4.1878
+      ],
+      "size": {
+        "area": 0.0583,
+        "width": 0.2687,
+        "height": 0.2988
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0466,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           4.266986572482574,
@@ -5498,29 +6457,43 @@
           4.337174215615293
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 60,
+      "shape": "pentagon",
+      "shape_type": "pentagon",
+      "class_true": "movable",
+      "center": [
+        4.5011,
+        3.0994
+      ],
+      "position": [
+        4.5011,
+        3.0994
+      ],
+      "size": {
+        "area": 0.1312,
+        "width": 0.4446,
+        "height": 0.4362
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0466,
+        "mass": 0.105,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 60,
-      "shape_type": "pentagon",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        4.501072514511826,
-        3.09943366180947
-      ],
       "vertices": [
         [
           4.271727162795772,
@@ -5543,30 +6516,79 @@
           3.3331966828087713
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 61,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        1.8327,
+        1.3581
+      ],
+      "position": [
+        1.8327,
+        1.3581
+      ],
+      "size": {
+        "area": 0.0881,
+        "width": 0.3273,
+        "height": 0.3678
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.105,
+        "mass": 0.0705,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 61,
-      "shape_type": "hexagon",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        1.8326565678949422,
-        1.3581046727676769
-      ],
       "vertices": [
+        [
+          1.6574734050137068,
+          1.575900516571769
+        ],
+        [
+          1.6487197955611894,
+          1.3920095514428728
+        ],
+        [
+          1.8035972381629932,
+          1.292483220717737
+        ],
+        [
+          1.9672282902173144,
+          1.3768478551214975
+        ],
+        [
+          1.9759818996698317,
+          1.5607388202503938
+        ],
+        [
+          1.821104457068028,
+          1.6602651509755295
+        ]
+      ],
+      "observed": true,
+      "belief": {
+        "safe": 0.0666666666661451,
+        "movable": 0.8000000000034992,
+        "fragile": 0.06666666666517791,
+        "forbidden": 0.06666666666517791
+      },
+      "map_class": "movable",
+      "push_count": 1,
+      "previous_vertices": [
         [
           1.6777791252931384,
           1.4576310034928124
@@ -5591,30 +6613,35 @@
           1.8414101773474596,
           1.541995637896573
         ]
-      ],
-      "semantic_probs": {
-        "movable": 1.0
-      },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0705,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      ]
     },
     {
       "id": 62,
+      "shape": "pentagon",
       "shape_type": "pentagon",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        1.6008563922033483,
-        5.054868078638728
+        1.6009,
+        5.0549
       ],
+      "position": [
+        1.6009,
+        5.0549
+      ],
+      "size": {
+        "area": 0.0738,
+        "width": 0.3316,
+        "height": 0.3305
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0258,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           1.4429765649203166,
@@ -5637,29 +6664,43 @@
           5.229208294588283
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0258,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     },
     {
       "id": 63,
+      "shape": "triangle",
       "shape_type": "triangle",
       "class_true": "movable",
-      "radius": 0.0,
       "center": [
-        2.0922717601589564,
-        5.787467399696159
+        2.0923,
+        5.7875
       ],
+      "position": [
+        2.0923,
+        5.7875
+      ],
+      "size": {
+        "area": 0.0396,
+        "width": 0.2924,
+        "height": 0.2981
+      },
+      "material": {
+        "name": "movable",
+        "density": 0.8,
+        "mass": 0.0317,
+        "friction": 0.55,
+        "fragility": 0.2,
+        "pushable": true
+      },
+      "movable": true,
       "vertices": [
         [
           2.260533968836968,
@@ -5674,29 +6715,43 @@
           5.6551688251454975
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
+      },
+      "map_class": "movable",
+      "push_count": 0
+    },
+    {
+      "id": 64,
+      "shape": "hexagon",
+      "shape_type": "hexagon",
+      "class_true": "movable",
+      "center": [
+        3.0746,
+        5.5119
+      ],
+      "position": [
+        3.0746,
+        5.5119
+      ],
+      "size": {
+        "area": 0.1006,
+        "width": 0.3872,
+        "height": 0.3706
       },
       "material": {
         "name": "movable",
         "density": 0.8,
-        "mass": 0.0317,
+        "mass": 0.0805,
         "friction": 0.55,
         "fragility": 0.2,
         "pushable": true
       },
       "movable": true,
-      "previous_vertices": []
-    },
-    {
-      "id": 64,
-      "shape_type": "hexagon",
-      "class_true": "movable",
-      "radius": 0.0,
-      "center": [
-        3.074605061833059,
-        5.5119130597600305
-      ],
       "vertices": [
         [
           3.1408071807617044,
@@ -5723,29 +6778,43 @@
           5.5472338157600705
         ]
       ],
-      "semantic_probs": {
-        "movable": 1.0
+      "observed": true,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.8,
+        "fragile": 0.06666666666666665,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "movable",
-        "density": 0.8,
-        "mass": 0.0805,
-        "friction": 0.55,
-        "fragility": 0.2,
-        "pushable": true
-      },
-      "movable": true,
-      "previous_vertices": []
+      "map_class": "movable",
+      "push_count": 0
     },
     {
       "id": 65,
+      "shape": "parallelogram",
       "shape_type": "parallelogram",
       "class_true": "fragile",
-      "radius": 0.0,
       "center": [
-        5.579444754140202,
-        3.9590237600441185
+        5.5794,
+        3.959
       ],
+      "position": [
+        5.5794,
+        3.959
+      ],
+      "size": {
+        "area": 0.0448,
+        "width": 0.1938,
+        "height": 0.4942
+      },
+      "material": {
+        "name": "fragile",
+        "density": 0.35,
+        "mass": 0.0157,
+        "friction": 0.75,
+        "fragility": 0.95,
+        "pushable": false
+      },
+      "movable": false,
       "vertices": [
         [
           5.543062285131167,
@@ -5764,20 +6833,15 @@
           3.9158392347550475
         ]
       ],
-      "semantic_probs": {
-        "fragile": 1.0
+      "observed": false,
+      "belief": {
+        "safe": 0.06666666666666665,
+        "movable": 0.06666666666666665,
+        "fragile": 0.8,
+        "forbidden": 0.06666666666666665
       },
-      "material": {
-        "name": "fragile",
-        "density": 0.35,
-        "mass": 0.0157,
-        "friction": 0.75,
-        "fragility": 0.95,
-        "pushable": false
-      },
-      "movable": false,
-      "previous_vertices": []
+      "map_class": "fragile",
+      "push_count": 0
     }
-  ],
-  "family": "collision_required"
+  ]
 }

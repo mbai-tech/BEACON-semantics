@@ -1,0 +1,68 @@
+{
+  "scene_sweep_environments": [
+    "sparse",
+    "cluttered",
+    "collision_required",
+    "collision_shortcut"
+  ],
+  "scene_sweep_episodes_per_env": 100,
+  "planner_sweep_environment": "cluttered",
+  "planner_sweep_episodes": 100,
+  "default_parameters": {
+    "robot_radius": 0.12,
+    "obstacle_density_scale": 1.0,
+    "obstacle_size_scale": 1.0,
+    "friction_scale": 1.0,
+    "energy_weight": 1.0,
+    "obstacle_count_scale": 1.0
+  },
+  "scene_sweep_factors": {
+    "obstacle_density_scale": [
+      0.7,
+      1.0,
+      1.4
+    ],
+    "obstacle_size_scale": [
+      0.75,
+      1.0,
+      1.35
+    ],
+    "friction_scale": [
+      0.7,
+      1.0,
+      1.3
+    ],
+    "obstacle_count_scale": [
+      0.7,
+      1.0,
+      1.3
+    ]
+  },
+  "planner_sweep_factors": {
+    "robot_radius": [
+      0.12,
+      0.15,
+      0.45
+    ],
+    "energy_weight": [
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "planners": {
+    "bug1_geometric": "Bug",
+    "bug2_geometric": "Bug2",
+    "dstar_lite_geometric": "D* Lite",
+    "baseline_semantic": "Baseline Sem.",
+    "beacon_human_like": "BEACON"
+  },
+  "notes": [
+    "Bug and Bug2 are geometric non-contact planners.",
+    "D* Lite is geometric non-contact D* Lite.",
+    "Baseline Sem. is the Semantics push-aware D* Lite planner.",
+    "BEACON is the current human-like BEACON planner in this repo.",
+    "Scene-generation sweep explicitly uses 4 environments x 100 seeds = 400 episodes per factor level.",
+    "Planner sweep explicitly uses the cluttered environment with 100 seeds."
+  ]
+}

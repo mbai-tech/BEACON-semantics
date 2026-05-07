@@ -1,0 +1,5 @@
+planner,planner_label,runs,successes,success_rate,mean_energy,median_energy,max_energy,nonzero_energy_runs
+dstar_lite,D* Lite,117,117,1.0,0.0,0.0,0.0,0
+bug1,Bug1,117,38,0.3247863247863248,0.0,0.0,0.0,0
+bug2,Bug2,117,25,0.21367521367521367,0.0,0.0,0.0,0
+beacon_human_like,BEACON,117,117,1.0,0.0,0.0,0.0,0

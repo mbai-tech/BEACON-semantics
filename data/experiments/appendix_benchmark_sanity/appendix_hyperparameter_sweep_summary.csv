@@ -1,0 +1,8 @@
+sweep_group,factor,factor_level,planner,planner_label,episodes,success_rate_percent,mean_energy,mean_path_length,mean_time_to_goal
+planner_hyperparameter,robot_radius,0.15,baseline_semantic,Baseline Sem.,1,100.0,26.6274,26.6274,20.0
+planner_hyperparameter,robot_radius,0.15,beacon_human_like,BEACON,1,100.0,26.5487,26.5487,32.0
+scene_generation,obstacle_density_scale,1.0,baseline_semantic,Baseline Sem.,1,100.0,26.6274,26.6274,20.0
+scene_generation,obstacle_density_scale,1.0,beacon_human_like,BEACON,1,100.0,26.5487,26.5487,32.0
+scene_generation,obstacle_density_scale,1.0,bug1_geometric,Bug,1,0.0,0.0,0.0,0.0
+scene_generation,obstacle_density_scale,1.0,bug2_geometric,Bug2,1,0.0,0.0,0.0,0.0
+scene_generation,obstacle_density_scale,1.0,dstar_lite_geometric,D* Lite,1,100.0,26.6274,26.6274,20.0

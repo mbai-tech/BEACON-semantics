@@ -1,0 +1,182 @@
+[
+  {
+    "environment": "sparse",
+    "seed": 0,
+    "planner": "dstar_lite",
+    "label": "D* Lite",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/01_sparse_seed00_dstar_lite.png"
+  },
+  {
+    "environment": "sparse",
+    "seed": 0,
+    "planner": "bug1",
+    "label": "Bug1",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/01_sparse_seed00_bug1.png"
+  },
+  {
+    "environment": "sparse",
+    "seed": 0,
+    "planner": "bug2",
+    "label": "Bug2",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/01_sparse_seed00_bug2.png"
+  },
+  {
+    "environment": "sparse",
+    "seed": 0,
+    "planner": "beacon_human_like",
+    "label": "BEACON",
+    "path_length": 26.052,
+    "steps": 32,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/01_sparse_seed00_beacon_human_like.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 0,
+    "planner": "dstar_lite",
+    "label": "D* Lite",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/02_open_room_seed00_dstar_lite.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 0,
+    "planner": "bug1",
+    "label": "Bug1",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/02_open_room_seed00_bug1.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 0,
+    "planner": "bug2",
+    "label": "Bug2",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/02_open_room_seed00_bug2.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 0,
+    "planner": "beacon_human_like",
+    "label": "BEACON",
+    "path_length": 26.052,
+    "steps": 32,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/02_open_room_seed00_beacon_human_like.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 7,
+    "planner": "dstar_lite",
+    "label": "D* Lite",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/03_open_room_seed07_dstar_lite.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 7,
+    "planner": "bug1",
+    "label": "Bug1",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/03_open_room_seed07_bug1.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 7,
+    "planner": "bug2",
+    "label": "Bug2",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/03_open_room_seed07_bug2.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 7,
+    "planner": "beacon_human_like",
+    "label": "BEACON",
+    "path_length": 25.7,
+    "steps": 31,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/03_open_room_seed07_beacon_human_like.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 11,
+    "planner": "dstar_lite",
+    "label": "D* Lite",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/04_open_room_seed11_dstar_lite.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 11,
+    "planner": "bug1",
+    "label": "Bug1",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/04_open_room_seed11_bug1.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 11,
+    "planner": "bug2",
+    "label": "Bug2",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/04_open_room_seed11_bug2.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 11,
+    "planner": "beacon_human_like",
+    "label": "BEACON",
+    "path_length": 25.7,
+    "steps": 31,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/04_open_room_seed11_beacon_human_like.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 3,
+    "planner": "dstar_lite",
+    "label": "D* Lite",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/05_open_room_seed03_dstar_lite.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 3,
+    "planner": "bug1",
+    "label": "Bug1",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/05_open_room_seed03_bug1.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 3,
+    "planner": "bug2",
+    "label": "Bug2",
+    "path_length": 25.456,
+    "steps": 18,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/05_open_room_seed03_bug2.png"
+  },
+  {
+    "environment": "open_room",
+    "seed": 3,
+    "planner": "beacon_human_like",
+    "label": "BEACON",
+    "path_length": 25.349,
+    "steps": 30,
+    "output": "/Users/ishita/Documents/GitHub/BEACON-semantics/data/examples/example_runs/05_open_room_seed03_beacon_human_like.png"
+  }
+]

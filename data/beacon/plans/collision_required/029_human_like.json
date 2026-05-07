@@ -22,42 +22,278 @@
   "success": false,
   "summary": {
     "success": false,
-    "algorithm": "semantic_dstar_lite",
-    "observability": "radius_limited_incremental_fallback",
-    "grid_start": [
-      25,
-      4
-    ],
-    "grid_goal": [
-      17,
-      36
-    ],
-    "num_waypoints": 47,
-    "path_length": 7.7752,
-    "lambda_occ": 5.0,
-    "lambda_sem": 2.5,
-    "step": 0.15,
-    "robot_radius": 0.12,
-    "movable_obstacle_model": "soft obstacle traversal + manipulation",
-    "observed_obstacles": 29,
-    "stop_reason": "no_action_available",
-    "actions": [
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction",
-      "MoveAction"
-    ],
-    "num_actions": 9,
+    "algorithm": "surp_beacon_online",
+    "observability": "radius_limited_incremental",
+    "sensing_range": 2.0,
+    "num_waypoints": 502,
+    "stop_reason": "surp_rollout_stopped",
+    "actions": [],
+    "num_actions": 501,
     "final_robot_position": [
-      3.3,
-      0.75
+      3.5357543230554365,
+      2.6054883820695123
     ],
-    "latest_replan_waypoints": 47
+    "contact_log": [
+      "CIBP obs 60: outcome=no_displacement kl=0.9794 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 60: outcome=no_displacement kl=0.6403 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 60: outcome=displacement kl=1.0287 replan=YES map_class=movable",
+      "contact mode (stuck override): pushed obstacle 60 by 0.12",
+      "CIBP obs 60: outcome=no_displacement kl=0.8328 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 60: outcome=displacement kl=1.0184 replan=YES map_class=movable",
+      "contact mode (stuck override): pushed obstacle 60 by 0.12",
+      "CIBP obs 60: outcome=no_displacement kl=0.9504 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 60: outcome=displacement kl=0.9632 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 60 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 60: outcome=no_displacement kl=1.0035 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 60: outcome=no_displacement kl=0.3498 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 60: outcome=no_displacement kl=0.2066 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 60 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.9794 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=displacement kl=0.6943 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 2 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.9854 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=displacement kl=0.6403 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 2 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.9721 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=displacement kl=0.6164 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 2 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.9607 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.5572 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.1907 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.1959 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 9: outcome=no_displacement kl=0.9794 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 9 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=no_displacement kl=0.2660 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 2 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 2: outcome=displacement kl=0.9355 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 2 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 9: outcome=no_displacement kl=0.5069 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 9 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 9: outcome=displacement kl=1.0057 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 9 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 15: outcome=no_displacement kl=0.9794 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 15 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 15: outcome=displacement kl=0.6943 replan=YES map_class=movable",
+      "CIBP replan (push\u2192avoid): obs 15 KL>\u03c4=0.15, switching to avoid",
+      "CIBP obs 15: outcome=no_displacement kl=0.9846 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 15 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.9794 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.5069 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.2553 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1999 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1606 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.2294 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1982 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1963 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1603 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 9: outcome=no_displacement kl=0.9794 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 9 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1941 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 9: outcome=no_displacement kl=0.5352 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 9 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1602 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1217 replan=no map_class=forbidden",
+      "CIBP obs 24: outcome=hard_flag kl=0.1561 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1939 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1961 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1603 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 9: outcome=no_displacement kl=0.9754 replan=YES map_class=safe",
+      "CIBP replan (boundary): obs 9 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1941 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1602 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1941 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1602 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1941 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1961 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid",
+      "CIBP obs 24: outcome=hard_flag kl=0.1962 replan=YES map_class=forbidden",
+      "CIBP replan (boundary): obs 24 KL>\u03c4=0.15, decision=avoid"
+    ],
+    "sensed_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      14,
+      15,
+      23,
+      53,
+      57,
+      58,
+      60,
+      62,
+      63,
+      64,
+      65,
+      21,
+      13,
+      20,
+      22,
+      29,
+      30,
+      28,
+      39,
+      38,
+      45,
+      37,
+      24,
+      10,
+      16,
+      5,
+      52,
+      17,
+      31,
+      32,
+      11,
+      33,
+      40,
+      41,
+      48,
+      49,
+      34,
+      47,
+      35,
+      46,
+      42,
+      55,
+      66,
+      25,
+      50,
+      6,
+      18
+    ],
+    "observed_obstacles": 54,
+    "movable_obstacle_model": "SURP online push/avoid controller"
   },
   "planner_config": {
     "step": 0.15,
@@ -74,138 +310,2508 @@
       0.0
     ],
     [
-      5.4,
-      1.65,
+      5.36091619557409,
+      1.5581274284803308,
       0.0
     ],
     [
-      5.55,
-      1.8,
+      5.429712929757791,
+      1.571050638826727,
       0.0
     ],
     [
-      5.7,
-      1.95,
+      5.498509663941492,
+      1.5839738491731232,
       0.0
     ],
     [
-      5.85,
-      2.1,
+      5.567306398125194,
+      1.5968970595195193,
       0.0
     ],
     [
-      5.85,
-      2.25,
+      5.636103132308895,
+      1.6098202698659156,
       0.0
     ],
     [
-      5.85,
-      2.4,
+      5.704899866492596,
+      1.622743480212312,
       0.0
     ],
     [
-      5.85,
-      2.25,
+      5.773696600676297,
+      1.6356666905587083,
       0.0
     ],
     [
-      5.85,
-      2.1,
+      5.8424933348599986,
+      1.6485899009051044,
       0.0
     ],
     [
-      5.7,
-      1.95,
+      5.845959562997338,
+      1.7185040286798248,
       0.0
     ],
     [
-      5.55,
-      1.8,
+      5.847181128622677,
+      1.7884933691355185,
       0.0
     ],
     [
-      5.55,
-      1.65,
+      5.848402694248016,
+      1.8584827095912122,
       0.0
     ],
     [
-      5.55,
-      1.5,
+      5.848402694248016,
+      1.8584827095912122,
       0.0
     ],
     [
-      5.4,
-      1.35,
+      5.848688276711063,
+      1.9284821270363368,
       0.0
     ],
     [
-      5.25,
-      1.2,
+      5.848688276711063,
+      1.9284821270363368,
       0.0
     ],
     [
-      5.1,
-      1.05,
+      5.870077195348326,
+      1.9951343149938867,
       0.0
     ],
     [
-      4.95,
-      0.9,
+      5.870077195348326,
+      1.9951343149938867,
       0.0
     ],
     [
-      4.8,
-      0.75,
+      5.901868622878518,
+      2.0574986087491487,
       0.0
     ],
     [
-      4.65,
-      0.6,
+      5.93366005040871,
+      2.1198629025044107,
       0.0
     ],
     [
-      4.5,
-      0.6,
+      5.965451477938902,
+      2.1822271962596727,
       0.0
     ],
     [
-      4.35,
-      0.45,
+      5.970111882604657,
+      2.2520718855950217,
       0.0
     ],
     [
-      4.2,
-      0.6,
+      5.983974895263027,
+      2.3206854183712453,
       0.0
     ],
     [
-      4.05,
-      0.6,
+      5.986093188673304,
+      2.3906533598375197,
       0.0
     ],
     [
-      3.9,
-      0.6,
+      5.986093188673304,
+      2.3906533598375197,
       0.0
     ],
     [
-      3.75,
-      0.6,
+      5.9921792315015034,
+      2.460388287117136,
       0.0
     ],
     [
-      3.6,
-      0.75,
+      5.993193657787606,
+      2.5303809362976755,
       0.0
     ],
     [
-      3.45,
-      0.75,
+      5.994683981788192,
+      2.6003650697450027,
       0.0
     ],
     [
-      3.3,
-      0.75,
+      5.994683981788192,
+      2.6003650697450027,
+      0.0
+    ],
+    [
+      5.996174305788778,
+      2.67034920319233,
+      0.0
+    ],
+    [
+      5.996174305788778,
+      2.67034920319233,
+      0.0
+    ],
+    [
+      5.996732607951022,
+      2.7403469767190334,
+      0.0
+    ],
+    [
+      5.997290910113265,
+      2.810344750245737,
+      0.0
+    ],
+    [
+      5.997290910113265,
+      2.810344750245737,
+      0.0
+    ],
+    [
+      5.997849212275509,
+      2.8803425237724403,
+      0.0
+    ],
+    [
+      5.998407514437752,
+      2.9503402972991437,
+      0.0
+    ],
+    [
+      5.998965816599996,
+      3.020338070825847,
+      0.0
+    ],
+    [
+      5.999524118762239,
+      3.0903358443525506,
+      0.0
+    ],
+    [
+      5.999524118762239,
+      3.0903358443525506,
+      0.0
+    ],
+    [
+      5.999682999524357,
+      3.160335664044486,
+      0.0
+    ],
+    [
+      5.999720631154312,
+      3.2303356539292025,
+      0.0
+    ],
+    [
+      5.999720631154312,
+      3.2303356539292025,
+      0.0
+    ],
+    [
+      5.999809656996386,
+      3.3003355973177473,
+      0.0
+    ],
+    [
+      5.999809656996386,
+      3.3003355973177473,
+      0.0
+    ],
+    [
+      5.9777138336302045,
+      3.233914406499075,
+      0.0
+    ],
+    [
+      5.915543906026928,
+      3.2660842697534216,
+      0.0
+    ],
+    [
+      5.904651433500765,
+      3.1969369339965987,
+      0.0
+    ],
+    [
+      5.89699920880643,
+      3.127356452126843,
+      0.0
+    ],
+    [
+      5.8853041384957745,
+      3.0583403284278923,
+      0.0
+    ],
+    [
+      5.878440879180572,
+      2.988677600433847,
+      0.0
+    ],
+    [
+      5.87157761986537,
+      2.919014872439802,
+      0.0
+    ],
+    [
+      5.864714360550169,
+      2.849352144445757,
+      0.0
+    ],
+    [
+      5.857851101234966,
+      2.7796894164517116,
+      0.0
+    ],
+    [
+      5.856403972055717,
+      2.7097043764993147,
+      0.0
+    ],
+    [
+      5.855428922488714,
+      2.6397111676977323,
+      0.0
+    ],
+    [
+      5.85445387292171,
+      2.56971795889615,
+      0.0
+    ],
+    [
+      5.853478823354707,
+      2.4997247500945674,
+      0.0
+    ],
+    [
+      5.852503773787703,
+      2.429731541292985,
+      0.0
+    ],
+    [
+      5.8515287242206995,
+      2.3597383324914025,
+      0.0
+    ],
+    [
+      5.850553674653695,
+      2.28974512368982,
+      0.0
+    ],
+    [
+      5.850349416119913,
+      2.219745421701516,
+      0.0
+    ],
+    [
+      5.816269423109398,
+      2.1586017051281567,
+      0.0
+    ],
+    [
+      5.782189430098883,
+      2.0974579885547975,
+      0.0
+    ],
+    [
+      5.7481094370883685,
+      2.036314271981438,
+      0.0
+    ],
+    [
+      5.683935841004462,
+      2.0083544871886394,
+      0.0
+    ],
+    [
+      5.614282776104211,
+      2.0013938442584513,
+      0.0
+    ],
+    [
+      5.544629711203961,
+      1.9944332013282633,
+      0.0
+    ],
+    [
+      5.474976646303711,
+      1.9874725583980752,
+      0.0
+    ],
+    [
+      5.474976646303711,
+      1.9874725583980752,
+      0.0
+    ],
+    [
+      5.405323581403461,
+      1.9805119154678872,
+      0.0
+    ],
+    [
+      5.3366363250800095,
+      1.9670189239998477,
+      0.0
+    ],
+    [
+      5.267949068756558,
+      1.9535259325318082,
+      0.0
+    ],
+    [
+      5.234058420741336,
+      1.8922770633413626,
+      0.0
+    ],
+    [
+      5.234058420741336,
+      1.8922770633413626,
+      0.0
+    ],
+    [
+      5.200167772726114,
+      1.831028194150917,
+      0.0
+    ],
+    [
+      5.200167772726114,
+      1.831028194150917,
+      0.0
+    ],
+    [
+      5.166277124710891,
+      1.7697793249604714,
+      0.0
+    ],
+    [
+      5.13421698064122,
+      1.707552745733971,
+      0.0
+    ],
+    [
+      5.086416414972855,
+      1.656414639376927,
+      0.0
+    ],
+    [
+      5.03861584930449,
+      1.605276533019883,
+      0.0
+    ],
+    [
+      4.990815283636125,
+      1.554138426662839,
+      0.0
+    ],
+    [
+      4.990815283636125,
+      1.554138426662839,
+      0.0
+    ],
+    [
+      4.990815283636125,
+      1.554138426662839,
+      0.0
+    ],
+    [
+      4.966035998074065,
+      1.4886709766816928,
+      0.0
+    ],
+    [
+      4.897260267980953,
+      1.5017055058315862,
+      0.0
+    ],
+    [
+      4.843067052206007,
+      1.4573986738079567,
+      0.0
+    ],
+    [
+      4.7820033525110786,
+      1.423175515280907,
+      0.0
+    ],
+    [
+      4.7820033525110786,
+      1.423175515280907,
+      0.0
+    ],
+    [
+      4.777132151551851,
+      1.4319088652232153,
+      0.0
+    ],
+    [
+      4.777132151551851,
+      1.4319088652232153,
+      0.0
+    ],
+    [
+      4.743033744837256,
+      1.493042314819374,
+      0.0
+    ],
+    [
+      4.718677740041118,
+      1.536709064530916,
+      0.0
+    ],
+    [
+      4.718677740041118,
+      1.536709064530916,
+      0.0
+    ],
+    [
+      4.7129747475313355,
+      1.5379353003202905,
+      0.0
+    ],
+    [
+      4.678936909170635,
+      1.5991024938126426,
+      0.0
+    ],
+    [
+      4.678936909170635,
+      1.5991024938126426,
+      0.0
+    ],
+    [
+      4.652192893315799,
+      1.6471624315566336,
+      0.0
+    ],
+    [
+      4.6464911181689,
+      1.6483943154602456,
+      0.0
+    ],
+    [
+      4.588218199736714,
+      1.6871791962438167,
+      0.0
+    ],
+    [
+      4.578643871820059,
+      1.7047385881736181,
+      0.0
+    ],
+    [
+      4.561570986188607,
+      1.7085813184810088,
+      0.0
+    ],
+    [
+      4.561570986188607,
+      1.7085813184810088,
+      0.0
+    ],
+    [
+      4.492995236082177,
+      1.7226300371891528,
+      0.0
+    ],
+    [
+      4.492995236082177,
+      1.7226300371891528,
+      0.0
+    ],
+    [
+      4.490672303290517,
+      1.7270576757522502,
+      0.0
+    ],
+    [
+      4.490672303290517,
+      1.7270576757522502,
+      0.0
+    ],
+    [
+      4.490672303290517,
+      1.7270576757522502,
+      0.0
+    ],
+    [
+      4.42591528977604,
+      1.7536382927632574,
+      0.0
+    ],
+    [
+      4.42591528977604,
+      1.7536382927632574,
+      0.0
+    ],
+    [
+      4.419092685320908,
+      1.766996888065489,
+      0.0
+    ],
+    [
+      4.362195744985668,
+      1.8077735747931791,
+      0.0
+    ],
+    [
+      4.362195744985668,
+      1.8077735747931791,
+      0.0
+    ],
+    [
+      4.330855745193506,
+      1.870365941844021,
+      0.0
+    ],
+    [
+      4.299515745401344,
+      1.932958308894863,
+      0.0
+    ],
+    [
+      4.268175745609182,
+      1.995550675945705,
+      0.0
+    ],
+    [
+      4.250267174299375,
+      2.0313177428319005,
+      0.0
+    ],
+    [
+      4.250267174299375,
+      2.0313177428319005,
+      0.0
+    ],
+    [
+      4.24462449776294,
+      2.032796924796009,
+      0.0
+    ],
+    [
+      4.213357312622591,
+      2.0954256972045364,
+      0.0
+    ],
+    [
+      4.213357312622591,
+      2.0954256972045364,
+      0.0
+    ],
+    [
+      4.188790238583746,
+      2.144634018382665,
+      0.0
+    ],
+    [
+      4.188790238583746,
+      2.144634018382665,
+      0.0
+    ],
+    [
+      4.157523053443397,
+      2.2072627907911926,
+      0.0
+    ],
+    [
+      4.157523053443397,
+      2.2072627907911926,
+      0.0
+    ],
+    [
+      4.135189349771719,
+      2.251997628225855,
+      0.0
+    ],
+    [
+      4.12954839730519,
+      2.2534833714904003,
+      0.0
+    ],
+    [
+      4.082490014523486,
+      2.2879549015949436,
+      0.0
+    ],
+    [
+      4.082490014523486,
+      2.2879549015949436,
+      0.0
+    ],
+    [
+      4.012875647129876,
+      2.2806173371224894,
+      0.0
+    ],
+    [
+      4.008661662030395,
+      2.289686092802369,
+      0.0
+    ],
+    [
+      4.008661662030395,
+      2.289686092802369,
+      0.0
+    ],
+    [
+      4.008661662030395,
+      2.289686092802369,
+      0.0
+    ],
+    [
+      3.9452599764443814,
+      2.3193547001989474,
+      0.0
+    ],
+    [
+      3.9452599764443814,
+      2.3193547001989474,
+      0.0
+    ],
+    [
+      3.937074071480488,
+      2.3376027400915524,
+      0.0
+    ],
+    [
+      3.937074071480488,
+      2.3376027400915524,
+      0.0
+    ],
+    [
+      3.937074071480488,
+      2.3376027400915524,
+      0.0
+    ],
+    [
+      3.888307060500715,
+      2.387820054238156,
+      0.0
+    ],
+    [
+      3.8862937743140806,
+      2.3923968084079474,
+      0.0
+    ],
+    [
+      3.8751521441642045,
+      2.405891773306137,
+      0.0
+    ],
+    [
+      3.8751521441642045,
+      2.405891773306137,
+      0.0
+    ],
+    [
+      3.8268248114861287,
+      2.456532358968455,
+      0.0
+    ],
+    [
+      3.8268248114861287,
+      2.456532358968455,
+      0.0
+    ],
+    [
+      3.8248524150331833,
+      2.461126883125798,
+      0.0
+    ],
+    [
+      3.8248524150331833,
+      2.461126883125798,
+      0.0
+    ],
+    [
+      3.8248524150331833,
+      2.461126883125798,
+      0.0
+    ],
+    [
+      3.8288007871712377,
+      2.3912383264268686,
+      0.0
+    ],
+    [
+      3.80165899800176,
+      2.4557621459099064,
+      0.0
+    ],
+    [
+      3.7997202987753687,
+      2.4603709901586948,
+      0.0
+    ],
+    [
+      3.7961583052687202,
+      2.4893193346140006,
+      0.0
+    ],
+    [
+      3.792257801900305,
+      2.4985272699674326,
+      0.0
+    ],
+    [
+      3.792257801900305,
+      2.4985272699674326,
+      0.0
+    ],
+    [
+      3.7695048655845502,
+      2.5522402261957855,
+      0.0
+    ],
+    [
+      3.7695048655845502,
+      2.5522402261957855,
+      0.0
+    ],
+    [
+      3.7639674654242734,
+      2.5540746136256227,
+      0.0
+    ],
+    [
+      3.7639674654242734,
+      2.5540746136256227,
+      0.0
+    ],
+    [
+      3.7306072574422653,
+      2.577621537724287,
+      0.0
+    ],
+    [
+      3.7306072574422653,
+      2.577621537724287,
+      0.0
+    ],
+    [
+      3.7306072574422653,
+      2.577621537724287,
+      0.0
+    ],
+    [
+      3.663857253583014,
+      2.598703211870092,
+      0.0
+    ],
+    [
+      3.663857253583014,
+      2.598703211870092,
+      0.0
+    ],
+    [
+      3.6620285425966097,
+      2.603356792870591,
+      0.0
+    ],
+    [
+      3.6093833777480597,
+      2.649492317340017,
+      0.0
+    ],
+    [
+      3.6058275878662918,
+      2.6588387796823536,
+      0.0
+    ],
+    [
+      3.6058275878662918,
+      2.6588387796823536,
+      0.0
+    ],
+    [
+      3.6058275878662918,
+      2.6588387796823536,
+      0.0
+    ],
+    [
+      3.5528610383664496,
+      2.6130725843622185,
+      0.0
+    ],
+    [
+      3.5511873345585654,
+      2.6177841356527676,
+      0.0
+    ],
+    [
+      3.5511873345585654,
+      2.6177841356527676,
+      0.0
+    ],
+    [
+      3.5511873345585654,
+      2.6177841356527676,
+      0.0
+    ],
+    [
+      3.4972177606636023,
+      2.573205159738149,
+      0.0
+    ],
+    [
+      3.4972177606636023,
+      2.573205159738149,
+      0.0
+    ],
+    [
+      3.567215666213769,
+      2.572663663117733,
+      0.0
+    ],
+    [
+      3.552152331942811,
+      2.615067624732674,
+      0.0
+    ],
+    [
+      3.5549943566408837,
+      2.620161805078257,
+      0.0
+    ],
+    [
+      3.5549943566408837,
+      2.620161805078257,
+      0.0
+    ],
+    [
+      3.5010909274093023,
+      2.575502871850112,
+      0.0
+    ],
+    [
+      3.571089558778082,
+      2.575065143055478,
+      0.0
+    ],
+    [
+      3.5559633800112143,
+      2.6174467276874,
+      0.0
+    ],
+    [
+      3.558797849803536,
+      2.6225451155477133,
+      0.0
+    ],
+    [
+      3.558797849803536,
+      2.6225451155477133,
+      0.0
+    ],
+    [
+      3.5049607052988745,
+      2.5778062971504405,
+      0.0
+    ],
+    [
+      3.5033773195470737,
+      2.5825489640753885,
+      0.0
+    ],
+    [
+      3.5077353708301686,
+      2.5864264847770344,
+      0.0
+    ],
+    [
+      3.5077353708301686,
+      2.5864264847770344,
+      0.0
+    ],
+    [
+      3.45300258571829,
+      2.5427879440830914,
+      0.0
+    ],
+    [
+      3.45300258571829,
+      2.5427879440830914,
+      0.0
+    ],
+    [
+      3.5193598399456487,
+      2.5650750437464773,
+      0.0
+    ],
+    [
+      3.511366789441959,
+      2.5887628284391297,
+      0.0
+    ],
+    [
+      3.511366789441959,
+      2.5887628284391297,
+      0.0
+    ],
+    [
+      3.511366789441959,
+      2.5887628284391297,
+      0.0
+    ],
+    [
+      3.4566955232831633,
+      2.545047240182832,
+      0.0
+    ],
+    [
+      3.5230213204225906,
+      2.567427781593163,
+      0.0
+    ],
+    [
+      3.514994901974017,
+      2.5911042806352174,
+      0.0
+    ],
+    [
+      3.5193349895434025,
+      2.595001897556856,
+      0.0
+    ],
+    [
+      3.5193349895434025,
+      2.595001897556856,
+      0.0
+    ],
+    [
+      3.464804550463867,
+      2.5511107684554863,
+      0.0
+    ],
+    [
+      3.531058051941098,
+      2.5737044300004106,
+      0.0
+    ],
+    [
+      3.522955518328491,
+      2.597354989170472,
+      0.0
+    ],
+    [
+      3.5272830465593716,
+      2.601266546045772,
+      0.0
+    ],
+    [
+      3.5272830465593716,
+      2.601266546045772,
+      0.0
+    ],
+    [
+      3.472894157528164,
+      2.5572001330995047,
+      0.0
+    ],
+    [
+      3.5420295235859363,
+      2.568168321649024,
+      0.0
+    ],
+    [
+      3.5305913209300295,
+      2.60124652474415,
+      0.0
+    ],
+    [
+      3.5305913209300295,
+      2.60124652474415,
+      0.0
+    ],
+    [
+      3.5305913209300295,
+      2.60124652474415,
+      0.0
+    ],
+    [
+      3.476248825638857,
+      2.5571229119554304,
+      0.0
+    ],
+    [
+      3.5453726134604087,
+      2.5681638338916235,
+      0.0
+    ],
+    [
+      3.533899627261501,
+      2.601229988607279,
+      0.0
+    ],
+    [
+      3.536779050353987,
+      2.606303123775224,
+      0.0
+    ],
+    [
+      3.536779050353987,
+      2.606303123775224,
+      0.0
+    ],
+    [
+      3.482548391439333,
+      2.562042129280268,
+      0.0
+    ],
+    [
+      3.55164401697087,
+      2.573257945452336,
+      0.0
+    ],
+    [
+      3.540087356119185,
+      2.6062949487964517,
+      0.0
+    ],
+    [
+      3.542953926660134,
+      2.6113753573539933,
+      0.0
+    ],
+    [
+      3.542953926660134,
+      2.6113753573539933,
+      0.0
+    ],
+    [
+      3.488835555114845,
+      2.5669771382310818,
+      0.0
+    ],
+    [
+      3.5588312580521175,
+      2.5662015285888424,
+      0.0
+    ],
+    [
+      3.5439098329635264,
+      2.608655634083194,
+      0.0
+    ],
+    [
+      3.54676887983788,
+      2.6137402804571344,
+      0.0
+    ],
+    [
+      3.54676887983788,
+      2.6137402804571344,
+      0.0
+    ],
+    [
+      3.492716311662515,
+      2.569261972557131,
+      0.0
+    ],
+    [
+      3.5627130863675083,
+      2.5685900120684018,
+      0.0
+    ],
+    [
+      3.546063893078781,
+      2.6157366382768017,
+      0.0
+    ],
+    [
+      3.546063893078781,
+      2.6157366382768017,
+      0.0
+    ],
+    [
+      3.546063893078781,
+      2.6157366382768017,
+      0.0
+    ],
+    [
+      3.492011324903416,
+      2.571258330376798,
+      0.0
+    ],
+    [
+      3.562008099608409,
+      2.570586369888069,
+      0.0
+    ],
+    [
+      3.5470238256485547,
+      2.613018333475629,
+      0.0
+    ],
+    [
+      3.549875340140909,
+      2.6181072078971166,
+      0.0
+    ],
+    [
+      3.549875340140909,
+      2.6181072078971166,
+      0.0
+    ],
+    [
+      3.4958887625834816,
+      2.573548825479934,
+      0.0
+    ],
+    [
+      3.5658864564498,
+      2.5729806235816914,
+      0.0
+    ],
+    [
+      3.550839301062688,
+      2.6153903290128317,
+      0.0
+    ],
+    [
+      3.5536832690649653,
+      2.62048342470993,
+      0.0
+    ],
+    [
+      3.5536832690649653,
+      2.62048342470993,
+      0.0
+    ],
+    [
+      3.499762822302434,
+      2.5758450396480908,
+      0.0
+    ],
+    [
+      3.569761281749531,
+      2.5753806313868,
+      0.0
+    ],
+    [
+      3.554651257531778,
+      2.617767978179669,
+      0.0
+    ],
+    [
+      3.5574876703337974,
+      2.622865285330932,
+      0.0
+    ],
+    [
+      3.5574876703337974,
+      2.622865285330932,
+      0.0
+    ],
+    [
+      3.5036334945276493,
+      2.5781469697517374,
+      0.0
+    ],
+    [
+      3.572506508620805,
+      2.565636656817044,
+      0.0
+    ],
+    [
+      3.5540504924585017,
+      2.6174476157679916,
+      0.0
+    ],
+    [
+      3.556888065286816,
+      2.622544277246037,
+      0.0
+    ],
+    [
+      3.556888065286816,
+      2.622544277246037,
+      0.0
+    ],
+    [
+      3.503023711155747,
+      2.5778382222417893,
+      0.0
+    ],
+    [
+      3.5718938756047414,
+      2.5653122313121868,
+      0.0
+    ],
+    [
+      3.553449651272595,
+      2.6171273892178175,
+      0.0
+    ],
+    [
+      3.55628838394671,
+      2.62222340477732,
+      0.0
+    ],
+    [
+      3.55628838394671,
+      2.62222340477732,
+      0.0
+    ],
+    [
+      3.502413854576086,
+      2.5775296123102023,
+      0.0
+    ],
+    [
+      3.5724127544538677,
+      2.5771371637144203,
+      0.0
+    ],
+    [
+      3.557259163420004,
+      2.619508954787945,
+      0.0
+    ],
+    [
+      3.560090334618395,
+      2.6246091751187914,
+      0.0
+    ],
+    [
+      3.560090334618395,
+      2.6246091751187914,
+      0.0
+    ],
+    [
+      3.506282175482929,
+      2.579835499700613,
+      0.0
+    ],
+    [
+      3.5751680187273567,
+      2.5673960221993597,
+      0.0
+    ],
+    [
+      3.556658752503923,
+      2.6191879816512866,
+      0.0
+    ],
+    [
+      3.559491084647304,
+      2.624287557359848,
+      0.0
+    ],
+    [
+      3.559491084647304,
+      2.624287557359848,
+      0.0
+    ],
+    [
+      3.5056727323392924,
+      2.579526134741138,
+      0.0
+    ],
+    [
+      3.57455574143979,
+      2.5670709728690158,
+      0.0
+    ],
+    [
+      3.5560582653193378,
+      2.618867144321868,
+      0.0
+    ],
+    [
+      3.5588917582273876,
+      2.6239660751625253,
+      0.0
+    ],
+    [
+      3.5588917582273876,
+      2.6239660751625253,
+      0.0
+    ],
+    [
+      3.505063215831537,
+      2.5792169073095015,
+      0.0
+    ],
+    [
+      3.573943387299084,
+      2.566746062165673,
+      0.0
+    ],
+    [
+      3.555457701899298,
+      2.6185464428138894,
+      0.0
+    ],
+    [
+      3.55829235539165,
+      2.6236447285410796,
+      0.0
+    ],
+    [
+      3.55829235539165,
+      2.6236447285410796,
+      0.0
+    ],
+    [
+      3.504453625992936,
+      2.578907817419143,
+      0.0
+    ],
+    [
+      3.5733309563389626,
+      2.5664212901035004,
+      0.0
+    ],
+    [
+      3.5548570622768554,
+      2.6182258771415423,
+      0.0
+    ],
+    [
+      3.5576928761730975,
+      2.6233235175097573,
+      0.0
+    ],
+    [
+      3.5576928761730975,
+      2.6233235175097573,
+      0.0
+    ],
+    [
+      3.5038439628567635,
+      2.578598865083495,
+      0.0
+    ],
+    [
+      3.5727184485931534,
+      2.5660966566966605,
+      0.0
+    ],
+    [
+      3.554256346485062,
+      2.6179054473190098,
+      0.0
+    ],
+    [
+      3.557093320604737,
+      2.6230024420827966,
+      0.0
+    ],
+    [
+      3.557093320604737,
+      2.6230024420827966,
+      0.0
+    ],
+    [
+      3.5032342264562963,
+      2.578290050315979,
+      0.0
+    ],
+    [
+      3.572105864095384,
+      2.565772161959305,
+      0.0
+    ],
+    [
+      3.5536555545569732,
+      2.617585153360466,
+      0.0
+    ],
+    [
+      3.5564936887195775,
+      2.6226815022744274,
+      0.0
+    ],
+    [
+      3.5564936887195775,
+      2.6226815022744274,
+      0.0
+    ],
+    [
+      3.5026244168248106,
+      2.577981373130009,
+      0.0
+    ],
+    [
+      3.5714932028793847,
+      2.5654478059055776,
+      0.0
+    ],
+    [
+      3.553054686525644,
+      2.617264995280078,
+      0.0
+    ],
+    [
+      3.5558939805506298,
+      2.622360698098871,
+      0.0
+    ],
+    [
+      3.5558939805506298,
+      2.622360698098871,
+      0.0
+    ],
+    [
+      3.5020145339955855,
+      2.577672833538992,
+      0.0
+    ],
+    [
+      3.5720133902698437,
+      2.5772726831975907,
+      0.0
+    ],
+    [
+      3.556864461356071,
+      2.619646141314264,
+      0.0
+    ],
+    [
+      3.5596961936977403,
+      2.6247460501098137,
+      0.0
+    ],
+    [
+      3.5596961936977403,
+      2.6247460501098137,
+      0.0
+    ],
+    [
+      3.505883114480665,
+      2.5799782882138156,
+      0.0
+    ],
+    [
+      3.574767590271784,
+      2.5675312405725985,
+      0.0
+    ],
+    [
+      3.5562640235509355,
+      2.6193252365432427,
+      0.0
+    ],
+    [
+      3.5590969168544953,
+      2.62442450053998,
+      0.0
+    ],
+    [
+      3.5590969168544953,
+      2.62442450053998,
+      0.0
+    ],
+    [
+      3.5052736450401425,
+      2.579668993491145,
+      0.0
+    ],
+    [
+      3.5741552847489313,
+      2.5672062606035078,
+      0.0
+    ],
+    [
+      3.555663509486655,
+      2.61900446759612,
+      0.0
+    ],
+    [
+      3.55849756357173,
+      2.6241030865484096,
+      0.0
+    ],
+    [
+      3.55849756357173,
+      2.6241030865484096,
+      0.0
+    ],
+    [
+      3.5046641022454903,
+      2.5793598363129133,
+      0.0
+    ],
+    [
+      3.5735429023825205,
+      2.5668814192785687,
+      0.0
+    ],
+    [
+      3.555062919196286,
+      2.6186838344870944,
+      0.0
+    ],
+    [
+      3.5578981338824556,
+      2.6237818081493556,
+      0.0
+    ],
+    [
+      3.5578981338824556,
+      2.6237818081493556,
+      0.0
+    ],
+    [
+      3.5040544861299883,
+      2.5790508166925568,
+      0.0
+    ],
+    [
+      3.572930443206284,
+      2.5665567166119483,
+      0.0
+    ],
+    [
+      3.5544622527128866,
+      2.6183633372303556,
+      0.0
+    ],
+    [
+      3.5572986278196836,
+      2.623460665357063,
+      0.0
+    ],
+    [
+      3.5572986278196836,
+      2.623460665357063,
+      0.0
+    ],
+    [
+      3.503444796726917,
+      2.5787419346435048,
+      0.0
+    ],
+    [
+      3.5723179072539546,
+      2.5662321526178067,
+      0.0
+    ],
+    [
+      3.5538615100695146,
+      2.618042975840085,
+      0.0
+    ],
+    [
+      3.556699045416427,
+      2.6231396581857687,
+      0.0
+    ],
+    [
+      3.556699045416427,
+      2.6231396581857687,
+      0.0
+    ],
+    [
+      3.502835034069557,
+      2.5784331901791786,
+      0.0
+    ],
+    [
+      3.571705294559265,
+      2.565907727310295,
+      0.0
+    ],
+    [
+      3.55326069129923,
+      2.6177227503304565,
+      0.0
+    ],
+    [
+      3.556099386705701,
+      2.622818786649701,
+      0.0
+    ],
+    [
+      3.556099386705701,
+      2.622818786649701,
+      0.0
+    ],
+    [
+      3.502225198191192,
+      2.578124583312991,
+      0.0
+    ],
+    [
+      3.5710926051559513,
+      2.5655834407035556,
+      0.0
+    ],
+    [
+      3.5526597964350946,
+      2.6174026607156353,
+      0.0
+    ],
+    [
+      3.555499651720521,
+      2.6224980507630815,
+      0.0
+    ],
+    [
+      3.555499651720521,
+      2.6224980507630815,
+      0.0
+    ],
+    [
+      3.5016152891251062,
+      2.577816114058347,
+      0.0
+    ],
+    [
+      3.571614100952933,
+      2.5774082627466135,
+      0.0
+    ],
+    [
+      3.5564698338762404,
+      2.6197833872267826,
+      0.0
+    ],
+    [
+      3.559302127270778,
+      2.62488298445647,
+      0.0
+    ],
+    [
+      3.559302127270778,
+      2.62488298445647,
+      0.0
+    ],
+    [
+      3.5054841291155947,
+      2.580121136029839,
+      0.0
+    ],
+    [
+      3.5743672367588344,
+      2.567666519158579,
+      0.0
+    ],
+    [
+      3.5558693691946646,
+      2.6194625508171763,
+      0.0
+    ],
+    [
+      3.5587028235679874,
+      2.62456150307152,
+      0.0
+    ],
+    [
+      3.5587028235679874,
+      2.62456150307152,
+      0.0
+    ],
+    [
+      3.504874633390888,
+      2.579811911539775,
+      0.0
+    ],
+    [
+      3.5737549030133153,
+      2.5673416085465957,
+      0.0
+    ],
+    [
+      3.5552688282633045,
+      2.6191418502481265,
+      0.0
+    ],
+    [
+      3.5581034434349825,
+      2.624240157281473,
+      0.0
+    ],
+    [
+      3.5581034434349825,
+      2.624240157281473,
+      0.0
+    ],
+    [
+      3.5042650643220408,
+      2.5795028246107474,
+      0.0
+    ],
+    [
+      3.5731424924338206,
+      2.5670168365959127,
+      0.0
+    ],
+    [
+      3.5546682111152217,
+      2.61882128553383,
+      0.0
+    ],
+    [
+      3.5575039869047793,
+      2.6239189471005817,
+      0.0
+    ],
+    [
+      3.5575039869047793,
+      2.6239189471005817,
+      0.0
+    ],
+    [
+      3.503655421942339,
+      2.5791938752561916,
+      0.0
+    ],
+    [
+      3.5725300050540882,
+      2.566692203320697,
+      0.0
+    ],
+    [
+      3.5540675177834795,
+      2.6185008566884753,
+      0.0
+    ],
+    [
+      3.556904454010396,
+      2.6235978725430895,
+      0.0
+    ],
+    [
+      3.556904454010396,
+      2.6235978725430895,
+      0.0
+    ],
+    [
+      3.503045706285069,
+      2.5788850634895355,
+      0.0
+    ],
+    [
+      3.5719174409078573,
+      2.5663677087351067,
+      0.0
+    ],
+    [
+      3.5534667483011435,
+      2.618180563726243,
+      0.0
+    ],
+    [
+      3.5563048447848518,
+      2.6232769336232327,
+      0.0
+    ],
+    [
+      3.5563048447848518,
+      2.6232769336232327,
+      0.0
+    ],
+    [
+      3.5024359173835187,
+      2.5785763893241986,
+      0.0
+    ],
+    [
+      3.571304800028868,
+      2.566043352853291,
+      0.0
+    ],
+    [
+      3.5528659027012797,
+      2.6178604066613054,
+      0.0
+    ],
+    [
+      3.5557051592611684,
+      2.622956130355238,
+      0.0
+    ],
+    [
+      3.5557051592611684,
+      2.622956130355238,
+      0.0
+    ],
+    [
+      3.5018260552709775,
+      2.5782678527735925,
+      0.0
+    ],
+    [
+      3.570692082450863,
+      2.565719135689392,
+      0.0
+    ],
+    [
+      3.5522649810169558,
+      2.617540385507825,
+      0.0
+    ],
+    [
+      3.5551053974723676,
+      2.6226354627533244,
+      0.0
+    ],
+    [
+      3.5551053974723676,
+      2.6226354627533244,
+      0.0
+    ],
+    [
+      3.5012161199807355,
+      2.5779594538511197,
+      0.0
+    ],
+    [
+      3.5712148865194795,
+      2.577543902344807,
+      0.0
+    ],
+    [
+      3.556075280996518,
+      2.6199206925088707,
+      0.0
+    ],
+    [
+      3.5589081353534913,
+      2.625019978142168,
+      0.0
+    ],
+    [
+      3.5589081353534913,
+      2.625019978142168,
+      0.0
+    ],
+    [
+      3.505085219403805,
+      2.580264043131568,
+      0.0
+    ],
+    [
+      3.5739669582049274,
+      2.567801857940601,
+      0.0
+    ],
+    [
+      3.555474789451116,
+      2.6195999244564523,
+      0.0
+    ],
+    [
+      3.558308804803762,
+      2.624698564937869,
+      0.0
+    ],
+    [
+      3.558308804803762,
+      2.624698564937869,
+      0.0
+    ],
+    [
+      3.504475697407613,
+      2.579954888869907,
+      0.0
+    ],
+    [
+      3.5733545962493602,
+      2.5674770166815737,
+      0.0
+    ],
+    [
+      3.5548742216652895,
+      2.6192792922612473,
+      0.0
+    ],
+    [
+      3.5577093978331247,
+      2.624377287345113,
+      0.0
+    ],
+    [
+      3.5577093978331247,
+      2.624377287345113,
+      0.0
+    ],
+    [
+      3.5038661020772714,
+      2.5796458721858793,
+      0.0
+    ],
+    [
+      3.572742157469401,
+      2.5671523141009964,
+      0.0
+    ],
+    [
+      3.5542735776721077,
+      2.618958795937452,
+      0.0
+    ],
+    [
+      3.5571099144746015,
+      2.6240561453781512,
+      0.0
+    ],
+    [
+      3.5571099144746015,
+      2.6240561453781512,
+      0.0
+    ],
+    [
+      3.5032564334460714,
+      2.579336993092919,
+      0.0
+    ],
+    [
+      3.572129641898793,
+      2.566827750213033,
+      0.0
+    ],
+    [
+      3.55367285750464,
+      2.618638435499253,
+      0.0
+    ],
+    [
+      3.55367285750464,
+      2.618638435499253,
+      0.0
+    ],
+    [
+      3.55367285750464,
+      2.618638435499253,
+      0.0
+    ],
+    [
+      3.499742914562364,
+      2.5740115237279593,
+      0.0
+    ],
+    [
+      3.4981693132794,
+      2.5787574460832294,
+      0.0
+    ],
+    [
+      3.4981693132794,
+      2.5787574460832294,
+      0.0
+    ],
+    [
+      3.4981693132794,
+      2.5787574460832294,
+      0.0
+    ],
+    [
+      3.4432682449631296,
+      2.535330810273715,
+      0.0
+    ],
+    [
+      3.4432682449631296,
+      2.535330810273715,
+      0.0
+    ],
+    [
+      3.5571099144746015,
+      2.6240561453781512,
+      0.0
+    ],
+    [
+      3.5571099144746015,
+      2.6240561453781512,
+      0.0
+    ],
+    [
+      3.502208846158331,
+      2.5806295095686367,
+      0.0
+    ],
+    [
+      3.4473077778420604,
+      2.537202873759122,
+      0.0
+    ],
+    [
+      3.4503592539618,
+      2.542174419923892,
+      0.0
+    ],
+    [
+      3.4547979279171597,
+      2.5459593837672845,
+      0.0
+    ],
+    [
+      3.4547979279171597,
+      2.5459593837672845,
+      0.0
+    ],
+    [
+      3.467980147282055,
+      2.5446690383008623,
+      0.0
+    ],
+    [
+      3.4664689726437,
+      2.5494352056513017,
+      0.0
+    ],
+    [
+      3.4664689726437,
+      2.5494352056513017,
+      0.0
+    ],
+    [
+      3.4664689726437,
+      2.5494352056513017,
+      0.0
+    ],
+    [
+      3.5331953155498503,
+      2.570591650588267,
+      0.0
+    ],
+    [
+      3.5250847865021284,
+      2.5942394690619883,
+      0.0
+    ],
+    [
+      3.527982321644454,
+      2.5993022813117923,
+      0.0
+    ],
+    [
+      3.527982321644454,
+      2.5993022813117923,
+      0.0
+    ],
+    [
+      3.4735937465215914,
+      2.555235480927549,
+      0.0
+    ],
+    [
+      3.5427290344457503,
+      2.56620416196237,
+      0.0
+    ],
+    [
+      3.5312906203148846,
+      2.5992822919302325,
+      0.0
+    ],
+    [
+      3.5341753450504663,
+      2.6043524143131442,
+      0.0
+    ],
+    [
+      3.5341753450504663,
+      2.6043524143131442,
+      0.0
+    ],
+    [
+      3.479898425657355,
+      2.560148160884388,
+      0.0
+    ],
+    [
+      3.5490057434053277,
+      2.5712917076124606,
+      0.0
+    ],
+    [
+      3.537483651893213,
+      2.604340783351223,
+      0.0
+    ],
+    [
+      3.540355535943046,
+      2.6094181901482103,
+      0.0
+    ],
+    [
+      3.540355535943046,
+      2.6094181901482103,
+      0.0
+    ],
+    [
+      3.486190723137926,
+      2.5650766401777103,
+      0.0
+    ],
+    [
+      3.5552696020036385,
+      2.5763951424927805,
+      0.0
+    ],
+    [
+      3.5436638297902743,
+      2.609414925219678,
+      0.0
+    ],
+    [
+      3.546522842884794,
+      2.6144995905875406,
+      0.0
+    ],
+    [
+      3.546522842884794,
+      2.6144995905875406,
+      0.0
+    ],
+    [
+      3.492470587959865,
+      2.570020902010532,
+      0.0
+    ],
+    [
+      3.5624673673955645,
+      2.5693494344908068,
+      0.0
+    ],
+    [
+      3.547482794598854,
+      2.61178129254699,
+      0.0
+    ],
+    [
+      3.5503342732515253,
+      2.6168701870508224,
+      0.0
+    ],
+    [
+      3.5503342732515253,
+      2.6168701870508224,
+      0.0
+    ],
+    [
+      3.496347980053443,
+      2.572311460108385,
+      0.0
+    ],
+    [
+      3.5663456775444304,
+      2.5717437049144634,
+      0.0
+    ],
+    [
+      3.551298251511592,
+      2.6141533143183033,
+      0.0
+    ],
+    [
+      3.554142187011201,
+      2.6192464281646495,
+      0.0
+    ],
+    [
+      3.554142187011201,
+      2.6192464281646495,
+      0.0
+    ],
+    [
+      3.5002219955914815,
+      2.574607734666062,
+      0.0
+    ],
+    [
+      3.4986473720126963,
+      2.5793533179373926,
+      0.0
+    ],
+    [
+      3.4986473720126963,
+      2.5793533179373926,
+      0.0
+    ],
+    [
+      3.4986473720126963,
+      2.5793533179373926,
+      0.0
+    ],
+    [
+      3.4437556596225734,
+      2.535914856743653,
+      0.0
+    ],
+    [
+      3.4437556596225734,
+      2.535914856743653,
+      0.0
+    ],
+    [
+      3.5503342732515253,
+      2.6168701870508224,
+      0.0
+    ],
+    [
+      3.5503342732515253,
+      2.6168701870508224,
+      0.0
+    ],
+    [
+      3.4954425608614024,
+      2.5734317258570827,
+      0.0
+    ],
+    [
+      3.565413756750327,
+      2.5714238050733385,
+      0.0
+    ],
+    [
+      3.5503802305873053,
+      2.613838343749431,
+      0.0
+    ],
+    [
+      3.5532258351196466,
+      2.6189305252685147,
+      0.0
+    ],
+    [
+      3.5532258351196466,
+      2.6189305252685147,
+      0.0
+    ],
+    [
+      3.4992910172109224,
+      2.574309505365864,
+      0.0
+    ],
+    [
+      3.5692893234855347,
+      2.5738225570261632,
+      0.0
+    ],
+    [
+      3.554192949139271,
+      2.6162147671784717,
+      0.0
+    ],
+    [
+      3.5570310031707266,
+      2.62131116071629,
+      0.0
+    ],
+    [
+      3.5570310031707266,
+      2.62131116071629,
+      0.0
+    ],
+    [
+      3.5031624011127804,
+      2.5766102243466498,
+      0.0
+    ],
+    [
+      3.5015823320393604,
+      2.581353997288436,
+      0.0
+    ],
+    [
+      3.5015823320393604,
+      2.581353997288436,
+      0.0
+    ],
+    [
+      3.5015823320393604,
+      2.581353997288436,
+      0.0
+    ],
+    [
+      3.4467405103596134,
+      2.5378525651873334,
+      0.0
+    ],
+    [
+      3.5131533315446193,
+      2.559973532215211,
+      0.0
+    ],
+    [
+      3.505219617934114,
+      2.5836812564490232,
+      0.0
+    ],
+    [
+      3.505219617934114,
+      2.5836812564490232,
+      0.0
+    ],
+    [
+      3.505219617934114,
+      2.5836812564490232,
+      0.0
+    ],
+    [
+      3.450439063708596,
+      2.5401026965973594,
+      0.0
+    ],
+    [
+      3.5168206915632703,
+      2.5623170947067737,
+      0.0
+    ],
+    [
+      3.5088536136816884,
+      2.5860136275761367,
+      0.0
+    ],
+    [
+      3.5088536136816884,
+      2.5860136275761367,
+      0.0
+    ],
+    [
+      3.5088536136816884,
+      2.5860136275761367,
+      0.0
+    ],
+    [
+      3.4541344570031915,
+      2.5423579991601564,
+      0.0
+    ],
+    [
+      3.5204847490374087,
+      2.5646658172285854,
+      0.0
+    ],
+    [
+      3.5124843109315695,
+      2.588351107813981,
+      0.0
+    ],
+    [
+      3.5124843109315695,
+      2.588351107813981,
+      0.0
+    ],
+    [
+      3.5124843109315695,
+      2.588351107813981,
+      0.0
+    ],
+    [
+      3.45782668190098,
+      2.544618470244833,
+      0.0
+    ],
+    [
+      3.524145495540088,
+      2.5670196969411827,
+      0.0
+    ],
+    [
+      3.516111701331422,
+      2.5906936942929777,
+      0.0
+    ],
+    [
+      3.516111701331422,
+      2.5906936942929777,
+      0.0
+    ],
+    [
+      3.516111701331422,
+      2.5906936942929777,
+      0.0
+    ],
+    [
+      3.4615157300574095,
+      2.5468841072069615,
+      0.0
+    ],
+    [
+      3.5278029226424357,
+      2.5693787309912266,
+      0.0
+    ],
+    [
+      3.519735776527105,
+      2.5930413841297466,
+      0.0
+    ],
+    [
+      3.519735776527105,
+      2.5930413841297466,
+      0.0
+    ],
+    [
+      3.519735776527105,
+      2.5930413841297466,
+      0.0
+    ],
+    [
+      3.4652015931258155,
+      2.5491549073885627,
+      0.0
+    ],
+    [
+      3.5314570219136714,
+      2.5717429165114885,
+      0.0
+    ],
+    [
+      3.523356528162693,
+      2.595394174427091,
+      0.0
+    ],
+    [
+      3.5262562113660616,
+      2.6004557566992546,
+      0.0
+    ],
+    [
+      3.5262562113660616,
+      2.6004557566992546,
+      0.0
+    ],
+    [
+      3.471848978361068,
+      2.55641199440832,
+      0.0
+    ],
+    [
+      3.540988905438479,
+      2.5673513949280156,
+      0.0
+    ],
+    [
+      3.529564482125157,
+      2.600434359607107,
+      0.0
+    ],
+    [
+      3.529564482125157,
+      2.600434359607107,
+      0.0
+    ],
+    [
+      3.529564482125157,
+      2.600434359607107,
+      0.0
+    ],
+    [
+      3.4752036123579013,
+      2.5563333863962185,
+      0.0
+    ],
+    [
+      3.544331993153606,
+      2.5673455146448374,
+      0.0
+    ],
+    [
+      3.5328727862880362,
+      2.600416447168915,
+      0.0
+    ],
+    [
+      3.5357543230554365,
+      2.6054883820695123,
       0.0
     ]
   ]

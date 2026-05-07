@@ -1,0 +1,102 @@
+{
+  "planner": "beacon_human_like_tuned",
+  "comparison_scope": "baseline across the 9 semantics environments",
+  "step_size": 0.5,
+  "alpha": 2.5,
+  "success_rate": 1.0,
+  "mean_path_length": 24.699,
+  "mean_energy_consumption": 24.699,
+  "mean_steps": 38.4444,
+  "rows": [
+    {
+      "environment": "sparse",
+      "seed": 11,
+      "success": true,
+      "path_length": 25.2487,
+      "energy_consumption": 25.2487,
+      "steps": 36,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "collision_required",
+      "seed": 12,
+      "success": true,
+      "path_length": 23.1066,
+      "energy_consumption": 23.1066,
+      "steps": 40,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "collision_shortcut",
+      "seed": 13,
+      "success": true,
+      "path_length": 25.0061,
+      "energy_consumption": 25.0061,
+      "steps": 38,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "open_room",
+      "seed": 14,
+      "success": true,
+      "path_length": 25.4558,
+      "energy_consumption": 25.4558,
+      "steps": 36,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "corridor",
+      "seed": 15,
+      "success": true,
+      "path_length": 24.3995,
+      "energy_consumption": 24.3995,
+      "steps": 43,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "cluttered",
+      "seed": 16,
+      "success": true,
+      "path_length": 26.4203,
+      "energy_consumption": 26.4203,
+      "steps": 40,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "dense_barrier",
+      "seed": 17,
+      "success": true,
+      "path_length": 22.3995,
+      "energy_consumption": 22.3995,
+      "steps": 39,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "chain_reaction",
+      "seed": 18,
+      "success": true,
+      "path_length": 24.4203,
+      "energy_consumption": 24.4203,
+      "steps": 36,
+      "step_size": 0.5,
+      "alpha": 2.5
+    },
+    {
+      "environment": "mixed_materials",
+      "seed": 19,
+      "success": true,
+      "path_length": 25.8345,
+      "energy_consumption": 25.8345,
+      "steps": 38,
+      "step_size": 0.5,
+      "alpha": 2.5
+    }
+  ]
+}

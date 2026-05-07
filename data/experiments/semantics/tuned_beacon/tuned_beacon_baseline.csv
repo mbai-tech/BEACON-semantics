@@ -1,0 +1,10 @@
+environment,seed,success,path_length,energy_consumption,steps,step_size,alpha
+sparse,11,True,25.2487,25.2487,36,0.5,2.5
+collision_required,12,True,23.1066,23.1066,40,0.5,2.5
+collision_shortcut,13,True,25.0061,25.0061,38,0.5,2.5
+open_room,14,True,25.4558,25.4558,36,0.5,2.5
+corridor,15,True,24.3995,24.3995,43,0.5,2.5
+cluttered,16,True,26.4203,26.4203,40,0.5,2.5
+dense_barrier,17,True,22.3995,22.3995,39,0.5,2.5
+chain_reaction,18,True,24.4203,24.4203,36,0.5,2.5
+mixed_materials,19,True,25.8345,25.8345,38,0.5,2.5

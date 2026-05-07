@@ -1,0 +1,8 @@
+sweep_group,environment,seed,planner,planner_label,factor,factor_level,robot_radius,obstacle_density_scale,obstacle_size_scale,friction_scale,energy_weight,obstacle_count_scale,success,success_rate_value,energy_consumption,path_length,time_to_goal
+scene_generation,cluttered,11,bug1_geometric,Bug,obstacle_density_scale,1.0,0.12,1.0,1.0,1.0,1.0,1.0,False,0.0,0.0,0.0,0.0
+scene_generation,cluttered,11,bug2_geometric,Bug2,obstacle_density_scale,1.0,0.12,1.0,1.0,1.0,1.0,1.0,False,0.0,0.0,0.0,0.0
+scene_generation,cluttered,11,dstar_lite_geometric,D* Lite,obstacle_density_scale,1.0,0.12,1.0,1.0,1.0,1.0,1.0,True,1.0,26.6274,26.6274,20.0
+scene_generation,cluttered,11,baseline_semantic,Baseline Sem.,obstacle_density_scale,1.0,0.12,1.0,1.0,1.0,1.0,1.0,True,1.0,26.6274,26.6274,20.0
+scene_generation,cluttered,11,beacon_human_like,BEACON,obstacle_density_scale,1.0,0.12,1.0,1.0,1.0,1.0,1.0,True,1.0,26.5487,26.5487,32.0
+planner_hyperparameter,cluttered,11,baseline_semantic,Baseline Sem.,robot_radius,0.15,0.15,1.0,1.0,1.0,1.0,1.0,True,1.0,26.6274,26.6274,20.0
+planner_hyperparameter,cluttered,11,beacon_human_like,BEACON,robot_radius,0.15,0.15,1.0,1.0,1.0,1.0,1.0,True,1.0,26.5487,26.5487,32.0
